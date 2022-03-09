@@ -2,7 +2,7 @@ import React from 'react'
 
 function Projects() {
   return (
-    <div>Projects</div>
+    <div className='mt-20'>Projects</div>
   )
 }
 
