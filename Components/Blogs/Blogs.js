@@ -1,8 +1,12 @@
 import React from 'react'
 
-function Blogs() {
+function Blogs({post}) {
   return (
-    <div>Blogs</div>
+    <div>
+     <h1>hi</h1>
+     {post && console.log(post)} 
+    </div>
+    
   )
 }
 
