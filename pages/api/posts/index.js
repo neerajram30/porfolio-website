@@ -1,4 +1,4 @@
-const username = "neerajram30"
+const username = "2320sharon"
 
 export function getPosts() {
   return fetch(`https://dev.to/api/articles?username=${username}`)

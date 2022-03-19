@@ -9,7 +9,8 @@ import Projects from '../Components/Projects/Projects'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 
-export default function Home() {
+export default function Home({post}) {
+  
   const [opened,setOpened] = useState(false);
   const {theme, setTheme} = useTheme()
   return (
@@ -92,7 +93,7 @@ export default function Home() {
       <Profile theme/>
       <About/>
       <Projects/>
-      <Blogs/>
+      <Blogs data={post}/>
       </main>
 
       <footer>
@@ -100,4 +101,9 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+export async function getServerSideProps() {
+  const res = await fetch(`https://dev.to/api/articles?username=rivaanranawat`)
+  const json = await res.json()
+  return { props: { post: json } }
 }
