@@ -1,11 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
 import profile from '../../images/Profile.jpg'
+import Fade  from 'react-reveal'
 
 function About() {
   return (
-    <div className='md:mt-40 mt-20'>
+    <div className='md:mt-52 mt-20'>
+        <Fade bottom>
       <div className='md:ml-28 ml-8'>
+
       <h2 className='md:text-4xl text-3xl ml-5 font-bold md:ml-0'>About Me</h2>
       <div className='md:flex md:flex-row flex flex-col items-center'>
       <div className='mt-5 md:w-7/12 w-10/12 md:text-lg break-words'>
@@ -19,7 +22,7 @@ function About() {
 
       </p>
       <div className='flex md:pl-10 pt-10 items-center'>
-        <ul className='list-disc pl-10'>
+        <ul className='list-disc pl-2'>
           <li>Javascript</li>
           <li>Java</li>
           <li>C++</li>
@@ -37,6 +40,7 @@ function About() {
       </div>
       </div>
       </div>
+        </Fade>
     </div>
   )
 }

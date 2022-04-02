@@ -8,6 +8,7 @@ import Profile from '../Components/Profile/Profile'
 import Projects from '../Components/Projects/Projects'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
+import Fade  from 'react-reveal'
 
 export default function Home({post}) {
   
@@ -25,13 +26,19 @@ export default function Home({post}) {
       <nav className='bg-black h-16'>
         <div className='hidden md:flex space-x-3'>
         <div className='text-white dark:text-white pt-5 pl-2'>
+          <Fade top>
+
           <p>Neeraj</p>
+          </Fade>
         </div>
           <div className='flex pl-5 flex-1 mt-5 text-white space-x-3 dark:text-white'>
+            <Fade top delay={4000}>
+
             <Link 
             href="/"
             className="ml-5"
             >Home </Link>
+            </Fade>
             <Link 
             href="/about"
             className="ml-5"
@@ -103,7 +110,7 @@ export default function Home({post}) {
   )
 }
 export async function getServerSideProps() {
-  const res = await fetch(`https://dev.to/api/articles?username=rivaanranawat`)
+  const res = await fetch(`https://dev.to/api/articles?username=neerajram30`)
   const json = await res.json()
   return { props: { post: json } }
 }
