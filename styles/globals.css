@@ -1,4 +1,7 @@
 @import 'tailwindcss/base';
+html{
+  scroll-behavior: smooth
+}
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 

@@ -5,6 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function Dev() {
     return (
     
-    <FontAwesomeIcon icon={faDev} width={40} height={40}/>
+    <FontAwesomeIcon icon={faDev}/>
     )
   }

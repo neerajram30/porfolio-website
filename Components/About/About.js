@@ -5,7 +5,7 @@ import Fade  from 'react-reveal'
 
 function About() {
   return (
-    <div className='md:mt-52 mt-20'>
+    <div className='md:pt-20 md:mt-20 mt-20' id='about'>
         <Fade bottom>
       <div className='md:ml-28 ml-8'>
 
@@ -17,17 +17,17 @@ function About() {
         My ambition is to become a good Software Engineer and solve some real world problems.
         Curently working on React JS, Next JS, Node JS.
       </p>
-      <p>
-        Here are some technologies that I'm familar with:
+      <p className='pt-10 font-medium'>
+        Familar Tools:
 
       </p>
-      <div className='flex md:pl-10 pt-10 items-center'>
-        <ul className='list-disc pl-2'>
+      <div className='flex md:flex-row flex-col justify-center md:pl-10 pl-0 items-center  w-fit'>
+        <ul className='list-disc md:pl-2'>
           <li>Javascript</li>
           <li>Java</li>
           <li>C++</li>
         </ul>
-        <ul className='list-disc pl-10'>
+        <ul className='list-disc md:pl-10'>
           <li>React</li>
           <li>Nodejs</li>
           <li>MongoDB</li>

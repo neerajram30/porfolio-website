@@ -8,13 +8,14 @@ function Blogs({data}) {
   }, [])
   
   return (
-    <div>
+    <div id='blogs' className='pt-20 mt-14'>
      {data &&
-     <div className='mt-20 flex flex-col items-center md:items-start'>
+     <div className='flex flex-col items-center md:items-start'>
        <h2 className='md:text-4xl text-3xl md:ml-24 font-bold'>Articles</h2>
        <div className='mt-10 flex flex-col items-center md:ml-10 md:mr-10'>
          <div className='md:grid md:grid-cols-2 md:gap-2 flex flex-col '>
          {data.map((posts)=>{
+          
            return (
              <Fade bottom>
 
@@ -24,7 +25,7 @@ function Blogs({data}) {
              
              >
               <a target="_blank">
-               <div className='p-5 mt-10 ml-10 mr-10 md:w-auto rounded-xl flex items-center flex-col bg-gray-900 text-white md:h-72 h-80'>
+               <div className='p-5 mt-10 ml-10 mr-10 md:w-auto rounded-xl flex items-center flex-col border-2 md:h-72 h-80'>
                  
 
                  <div className='md:flex justify-start md:space-x-20'>

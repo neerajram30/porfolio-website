@@ -7,6 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function Github() {
     return (
     
-    <FontAwesomeIcon icon={faGithub} width={40} height={40}/>
+    <FontAwesomeIcon icon={faGithub}/>
     )
   }

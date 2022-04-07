@@ -5,37 +5,38 @@ import Fade from 'react-reveal'
 import Github from '../Icons/Github'
 import Twitter from '../Icons/Twitter'
 import Dev from '../Icons/Dev'
-function Profile() {
+
+function Profile(theme) {
   return (
     <div>
       <div className='flex flex-col md:pl-20 pl-10 pt-20 md:items-start items-start mt-10'>
-        
+
         
 
-        <p className='md:text-2xl text-xl'>Hi, I am</p>
+        <p className={ theme ==="dark"?'text-hicolor md:text-2xl text-xl':'md:text-2xl text-xl text-pcolor'}>Hi, I am</p>
         
         <Fade top duration={4000}>
-        <h1 className='md:text-7xl text-5xl font-extrabold'>Neeraj M R</h1>
+        <h1 className='md:text-7xl text-4xl w-fit font-extrabold'>Neeraj M R.</h1>
 
-        <p className='md:text-6xl text-4xl mt-2 font-extrabold'>I'm web developer.</p>
+        <p className={theme === "dark" ?'md:text-6xl text-3xl mt-2 font-extrabold w-fit text-hdcolor':'md:text-6xl text-3xl mt-2 font-extrabold w-fit text-hcolor'}>I'm web developer.</p>
         <div className='md:w-5/12 w-5/6 pt-10 break-words'>
-          <p className='md:text-xl'>
+          <p className={theme ==="dark"?'md:text-xl text-darkdesc':'md:text-xl'}>
             I am a Btech student from kerala, curretly learning web development
             and doing some side projects.  Node js, React js, Mongodb is my favourite
             stack. 
           </p>
         </div>
-        <button type='submit' className='mt-10 h-10 bg-red-700 rounded-sm w-32 hover:text-white'>
+        <button type='submit' className='mt-10 h-10 bg-pcolor rounded-sm w-32 text-white hover:text-hcolor'>
           Get Resume
         </button>
         <div className='flex mt-8'>
-        <a href='https://github.com/neerajram30' target='_blank' className='mr-5'>
+        <a href='https://github.com/neerajram30' target='_blank' className='mr-5 md:w-10 md:h-10 w-5 h-5'>
       <Github/>
        </a>
-       <a href='https://github.com/neerajram30' target='_blank' className='mr-5'>
+       <a href='https://github.com/neerajram30' target='_blank' className='mr-5 md:w-10 md:h-10 w-5 h-5'>
       <Twitter/>
        </a>
-       <a href='https://github.com/neerajram30' target='_blank' className='mr-5'>
+       <a href='https://github.com/neerajram30' target='_blank' className='mr-5 md:w-10 md:h-10 w-5 h-5'>
       <Dev/>
        </a>
        
