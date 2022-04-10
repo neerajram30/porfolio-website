@@ -14,7 +14,14 @@ module.exports = {
       'hcolor' :'#292C6D',
       'description':'#082032',
       'darkdesc':'#FAEDF0',
-      'hover':'#FFB830'
+      'hover':'#11468F',
+      'btn':'#1572A1',
+      'react':'#61DBFB',
+      'project':'#22577E',
+      'projecthe':'#FFD124',
+      'stack':'#EC255A',
+      'blogbg':'#151D3B',
+      'bloghover':'#FFF89A'
     },
 
     extend: {},

@@ -17,7 +17,7 @@ function About() {
         My ambition is to become a good Software Engineer and solve some real world problems.
         Curently working on React JS, Next JS, Node JS.
       </p>
-      <p className='pt-10 font-medium'>
+      <p className='pt-10 font-medium text-pcolor'>
         Familar Tools:
 
       </p>

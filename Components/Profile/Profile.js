@@ -6,9 +6,10 @@ import Github from '../Icons/Github'
 import Twitter from '../Icons/Twitter'
 import Dev from '../Icons/Dev'
 
-function Profile(theme) {
+function Profile({theme}) {
   return (
     <div>
+      console.log(theme);
       <div className='flex flex-col md:pl-20 pl-10 pt-20 md:items-start items-start mt-10'>
 
         
@@ -26,7 +27,7 @@ function Profile(theme) {
             stack. 
           </p>
         </div>
-        <button type='submit' className='mt-10 h-10 bg-pcolor rounded-sm w-32 text-white hover:text-hcolor'>
+        <button type='submit' className='mt-10 h-10 bg-hover rounded-sm w-32 text-white hover:bg-btn'>
           Get Resume
         </button>
         <div className='flex mt-8'>

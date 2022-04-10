@@ -99,7 +99,7 @@ export default function Home({post}) {
         </div>
         {opened ? <div className='bg-white'>home</div>: " "} */}
       </nav>
-      <Profile theme/>
+      <Profile theme={theme}/>
       <About theme/>
       <Projects theme/>
       <Blogs data={post}/>

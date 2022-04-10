@@ -8,7 +8,7 @@ function Blogs({data}) {
   }, [])
   
   return (
-    <div id='blogs' className='pt-20 mt-14'>
+    <div id='blogs' className='pt-20 mt-56'>
      {data &&
      <div className='flex flex-col items-center md:items-start'>
        <h2 className='md:text-4xl text-3xl md:ml-24 font-bold'>Articles</h2>
@@ -24,13 +24,13 @@ function Blogs({data}) {
              passHref
              
              >
-              <a target="_blank">
-               <div className='p-5 mt-10 ml-10 mr-10 md:w-auto rounded-xl flex items-center flex-col border-2 md:h-72 h-80'>
+              <a target="_blank" className='md:hover:text-hover'>
+               <div className='p-5 mt-10 ml-10 mr-10 md:w-auto rounded-xl flex items-center flex-col border-2 md:h-72 h-80 bg-blogbg text-white'>
                  
 
                  <div className='md:flex justify-start md:space-x-20'>
 
-           <h2 className='md:text-xl text-base font-bold md:w-auto'>{posts.title} </h2>
+           <h2 className='md:text-xl text-base font-bold md:w-auto md:hover:text-bloghover'>{posts.title} </h2>
            <p className='md:text-xl w-40 text-base font-bold'>{posts.readable_publish_date}</p>
                  </div>
                  <p className='md:mt-10 mt-5 justify-start flex md:text-base text-sm'>{posts.description}</p>
