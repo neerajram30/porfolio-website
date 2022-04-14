@@ -24,33 +24,33 @@ export default function Home({post}) {
       </Head>
 
       <main className='overflow-hidden'>
-      <nav className='md:bg-navcolor h-16 bg-white fixed w-full z-10'>
+      <nav className='md:bg-navcolor h-16 bg-transparent md:fixed w-full z-10 drop-shadow-lg'>
         <div className='md:flex space-x-3'>
         <div className='md:flex hidden text-white dark:text-white pt-5 pl-2'>
-          <Fade top>
+          {/* <Fade top>
                   <p>Neeraj</p>
-          </Fade>
+          </Fade> */}
         </div>
-          <div className='md:flex hidden pl-5 flex-1 mt-5 text-white space-x-3 dark:text-white'>
+          <div className='md:flex hidden pl-5 flex-1 mt-5 text-white space-x-3'>
             <Fade top delay={4000}>
 
             <Link 
             href="/"
-            className="ml-5"
-            >Home </Link>
+            
+            ><a className='hover:text-stack ml-5'>Home </a></Link>
             </Fade>
             <Link 
             href="#about"
-            className="ml-5"
-            >About</Link>
+            
+            ><a className='hover:text-stack ml-5'>About</a></Link>
             <Link 
             href="#projects"
             className="ml-5"
-            >Projects</Link>
+            ><a className='hover:text-stack ml-5'>Projects</a></Link>
             <Link 
             href="#blogs"
             className='ml-5'
-            >Blog</Link>
+            ><a className='hover:text-stack ml-5'>Blogs</a></Link>
           </div>
           <div className='flex items-end justify-end md:pr-5 pr-5'>
           <button
@@ -71,6 +71,7 @@ export default function Home({post}) {
                 strokeLinejoin="round"
                 strokeWidth={2}
                 d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                color='#F4F6F0'
                 />
                 ) : (
                   <path
@@ -78,6 +79,7 @@ export default function Home({post}) {
                   strokeLinejoin="round"
                   strokeWidth={2}
                   d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  color='yellow'
                   />
                   
                   )}
@@ -100,13 +102,13 @@ export default function Home({post}) {
         {opened ? <div className='bg-white'>home</div>: " "} */}
       </nav>
       <Profile theme={theme}/>
-      <About theme/>
+      <About theme={theme}/>
       <Projects theme/>
       <Blogs data={post}/>
       </main>
 
       <footer>
-        <Footer/>
+        <Footer theme={theme}/>
       </footer>
     </div>
   )

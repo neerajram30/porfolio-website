@@ -8,12 +8,12 @@ function Blogs({data}) {
   }, [])
   
   return (
-    <div id='blogs' className='pt-20 mt-56'>
+    <div id='blogs' className='pt-20 md:mt-56 mt-20'>
      {data &&
      <div className='flex flex-col items-center md:items-start'>
        <h2 className='md:text-4xl text-3xl md:ml-24 font-bold'>Articles</h2>
-       <div className='mt-10 flex flex-col items-center md:ml-10 md:mr-10'>
-         <div className='md:grid md:grid-cols-2 md:gap-2 flex flex-col '>
+       <div className='md:mt-10 mt-3 flex flex-col items-center md:ml-10 md:mr-10'>
+         <div className='md:grid md:grid-cols-2 md:gap-2 flex flex-col'>
          {data.map((posts)=>{
           
            return (
@@ -25,7 +25,10 @@ function Blogs({data}) {
              
              >
               <a target="_blank" className='md:hover:text-hover'>
-               <div className='p-5 mt-10 ml-10 mr-10 md:w-auto rounded-xl flex items-center flex-col border-2 md:h-72 h-80 bg-blogbg text-white'>
+               <div className='p-5 mt-10 ml-10 mr-10 md:w-auto min-w-min rounded-xl flex items-center flex-col border-2 md:h-72 h-80 bg-blogbg text-white 
+
+shadow-lg
+'>
                  
 
                  <div className='md:flex justify-start md:space-x-20'>

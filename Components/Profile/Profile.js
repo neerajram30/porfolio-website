@@ -9,12 +9,11 @@ import Dev from '../Icons/Dev'
 function Profile({theme}) {
   return (
     <div>
-      console.log(theme);
       <div className='flex flex-col md:pl-20 pl-10 pt-20 md:items-start items-start mt-10'>
 
         
 
-        <p className={ theme ==="dark"?'text-hicolor md:text-2xl text-xl':'md:text-2xl text-xl text-pcolor'}>Hi, I am</p>
+        <p className={ theme ==="dark"?'text-hicolor md:text-2xl text-xl text-pcolor':'md:text-2xl text-xl text-pcolor'}>Hi, I am</p>
         
         <Fade top duration={4000}>
         <h1 className='md:text-7xl text-4xl w-fit font-extrabold'>Neeraj M R.</h1>
@@ -27,17 +26,23 @@ function Profile({theme}) {
             stack. 
           </p>
         </div>
-        <button type='submit' className='mt-10 h-10 bg-hover rounded-sm w-32 text-white hover:bg-btn'>
+        <a target='_blank' type='submit'  href='https://drive.google.com/file/d/1zj32yY-f2LRf5ZoSwexWQ7JtXD6mkUnm/view?usp=sharing'>
+          <button >
+
           Get Resume
-        </button>
+          </button>
+
+        </a> 
         <div className='flex mt-8'>
-        <a href='https://github.com/neerajram30' target='_blank' className='mr-5 md:w-10 md:h-10 w-5 h-5'>
+          
+        <a href='https://github.com/neerajram30' target='_blank' className={theme=="dark"?'mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-black text-2xl':'mr-5 md:w-10 md:h-10 w-5 h-5 text-2xl hover:text-iconhover'}>
       <Github/>
        </a>
-       <a href='https://github.com/neerajram30' target='_blank' className='mr-5 md:w-10 md:h-10 w-5 h-5'>
+          
+       <a href='https://twitter.com/neeraJramachaN2' target='_blank' className='mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-twitter text-2xl'>
       <Twitter/>
        </a>
-       <a href='https://github.com/neerajram30' target='_blank' className='mr-5 md:w-10 md:h-10 w-5 h-5'>
+       <a href='https://dev.to/neerajram30' target='_blank' className={theme=="dark"?'text-2xl mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-black':'text-2xl mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-iconhover'}>
       <Dev/>
        </a>
        
