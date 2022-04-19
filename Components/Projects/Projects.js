@@ -4,7 +4,7 @@ import Github from '../Icons/Github'
 import Links from '../Icons/Link'
 
 
-function Projects(theme) {
+function Projects({theme}) {
   return (
     <div className='md:mt-52 mt-5 pt-20' id='projects'>
       <Fade bottom>
@@ -16,15 +16,15 @@ function Projects(theme) {
             
             <a href='https://github.com/neerajram30/Netflix-UI-clone' target='_blank'
             >
-            <div className='md:w-72 w-60 h-80 rounded-lg mt-5 bg-project md:hover:bg-navcolor shadow-lg'>
+            <div className={theme==="dark"?'md:w-72 w-60 h-80 rounded-lg mt-5 bg-blogdark shadow-lg':'md:w-72 w-60 h-80 rounded-lg mt-5 bg-blogbg shadow-lg'}>
               <div className='flex justify-between'>
                 <div className='w-10 h-10 ml-5 mt-5'>
-                <a className='text-white hover:text-black text-2xl'>
+                <a className='text-white text-2xl'>
                   <Github/>
                 </a>
                 </div>
                 <div className='w-10 h-10 mr-5 mt-5'>
-                <a className='text-white hover:text-black text-2xl'>
+                <a className='text-white text-2xl'>
                   <Links/>
                 </a>
                 </div>

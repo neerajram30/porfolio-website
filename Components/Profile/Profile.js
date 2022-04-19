@@ -26,9 +26,8 @@ function Profile({theme}) {
             stack. 
           </p>
         </div>
-        <a target='_blank' type='submit'  href='https://drive.google.com/file/d/1zj32yY-f2LRf5ZoSwexWQ7JtXD6mkUnm/view?usp=sharing'>
-          <button >
-
+        <a target='_blank'  type='submit' className='mt-10' href='https://drive.google.com/file/d/1zj32yY-f2LRf5ZoSwexWQ7JtXD6mkUnm/view?usp=sharing'>
+          <button className='bg-pcolor h-10 w-28 rounded-sm text-white hover:bg-rdhover hover:border-white'>
           Get Resume
           </button>
 

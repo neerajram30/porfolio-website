@@ -103,8 +103,8 @@ export default function Home({post}) {
       </nav>
       <Profile theme={theme}/>
       <About theme={theme}/>
-      <Projects theme/>
-      <Blogs data={post}/>
+      <Projects theme={theme}/>
+      <Blogs data={post} theme={theme}/>
       </main>
 
       <footer>

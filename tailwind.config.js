@@ -21,6 +21,7 @@ module.exports = {
       'projecthe':'#FFD124',
       'stack':'#EC255A',
       'blogbg':'#151D3B',
+      'blogdark':'#010101',
       'bloghover':'#FFF89A',
       'black':'#000000',
       'twitter':'#00acee',
@@ -28,6 +29,7 @@ module.exports = {
       'insta':'#C13584',
       'fb': '#405DE6',
       'greyhover':'#DCDCDC',
+      'rdhover':'#890F0D'
     },
 
     extend: {},
