@@ -34,14 +34,14 @@ function Profile({theme}) {
         </a> 
         <div className='flex mt-8'>
           
-        <a href='https://github.com/neerajram30' target='_blank' className={theme=="dark"?'mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-black text-2xl':'mr-5 md:w-10 md:h-10 w-5 h-5 text-2xl hover:text-iconhover'}>
+        <a href='https://github.com/neerajram30' target='_blank' className={theme=="dark"?'mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-black text-3xl':'mr-5 md:w-10 md:h-10 w-5 h-5 text-3xl hover:text-iconhover'}>
       <Github/>
        </a>
           
-       <a href='https://twitter.com/neeraJramachaN2' target='_blank' className='mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-twitter text-2xl'>
+       <a href='https://twitter.com/neeraJramachaN2' target='_blank' className='mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-twitter text-3xl'>
       <Twitter/>
        </a>
-       <a href='https://dev.to/neerajram30' target='_blank' className={theme=="dark"?'text-2xl mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-black':'text-2xl mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-iconhover'}>
+       <a href='https://dev.to/neerajram30' target='_blank' className={theme=="dark"?'text-3xl mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-black':'text-3xl mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-iconhover'}>
       <Dev/>
        </a>
        
