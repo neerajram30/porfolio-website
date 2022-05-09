@@ -32,6 +32,7 @@ module.exports = {
       'rdhover':'#890F0D'
     },
 
+   
     extend: {},
   },
   plugins: [],

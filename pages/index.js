@@ -16,14 +16,15 @@ export default function Home({post}) {
   // const [opened,setOpened] = useState(false);
   const {theme, setTheme} = useTheme()
   return (
+
     <div >
       <Head>
         <title>Neeraj M R.</title>
         <meta name="description" content="Neeraj M R developer portfolio" />
   <meta property="og:title" content="Neeraj M R" />
   <meta property="og:description" content="Neeraj M R is kerala based web developer" />
-  <meta property="og:url" content="https://neerajram.vercel.app" />
-  <meta property="og:type" content="blog" />
+  <meta property="og:url" content="https://neerajram.vercel.app/" />
+  <meta property="og:type" content="website" />
         <link rel="icon" href="/neeraj.png" />
       </Head>
 

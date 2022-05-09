@@ -2,12 +2,20 @@ import React from 'react'
 import Image from 'next/image'
 import profile from '../../images/Profile.jpg'
 import Fade  from 'react-reveal'
+import js from '../../assets/js.svg'
+import reacticon from '../../assets/react.svg'
+import node from '../../assets/node.svg'
+import java from '../../assets/java.svg'
+import mongo from '../../assets/mongodb.svg'
+import cplus from '../../assets/c++.svg'
+import next from '../../assets/nextjs.svg'
+import c from '../../assets/c.svg'
 
 function About() {
   return (
     <div className='md:pt-20 md:mt-20 mt-20' id='about'>
         <Fade bottom>
-      <div className='md:ml-28 ml-8'>
+      <div className='md:ml-28'>
 
       <h2 className='md:text-4xl text-3xl ml-5 font-bold md:ml-0'>About Me</h2>
       <div className='md:flex md:flex-row flex flex-col items-center'>
@@ -18,24 +26,48 @@ function About() {
         Curently working on React JS, Next JS, Node JS.
       </p>
       <p className='pt-10 font-medium text-pcolor'>
-        Familar Tools:
+        Familar tools
 
       </p>
-      <div className='flex md:flex-row flex-col justify-center md:pl-10 pl-0 items-center  w-fit'>
-        <ul className='list-disc md:pl-2'>
-          <li>Javascript</li>
-          <li>Java</li>
-          <li>C++</li>
-        </ul>
-        <ul className='list-disc md:pl-10'>
-          <li>React</li>
-          <li>Nodejs</li>
-          <li>MongoDB</li>
-        </ul>
+      <div className='flex justify-start pt-5 items-center'>
+        <div>
+        <Image src={js} alt="javascript" className='ml-10'/>
+        </div>
+        <div className='pl-2'>
+
+        <Image src={reacticon} alt="react" className='ml-10'/>
+        </div>
+        <div className='pl-2'>
+        <Image src={node} alt="node"/>
+
+        </div>
+        <div className='pl-2'>
+        <Image src={java} alt="java"/>
+
+        </div>
+
+        <div className='pl-2'>
+        <Image src={mongo} alt="mongo"/>
+
+        </div>
+        <div className='pl-2'>
+
+        <Image src={cplus} alt="c++"/>
+        </div>
+        <div className='pl-2'>
+
+        <Image src={c} alt="c"/>
+        </div >
+        <div className='pl-2'>
+
+        <Image src={next} alt="next"/>
+        </div>
+
+
 
       </div>
       </div>
-      <div className='flex md:h-64 md:w-64 h-40 w-40 pt-10 md:pl-10 items-center justify-center mr-8 md:ml-10'>
+      <div className='flex md:h-64 md:w-64 h-40 w-40 pt-10 md:pl-10 items-center justify-center md:ml-10'>
           <Image src={profile} className='rounded-sm'/>
       </div>
       </div>
