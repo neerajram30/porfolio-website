@@ -8,7 +8,7 @@ import node from '../../assets/node.svg'
 import java from '../../assets/java.svg'
 import mongo from '../../assets/mongodb.svg'
 import cplus from '../../assets/c++.svg'
-import next from '../../assets/nextjs.svg'
+// import next from '../../assets/nextjs.svg'
 import c from '../../assets/c.svg'
 
 function About() {
@@ -58,10 +58,10 @@ function About() {
 
         <Image src={c} alt="c"/>
         </div >
-        <div className='pl-2'>
+        {/* <div className='pl-2'>
 
         <Image src={next} alt="next"/>
-        </div>
+        </div> */}
 
 
 

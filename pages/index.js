@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import About from '../Components/About/About'
@@ -8,14 +8,18 @@ import Profile from '../Components/Profile/Profile'
 import Projects from '../Components/Projects/Projects'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
-import Fade  from 'react-reveal'
+import { Rings } from 'react-loader-spinner'
 
 
 export default function Home({post}) {
   
+  
   // const [opened,setOpened] = useState(false);
   const {theme, setTheme} = useTheme()
+
+
   return (
+    
 
     <div >
       <Head>
@@ -115,7 +119,8 @@ export default function Home({post}) {
       <footer>
         <Footer theme={theme}/>
       </footer>
-    </div>
+    
+</div>
   )
 }
 export async function getServerSideProps() {
