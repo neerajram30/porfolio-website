@@ -47,7 +47,7 @@ function About() {
         </div>
 
         <div className='pl-2'>
-        <Image src={mongo} alt="mongo"/>
+        <Image src={mongo} alt="mongo db"/>
 
         </div>
         <div className='pl-2'>
@@ -68,7 +68,7 @@ function About() {
       </div>
       </div>
       <div className='flex md:h-64 md:w-64 h-40 w-40 pt-10 md:pl-10 items-center justify-center md:ml-10'>
-          <Image src={profile} className='rounded-sm'/>
+          <Image src={profile} className='rounded-sm' alt='profile'/>
       </div>
       </div>
       </div>

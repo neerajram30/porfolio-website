@@ -8,7 +8,7 @@ import Dev from '../Icons/Dev'
 
 function Profile({theme}) {
   return (
-    <div>
+    <div >
       <div className='flex flex-col md:pl-20 pl-10 pt-20 md:items-start items-start mt-10'>
 
         
