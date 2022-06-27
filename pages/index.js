@@ -16,6 +16,12 @@ export default function Home({post}) {
   
   // const [opened,setOpened] = useState(false);
   const {theme, setTheme} = useTheme()
+  const [loading,setLoading] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(true);
+    }, 4000);
+  }, [])
 
 
   return (
@@ -31,7 +37,12 @@ export default function Home({post}) {
   <meta property="og:type" content="website" />
         <link rel="icon" href="/neeraj.png" />
       </Head>
-
+    {!loading ? 
+    (<span className='flex flex-col items-center justify-center h-screen' >
+    <Rings ariaLabel="loading-indicator" color='#36485E' width={100} height={100}/>
+    </span>) 
+    :
+    <div>
       <main className='overflow-hidden'>
       <nav className='md:bg-navcolor h-16 bg-transparent md:fixed w-full z-10 drop-shadow-lg'>
         <div className='md:flex space-x-3'>
@@ -115,11 +126,11 @@ export default function Home({post}) {
       <Projects theme={theme}/>
       <Blogs data={post} theme={theme}/>
       </main>
-
       <footer>
         <Footer theme={theme}/>
       </footer>
-    
+    </div>
+}
 </div>
   )
 }
