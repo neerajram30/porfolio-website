@@ -1,5 +1,5 @@
 @import 'tailwindcss/base';
-@import url('/node_modules/dejavu-sans/css/dejavu-sans.css');
+
 html{
   scroll-behavior: smooth
 }
@@ -10,11 +10,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; 
-    /* font-family: 'DejaVu Sans', sans-serif; */
-    text-transform: none;
+  font-family: "Inter",800s;
 }
-
 
 

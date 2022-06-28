@@ -5,25 +5,24 @@ import Fade from 'react-reveal'
 import Github from '../Icons/Github'
 import Twitter from '../Icons/Twitter'
 import Dev from '../Icons/Dev'
+import AnimatedText from 'react-animated-text-content';
 
 function Profile({theme}) {
   return (
     <div >
       <div className='flex flex-col md:pl-20 pl-10 pt-20 md:items-start items-start mt-10'>
+        <h1 className='md:text-5xl text-3xl w-fit font-black' id='head'>Hy, I'm<span className='text-twitter'> Neeraj MR</span> </h1>
 
-        
 
-        <p className={ theme ==="dark"?'text-hicolor md:text-2xl text-xl text-pcolor':'md:text-2xl text-xl text-pcolor'}>Hi, I am</p>
-        
-        <Fade top duration={4000}>
-        <h1 className='md:text-7xl text-4xl w-fit font-extrabold'>Neeraj M R.</h1>
-
-        <p className={theme === "dark" ?'md:text-6xl text-3xl mt-2 font-extrabold w-fit text-hdcolor':'md:text-6xl text-3xl mt-2 font-extrabold w-fit text-hcolor'}>I'm web developer.</p>
-        <div className='md:w-5/12 w-5/6 pt-10 break-words'>
-          <p className={theme ==="dark"?'md:text-xl text-darkdesc':'md:text-xl'}>
-            I am a Btech student from kerala, curretly learning web development
-            and doing some side projects.  Node js, React js, Mongodb is my favourite
-            stack. 
+        <div className='md:w-4/6 w-5/6 pt-10 break-words'>
+        <p className={theme ==="dark"?'md:text-xl text-darkdesc':'md:text-lg'}>
+            I am a Full Stack web developer working on individual projects. I'
+          </p>
+          <br/>
+          <br/>
+          <p className={theme ==="dark"?'md:text-xl text-darkdesc':'md:text-lg'}>
+            I am a Btech student who is passonate about exploring new technologies and 
+            building useful outcomes from it. 
           </p>
         </div>
         <a target='_blank'  type='submit' className='mt-10' href='https://drive.google.com/file/d/1zj32yY-f2LRf5ZoSwexWQ7JtXD6mkUnm/view?usp=sharing'>
@@ -47,7 +46,6 @@ function Profile({theme}) {
        
 
         </div>
-        </Fade>
       </div>
 
 </div>

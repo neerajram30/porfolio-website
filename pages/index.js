@@ -27,7 +27,7 @@ export default function Home({post}) {
   return (
     
 
-    <div >
+    <div className='dark:bg-gradient-to-tr dark:from-[#111827] dark:to-black'>
       <Head>
         <title>Neeraj M R.</title>
         <meta name="description" content="Neeraj M R developer portfolio" />
@@ -42,35 +42,31 @@ export default function Home({post}) {
     <Rings ariaLabel="loading-indicator" color='#36485E' width={100} height={100}/>
     </span>) 
     :
-    <div>
+    <div >
       <main className='overflow-hidden'>
-      <nav className='md:bg-navcolor h-16 bg-transparent md:fixed w-full z-10 drop-shadow-lg'>
+      <nav className='md:bg-black md:dark:shadow-[#eeeeee3d] md:shadow-sm h-14 bg-transparent md:fixed w-full z-10 drop-shadow-lg'>
         <div className='md:flex space-x-3'>
         <div className='md:flex hidden text-white dark:text-white pt-5 pl-2'>
-          {/* <Fade top>
-                  <p>Neeraj</p>
-          </Fade> */}
-        </div>
-          <div className='md:flex hidden pl-5 flex-1 mt-5 text-white space-x-3'>
-
-
-            <Link 
+        <Link 
             href="/"
             
             ><a className='hover:text-stack ml-5'>Home </a></Link>
+        </div>
+          <div className='md:flex hidden pl-5 flex-1 mt-5 text-white space-x-4'>
+            
 
-            <Link 
+            {/* <Link 
             href="#about"
             
-            ><a className='hover:text-stack ml-5'>About</a></Link>
+            ><a className='hover:text-stack ml-5'>About</a></Link> */}
             <Link 
             href="#projects"
             className="ml-5"
             ><a className='hover:text-stack ml-5'>Projects</a></Link>
-            <Link 
+            {/* <Link 
             href="#blogs"
             className='ml-5'
-            ><a className='hover:text-stack ml-5'>Blogs</a></Link>
+            ><a className='hover:text-stack ml-5'>Blogs</a></Link> */}
           </div>
           <div className='flex items-end justify-end md:pr-5 pr-5'>
           <button
@@ -125,10 +121,8 @@ export default function Home({post}) {
       <About theme={theme}/>
       <Projects theme={theme}/>
       <Blogs data={post} theme={theme}/>
-      </main>
-      <footer>
         <Footer theme={theme}/>
-      </footer>
+      </main>
     </div>
 }
 </div>

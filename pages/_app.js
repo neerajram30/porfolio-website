@@ -1,4 +1,5 @@
 import {ThemeProvider} from 'next-themes'
+import "@fontsource/inter";
 import '../styles/globals.css'
 function MyApp({ Component, pageProps }) {
 
