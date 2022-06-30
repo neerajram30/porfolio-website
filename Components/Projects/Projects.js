@@ -6,13 +6,12 @@ import Links from '../Icons/Link'
 
 function Projects({theme}) {
   return (
-    <div className='md:mt-52 mt-5 pt-20' id='projects'>
-      <Fade bottom>
+    <div className='pt-20' id='projects'>
 
       <div className='flex flex-col items-center'>
-        <h2 className='md:text-4xl text-3xl ml-5 font-bold'>Projects</h2>
+        {/* <h2 className='md:text-4xl text-3xl ml-5 font-bold'>Projects</h2> */}
         <div className='flex items-center justify-center'>
-        <div className='md:grid md:gap-4 md:grid-cols-3 md:mt-12 mt-8 flex flex-col'>
+        <div className='md:grid md:gap-4 md:grid-cols-3 flex flex-col'>
             
             <a href='https://github.com/neerajram30/Netflix-UI-clone' target='_blank'
             >
@@ -78,7 +77,6 @@ function Projects({theme}) {
         </div>
         </div>
       </div>
-      </Fade>
     </div>
   )
 }

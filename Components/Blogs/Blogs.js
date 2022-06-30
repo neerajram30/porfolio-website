@@ -8,7 +8,7 @@ function Blogs({data,theme}) {
   }, [])
   
   return (
-    <div id='blogs' className='pt-20 md:mt-56 mt-20'>
+    <div id='blogs' className=''>
      
      {data &&
      <div className='flex flex-col items-center md:items-start'>
@@ -18,7 +18,6 @@ function Blogs({data,theme}) {
          {data.map((posts)=>{
           
            return (
-             <Fade bottom>
 
              <Link
              href={posts.url}
@@ -42,7 +41,7 @@ function Blogs({data,theme}) {
            
               </a>
      </Link>     
-               </Fade>
+              
      
      )
            
