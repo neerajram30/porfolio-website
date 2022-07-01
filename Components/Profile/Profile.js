@@ -12,7 +12,7 @@ function Profile({theme}) {
   return (
     <div >
       <div className='flex flex-col md:pl-20 pl-10 pt-24 md:items-start items-start mt-10'>
-        <h1 className='md:text-5xl text-3xl w-fit font-bold font-Inter' id='head'>Hy, I'm<span className='text-twitter'> Neeraj MR</span> </h1>
+        <h1 className='md:text-5xl text-3xl w-fit font-black' id='head'>Hy, I'm<span className={theme==="dark"?'text-twitter':'text-hcolor'}> Neeraj MR</span> </h1>
         <div className='flex mt-8'>
           
           <a href='https://github.com/neerajram30' target='_blank' className={theme=="dark"?'mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-black text-3xl':'mr-5 md:w-10 md:h-10 w-5 h-5 text-3xl hover:text-iconhover'}>
@@ -44,9 +44,9 @@ function Profile({theme}) {
             opacity: 1,
             }}
             >
-            I am a <span className='font-black text-twitter'>Full Stack</span> web developer,  
-            <span className='font-bold text-twitter'> Machine Learning </span> enthusiast, and most importantly <span className='font-black text-twitter'>Opensource</span> lover. 
-            I'm currently learning <span className='font-bold text-twitter'>NLP</span> and working on solving some problems using it 
+            I am a <span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}>Full Stack</span> web developer,  
+            <span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}> Machine Learning </span> enthusiast, and most importantly <span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}>Opensource</span> lover. 
+            I'm currently learning <span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}>NLP</span> and working on solving some problems using it 
 
             
           </motion.p>
@@ -54,7 +54,7 @@ function Profile({theme}) {
 
        
 
-          <motion.p className={theme ==="dark"?'md:text-lg text-darkdesc pt-8':'md:text-lg'}
+          <motion.p className={theme ==="dark"?'md:text-lg text-darkdesc pt-8':'md:text-lg pt-8'}
           transition={{
           duration: 0.3,
           delay: 0.1,
@@ -69,14 +69,14 @@ function Profile({theme}) {
           opacity: 1,
           }}
           >
-          I had explored web development technologies and libraries/frameworks like <span className='font-bold text-twitter'>React Js</span>, 
-          <span className='font-bold text-twitter'> Next Js</span>, <span className='font-bold text-twitter'>Express</span>. I am curretly learning to develop full fledged api using 
-          <span className='font-bold text-twitter'> Python Flask </span>framework
+          I had explored web development technologies and libraries/frameworks like <span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}>React Js</span>, 
+          <span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}> Next Js</span>, <span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}>Express</span>. I am curretly learning to develop full fledged api using 
+          <span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}> Python Flask </span>framework
           </motion.p>
        
           
         
-          <motion.p className={theme ==="dark"?'md:text-lg text-darkdesc pt-8':'md:text-lg'}
+          <motion.p className={theme ==="dark"?'md:text-lg text-darkdesc pt-8':'md:text-lg pt-8'}
           transition={{
             duration: 0.3,
             delay: 0.2,
@@ -91,13 +91,13 @@ function Profile({theme}) {
             opacity: 1,
             }}
           >
-          I'm pursuing a<span className='font-bold text-twitter'> Btech </span>computer science degree from
-          <span className='font-bold text-twitter'> College Of Engineering Cherthala </span>and 
-          expected to pass out in<span className='font-bold text-twitter'> July 2022</span>. I had participated in Technical and Non technical 
+          I'm pursuing a<span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}> Btech </span>computer science degree from
+          <span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}> College Of Engineering Cherthala </span>and 
+          expected to pass out in<span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}> July 2022</span>. I had participated in Technical and Non technical 
           events at collge and made a good networks in the college campus
 
           </motion.p>
-          <motion.p className={theme ==="dark"?'md:text-lg text-darkdesc pt-8':'md:text-lg'}
+          <motion.p className={theme ==="dark"?'md:text-lg text-darkdesc pt-8':'md:text-lg pt-8'}
            transition={{
             duration: 0.3,
             delay: 0.3,
@@ -112,8 +112,8 @@ function Profile({theme}) {
             opacity: 1,
             }}
           >
-          I regularly pushes code to<span className='font-bold text-twitter'><a href='https://github.com/neerajram30' target='_blank'> github </a></span> and write blog post on 
-          <span className='font-bold text-twitter'><a href='https://dev.to/neerajram30' target='_blank'> dev.to </a></span>   
+          I regularly pushes code to<span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}><a href='https://github.com/neerajram30' target='_blank'> github </a></span> and write blog post on 
+          <span className={theme==="dark"?'font-black text-twitter':'font-black text-hcolor'}><a href='https://dev.to/neerajram30' target='_blank'> dev.to </a></span>   
           </motion.p>
         </div>
 

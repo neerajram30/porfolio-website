@@ -16,13 +16,13 @@ export default function Home({post}) {
   
   // const [opened,setOpened] = useState(false);
   const {theme, setTheme} = useTheme()
-  const [loading,setLoading] = useState(false);
+  // const [loading,setLoading] = useState(false);
   
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(true);
-    }, 4000);
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(true);
+  //   }, 4000);
+  // }, [])
 
 
   return (
@@ -38,22 +38,22 @@ export default function Home({post}) {
   <meta property="og:type" content="website" />
         <link rel="icon" href="/neeraj.png" />
       </Head>
-    {!loading ? 
+    {/* {!loading ? 
     (<span className='flex flex-col items-center justify-center h-screen' >
     <Rings ariaLabel="loading-indicator" color='#36485E' width={100} height={100}/>
     </span>) 
-    :
+    : */}
     <div >
       <main className='overflow-hidden'>
-      <nav className='md:bg-black md:dark:shadow-[#eeeeee3d] shadow-nav h-14 bg-transparent md:fixed w-full z-10'>
+      <nav className='bg-black dark:shadow-[#eeeeee3d] shadow-nav h-14 md:fixed fixed w-full z-10'>
         <div className='md:flex space-x-3'>
-        <div className='md:flex hidden text-white dark:text-white pt-5 pl-2'>
+        <div className='md:flex hidden text-white dark:text-white pt-5 pl-2 md:ml-12'>
         <Link 
             href="/"
             
-            ><a className='hover:text-stack ml-5 font-extrabold'>Home </a></Link>
+            ><a className='hover:text-twitter ml-5 font-extrabold'>Home </a></Link>
         </div>
-          <div className='md:flex hidden pl-5 flex-1 mt-5 text-white space-x-4'>
+          <div className='md:flex pl-5 flex-1 mt-5 text-white space-x-4'>
             
 
             {/* <Link 
@@ -63,17 +63,17 @@ export default function Home({post}) {
             <Link 
             href="/projects"
             className="ml-5"
-            ><a className='hover:text-stack ml-5 font-extrabold'>projects</a></Link>
+            ><a className='hover:text-twitter ml-5 font-extrabold'>projects</a></Link>
             <Link 
             href="/blogs"
             className='ml-5'
-            ><a className='hover:text-stack ml-5 font-extrabold'>blogs</a></Link>
+            ><a className='hover:text-twitter ml-5 font-extrabold'>blogs</a></Link>
           </div>
           <div className='flex items-end justify-end md:pr-5 pr-5'>
           <button
           aria-label="Toggle Dark Mode"
           type="button"
-          className="pt-5 text-white dark:text-black"
+          className="pt-5 text-white dark:text-black fixed"
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ export default function Home({post}) {
         <Footer theme={theme}/>
       </main>
     </div>
-}
+{/* } */}
 </div>
   )
 }

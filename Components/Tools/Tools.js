@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Tool from './Tool';
 
-function Tools() {
+function Tools(props) {
 
   const [loaded, setLoaded] = useState(false);
   const { ref, inView } = useInView();
@@ -82,7 +82,7 @@ function Tools() {
         {console.log(tools)}
       {tools.map((tool,i)=>
         <div className='mt-2 mr-2'  >
-          <Tool tool={tool} key={i} delay={i / 30 + 0.05} inView={inView}/>
+          <Tool tool={tool} key={i} delay={i / 30 + 0.05} inView={inView} theme={props.theme}/>
         </div>
       )}
 
@@ -91,7 +91,7 @@ function Tools() {
       <motion.p className='mt-10 text-lg font-bold'
       animate={currentlyLearningAnimation} 
       >I'm currently learning
-      <span  className='p-1 bg-twitter rounded-sm pl-2 pr-2 text-base ml-4'> NLP</span>
+      <span  className={props.theme==="dark"?'p-1 bg-twitter rounded-sm pl-2 pr-2 text-base ml-4':'p-1 bg-hcolor text-white rounded-sm pl-2 pr-2 text-base ml-4'}> NLP</span>
       </motion.p>
       </div>
     </div>

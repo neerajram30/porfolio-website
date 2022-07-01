@@ -32,7 +32,7 @@ export default function
 
   return (
     <div className='text-base'>
-        <motion.p className='p-0.5 border-2 border-twitter rounded-sm pl-2 pr-2'
+        <motion.p className={props.theme=="dark"?'p-0.5 border-2 border-twitter rounded-sm pl-2 pr-2':'p-0.5 bg-hcolor rounded-sm pl-2 pr-2 text-white'}
         animate={animation} 
         >{props.tool}
         </motion.p>
