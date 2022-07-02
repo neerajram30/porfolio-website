@@ -2,16 +2,12 @@ import Head from 'next/head'
 import Tools from '../Components/Tools/Tools'
 import Footer from '../Components/Footer/Footer'
 import Profile from '../Components/Profile/Profile'
-import { useTheme } from 'next-themes'
 // import { Rings } from 'react-loader-spinner'
-import NavBar from '../Components/NavBar/NavBar'
-
 
 export default function Home() {
 
 
   // const [opened,setOpened] = useState(false);
-  const { theme, setTheme } = useTheme()
   // const [loading,setLoading] = useState(false);
 
   // useEffect(() => {
@@ -41,10 +37,10 @@ export default function Home() {
     : */}
       <div>
         <main className='overflow-hidden'>
-          <NavBar/>
-          <Profile theme={theme} />
-          <Tools theme={theme} />
-          <Footer theme={theme} />
+          {/* <NavBar/> */}
+          <Profile/>
+          <Tools/>
+          <Footer/>
         </main>
       </div>
       {/* } */}

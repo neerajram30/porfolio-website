@@ -2,7 +2,7 @@ import React from 'react'
 import Github from '../Icons/Github'
 import { motion } from "framer-motion";
 
-function Projects({ theme }) {
+function Projects() {
   return (
     <div className='pt-20 p-5' id='projects'>
 
@@ -30,7 +30,7 @@ function Projects({ theme }) {
               <a href='https://github.com/neerajram30/Netflix-UI-clone'
                 target='_blank'
               >
-                <div className={theme === "dark" ? 'md:w-72 w-60 h-80 rounded-lg mt-5 shadow-[#00acee3d]  shadow-project' : 'md:w-72 w-60 h-80 rounded-lg mt-5 shadow-[#eeeeee3d]  shadow-project bg-blogbg'}>
+                <div className='md:w-72 w-60 h-80 rounded-lg mt-5 dark:shadow-[#00acee3d]  shadow-project dark:bg-transparent shadow-[#eeeeee3d] bg-blogbg'>
                   <div className='flex justify-between'>
                     <div className='w-10 h-10 ml-5 mt-5'>
                       <a className='text-white text-2xl'>
@@ -73,7 +73,7 @@ function Projects({ theme }) {
 
               <a href='https://github.com/neerajram30/God-s-Eye' target='_blank'
                 className=''>
-                <div className={theme === "dark" ? 'md:w-72 w-60 h-80 rounded-lg mt-5 shadow-[#00acee3d]  shadow-project' : 'md:w-72 w-60 h-80 rounded-lg mt-5 shadow-[#eeeeee3d]  shadow-project bg-blogbg'}>
+                <div className='md:w-72 w-60 h-80 rounded-lg mt-5 dark:shadow-[#00acee3d]  shadow-project dark:bg-transparent shadow-[#eeeeee3d] bg-blogbg'>
                   <div className='flex justify-between'>
                     <div className='w-10 h-10 ml-5 mt-5'>
                       <a className='text-white text-2xl' href='https://github.com/neerajram30/God-s-Eye'>

@@ -2,9 +2,7 @@ import React from 'react'
 import Blogs from '../Components/Blogs/Blogs'
 import Head from 'next/head'
 import NavBar from '../Components/NavBar/NavBar'
-import { useTheme } from 'next-themes'
 export default function blogs({post}) {
-  const { theme} = useTheme()
   return (
     <div className='dark:bg-gradient-to-tr dark:from-[#111827] dark:to-black min-h-screen'>
       <Head>
@@ -17,8 +15,8 @@ export default function blogs({post}) {
         <link rel="icon" href="/neeraj.png" />
       </Head>
       <div>
-        <NavBar/>
-        <Blogs data={post} theme={theme} />
+        {/* <NavBar/> */}
+        <Blogs data={post}/>
       </div>
     </div>
   )

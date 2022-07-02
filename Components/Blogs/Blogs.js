@@ -40,7 +40,7 @@ function Blogs(props) {
 
                       <a target="_blank" className=''
                       >
-                        <div className={props.theme === "dark" ? 'p-5 mt-10 ml-10 mr-10 md:w-auto min-w-min rounded-xl flex items-center flex-col md:h-72 h-80 text-white shadow-[#eeeeee3d]  shadow-project' : 'p-5 mt-10 ml-10 mr-10 md:w-auto min-w-min rounded-xl flex items-center flex-col md:h-72 h-80 shadow-lg shadow-[#0000003d]  shadow-project bg-blogbg'}>
+                        <div className='p-5 mt-10 ml-10 mr-10 md:w-auto min-w-min rounded-xl flex items-center flex-col md:h-72 h-80 text-white dark:shadow-[#00acee3d]  shadow-project dark:bg-transparent shadow-lg shadow-[#0000003d] bg-blogbg'>
                           <div className='md:flex justify-start md:space-x-20'>
 
                             <h2 className='md:text-xl text-base font-bold md:w-auto text-white'>{posts.title} </h2>
