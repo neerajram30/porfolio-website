@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Tool from './Tool';
@@ -24,7 +24,7 @@ function Tools(props) {
     'C',
     'C++',
 
-  
+
   ]
 
   useEffect(() => {
@@ -60,7 +60,7 @@ function Tools(props) {
     }
 
 
-    
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
 
@@ -72,27 +72,27 @@ function Tools(props) {
   return (
     <div className='mt-16 md:pl-20 pl-10' id='about' ref={ref}>
       <div>
-      <motion.h2
-      animate={animation} 
-      className='md:text-3xl text-3xl font-black'>
-        Familar Technologies
-      </motion.h2>
-      <div className='md:flex md:flex-row flex flex-col items-center'>
-      <div className='mt-5 md:w-1/2 w-10/12 md:text-lg break-words flex flex-wrap mr-1'>
-        {console.log(tools)}
-      {tools.map((tool,i)=>
-        <div className='mt-2 mr-2'  >
-          <Tool tool={tool} key={i} delay={i / 30 + 0.05} inView={inView} theme={props.theme}/>
-        </div>
-      )}
+        <motion.h2
+          animate={animation}
+          className='md:text-3xl text-3xl font-black'>
+          Familar Technologies
+        </motion.h2>
+        <div className='md:flex md:flex-row flex flex-col items-center'>
+          <div className='mt-5 md:w-1/2 w-10/12 md:text-lg break-words flex flex-wrap mr-1'>
+            {console.log(tools)}
+            {tools.map((tool, i) =>
+              <div className='mt-2 mr-2' key={i} >
+                <Tool tool={tool} key={i} delay={i / 30 + 0.05} inView={inView} theme={props.theme} />
+              </div>
+            )}
 
-      </div>
-      </div>
-      <motion.p className='mt-10 text-lg font-bold'
-      animate={currentlyLearningAnimation} 
-      >I'm currently learning
-      <span  className={props.theme==="dark"?'p-1 bg-twitter rounded-sm pl-2 pr-2 text-base ml-4':'p-1 bg-hcolor text-white rounded-sm pl-2 pr-2 text-base ml-4'}> NLP</span>
-      </motion.p>
+          </div>
+        </div>
+        <motion.p className='mt-10 text-lg font-bold'
+          animate={currentlyLearningAnimation}
+        >I'm currently learning
+          <span className={props.theme === "dark" ? 'p-1 bg-twitter rounded-sm pl-2 pr-2 text-base ml-4' : 'p-1 bg-hcolor text-white rounded-sm pl-2 pr-2 text-base ml-4'}> NLP</span>
+        </motion.p>
       </div>
     </div>
   )

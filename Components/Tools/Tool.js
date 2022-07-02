@@ -1,13 +1,13 @@
-import React,{useEffect,useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export default function 
-(props) {
-    const [loaded, setLoaded] = useState(false);
-    const animation = useAnimation();
-    useEffect(() => {
-        if (loaded) return;
+export default function
+  (props) {
+  const [loaded, setLoaded] = useState(false);
+  const animation = useAnimation();
+  useEffect(() => {
+    if (loaded) return;
     if (props.inView) {
       setLoaded(true);
       animation.start({
@@ -27,15 +27,15 @@ export default function
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.inView]);
-    
+
 
 
   return (
     <div className='text-base'>
-        <motion.p className={props.theme=="dark"?'p-0.5 border-2 border-twitter rounded-sm pl-2 pr-2':'p-0.5 bg-hcolor rounded-sm pl-2 pr-2 text-white'}
-        animate={animation} 
-        >{props.tool}
-        </motion.p>
+      <motion.p className={props.theme == "dark" ? 'p-0.5 border-2 border-twitter rounded-sm pl-2 pr-2' : 'p-0.5 bg-hcolor rounded-sm pl-2 pr-2 text-white'}
+        animate={animation}
+      >{props.tool}
+      </motion.p>
     </div>
   )
 }
