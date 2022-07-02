@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes'
 import Head from 'next/head'
 import NavBar from '../Components/NavBar/NavBar'
 export default function projects() {
-  const { theme, setTheme } = useTheme()
+  const {theme} = useTheme()
   return (
     <div className='dark:bg-gradient-to-tr dark:from-[#111827] dark:to-black min-h-screen'>
       <Head>
