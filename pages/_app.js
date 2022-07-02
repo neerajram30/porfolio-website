@@ -1,15 +1,15 @@
 import {ThemeProvider} from 'next-themes'
 import "@fontsource/inter";
 import '../styles/globals.css'
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps,router}) {
 
   
 
   return (
     <>
-  <ThemeProvider attribute="class">
-      <Component {...pageProps} />
-    </ThemeProvider>  
+  <ThemeProvider attribute="class" enableSystem={true}>
+      <Component {...pageProps} key={router.route}/>
+  </ThemeProvider>  
     </>
   )
 }

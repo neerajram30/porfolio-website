@@ -21,7 +21,7 @@ function Blogs(props) {
              <Link
              href={posts.url}
              passHref
-             
+             key={posts}
              >
               <motion.a target="_blank" className=''
               transition={{
