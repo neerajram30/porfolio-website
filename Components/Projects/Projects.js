@@ -44,13 +44,13 @@ function Projects() {
               </div> */}
                   </div>
                   <div className='ml-5 w-11/12 mr-5 text-white'>
-                    <p className='text-xl font-bold mt-10 hover:cursor-pointer'>Netflix UI Clone</p>
+                    <p className='text-xl font-bold mt-10 hover:cursor-pointer font-overpass dark:text-twitter text-white'>Netflix UI Clone</p>
                     <p className='mt-5'>Netflix clone app powered by TMDB database and firebase</p>
                   </div>
-                  <div className='flex md:space-x-4 space-x-2 md:mt-12 ml-5 mt-5 md:text-base text-sm md:mr-2 pr-20 items-start justify-start text-white' >
-                    <p>ReactJS</p>
-                    <p>Firebase</p>
-                    <p>Javascript</p>
+                  <div className='flex md:space-x-1 space-x-2 md:mt-12 ml-5 mt-5 text-sm md:mr-2 pr-20 items-start justify-start w-11/12 mr-5' >
+                    <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>ReactJS</p>
+                    <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>Firebase</p>
+                    <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>Javascript</p>
                   </div>
                 </div>
               </a>
@@ -88,13 +88,13 @@ function Projects() {
 
                   </div>
                   <div className='ml-5 w-11/12 mr-5'>
-                    <p className='text-xl font-bold mt-10 text-white hover:cursor-pointer hover:text-bloghover'>God's Eye</p>
+                    <p className='text-xl font-bold mt-10 text-white hover:cursor-pointer hover:text-bloghover font-overpass dark:text-twitter'>God's Eye</p>
                     <p className='mt-5 text-white'>Helps police officers to find missing people using technology</p>
                   </div>
-                  <div className='flex md:space-x-4 space-x-2 md:mt-12 ml-5 mt-5 md:text-base text-sm md:mr-2 pr-20 items-start justify-start text-white' >
-                    <p>Python</p>
-                    <p>Flask</p>
-                    <p>HTML</p>
+                  <div className='flex md:space-x-2 space-x-2 md:mt-12 ml-5 mt-5 text-sm md:mr-2 items-start justify-start text-white' >
+                    <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>Python</p>
+                    <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>Flask</p>
+                    <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>HTML</p>
                   </div>
                 </div>
               </a>

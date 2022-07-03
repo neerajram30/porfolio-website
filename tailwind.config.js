@@ -45,7 +45,9 @@ module.exports = {
    
     extend: {
       fontFamily:{
-        sans:['Inter','sans-serif']
+        sans:['Inter','sans-serif'],
+        overpass:['Overpass','sans-serif'],
+        
       }
     },
   },

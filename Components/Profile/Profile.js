@@ -7,7 +7,7 @@ function Profile() {
   return (
     <div >
       <div className='flex flex-col md:pl-20 pl-10 pt-24 md:items-start items-start mt-10'>
-        <h1 className='md:text-5xl text-3xl w-fit font-black' id='head'>Hy, I'm<span className='dark:text-twitter text-hcolor'> Neeraj MR</span> </h1>
+        <h1 className='md:text-5xl text-3xl w-fit font-black font-overpass' id='head'>Hy, I'm<span className='dark:text-twitter text-hcolor'> Neeraj MR</span> </h1>
         <div className='flex mt-8'>
 
           <a href='https://github.com/neerajram30' target='_blank' className='mr-5 md:w-10 md:h-10 w-5 h-5 dark:hover:text-black text-3xl hover:text-iconhover'>
@@ -129,7 +129,7 @@ function Profile() {
           }}
         >
           <a target='_blank' type='submit' href='https://drive.google.com/file/d/1zj32yY-f2LRf5ZoSwexWQ7JtXD6mkUnm/view?usp=sharing'>
-            <button className='bg-btn h-10 w-28 rounded-sm text-white hover:bg-btn-hover hover:border-white'>
+            <button className='bg-btn h-10 w-28 rounded-sm text-white hover:bg-btn-hover hover:border-white font-overpass font-semibold text-sm'>
               Get resume
             </button>
 

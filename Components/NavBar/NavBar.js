@@ -10,7 +10,7 @@ export default function NavBar() {
         <div>
             <nav className='bg-black dark:shadow-[#eeeeee3d] shadow-nav h-14 md:fixed fixed w-full z-10'>
                 <div className='md:flex space-x-3'>
-                    <div className='md:flex hidden text-white dark:text-white pt-5 pl-2 md:ml-12'>
+                    <div className='md:flex text-white dark:text-white pt-5 pl-2 md:ml-12'>
                         <Link
                             href={links[0]}
 

@@ -31,7 +31,7 @@ export default function
 
 
   return (
-    <div className='text-base'>
+    <div className='text-sm font-semibold font-overpass'>
       <motion.p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white' 
         animate={animation}
       >{props.tool}

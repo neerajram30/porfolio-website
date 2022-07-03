@@ -74,7 +74,7 @@ function Tools() {
       <div>
         <motion.h2
           animate={animation}
-          className='md:text-3xl text-3xl font-black'>
+          className='md:text-3xl text-3xl font-extrabold font-overpass'>
           Familar Technologies
         </motion.h2>
         <div className='md:flex md:flex-row flex flex-col items-center'>
@@ -91,7 +91,7 @@ function Tools() {
         <motion.p className='mt-10 text-lg font-bold'
           animate={currentlyLearningAnimation}
         >I'm currently learning
-          <span className='p-1 dark:bg-twitter rounded-sm pl-2 pr-2 text-base ml-4 bg-hcolor text-white'> NLP</span>
+          <span className='p-1 dark:bg-twitter rounded-sm pl-2 pr-2 text-sm font-semibold ml-4 bg-hcolor text-white font-overpass'> NLP</span>
         </motion.p>
       </div>
     </div>
