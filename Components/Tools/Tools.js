@@ -74,12 +74,11 @@ function Tools() {
       <div>
         <motion.h2
           animate={animation}
-          className='md:text-3xl text-3xl font-extrabold font-overpass'>
+          className='md:text-3xl text-xl font-extrabold font-overpass'>
           Familar Technologies
         </motion.h2>
-        <div className='md:flex md:flex-row flex flex-col items-center'>
+        <div className='md:flex md:flex-row flex flex-col md:items-center items-start'>
           <div className='mt-5 md:w-1/2 w-10/12 md:text-lg break-words flex flex-wrap mr-1'>
-            {console.log(tools)}
             {tools.map((tool, i) =>
               <div className='mt-2 mr-2' key={i} >
                 <Tool tool={tool} key={i} delay={i / 30 + 0.05} inView={inView}/>
@@ -88,7 +87,7 @@ function Tools() {
 
           </div>
         </div>
-        <motion.p className='mt-10 text-lg font-bold'
+        <motion.p className='mt-10 md:text-lg lg:text-lg text-sm font-bold'
           animate={currentlyLearningAnimation}
         >I'm currently learning
           <span className='p-1 dark:bg-twitter rounded-sm pl-2 pr-2 text-sm font-semibold ml-4 bg-hcolor text-white font-overpass'> NLP</span>

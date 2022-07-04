@@ -47,10 +47,11 @@ function Projects() {
                     <p className='text-xl font-bold mt-10 hover:cursor-pointer font-overpass dark:text-twitter text-white'>Netflix UI Clone</p>
                     <p className='mt-5'>Netflix clone app powered by TMDB database and firebase</p>
                   </div>
-                  <div className='flex md:space-x-1 space-x-2 md:mt-12 ml-5 mt-5 text-sm md:mr-2 pr-20 items-start justify-start w-11/12 mr-5' >
+                  <div className='flex md:space-x-1 space-x-2 md:mt-12 ml-5 mt-5 text-sm md:mr-2 pr-20 items-center justify-center w-11/12 mr-5 break-words' >
                     <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>ReactJS</p>
                     <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>Firebase</p>
-                    <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>Javascript</p>
+                    
+                    
                   </div>
                 </div>
               </a>
@@ -92,9 +93,9 @@ function Projects() {
                     <p className='mt-5 text-white'>Helps police officers to find missing people using technology</p>
                   </div>
                   <div className='flex md:space-x-2 space-x-2 md:mt-12 ml-5 mt-5 text-sm md:mr-2 items-start justify-start text-white' >
-                    <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>Python</p>
                     <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>Flask</p>
-                    <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>HTML</p>
+                    <p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white font-overpass font-semibold'>PostgreSQL</p>
+                    
                   </div>
                 </div>
               </a>

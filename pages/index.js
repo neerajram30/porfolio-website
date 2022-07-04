@@ -47,8 +47,8 @@ export default function Home() {
     </div>
   )
 }
-export async function getServerSideProps() {
-  const res = await fetch(`https://dev.to/api/articles?username=neerajram30`)
-  const json = await res.json()
-  return { props: { post: json } }
-}
+// export async function getServerSideProps() {
+//   const res = await fetch(`https://dev.to/api/articles?username=neerajram30`)
+//   const json = await res.json()
+//   return { props: { post: json } }
+// }

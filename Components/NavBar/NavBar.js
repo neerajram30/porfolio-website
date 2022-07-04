@@ -1,42 +1,85 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
+import {motion} from 'framer-motion'
+import { CodeIcon, MenuIcon, XIcon } from "@heroicons/react/solid";
 
 export default function NavBar() {
 
-    const links = ['/', '/projects', '/blogs']
+    const links = [
+        { name: "Home", href: "/" },
+        { name: "Projects", href: "/projects" },
+        { name: "Blogs", href: "/blogs" },
+      ];
     const { theme, setTheme } = useTheme()
+    const [open, setOpen] = useState(false);
+
     return (
         <div>
             <nav className='bg-black dark:shadow-[#eeeeee3d] shadow-nav h-14 md:fixed fixed w-full z-10'>
-                <div className='md:flex space-x-3'>
-                    <div className='md:flex text-white dark:text-white pt-5 pl-2 md:ml-12'>
-                        <Link
-                            href={links[0]}
-
-                        ><a className='hover:text-twitter ml-5 font-extrabold'>Home </a></Link>
-                    </div>
-                    <div className='md:flex pl-5 flex-1 mt-5 text-white space-x-4'>
-
-
-                        {/* <Link 
-            href="#about"
+            {open && (
+          <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="fixed flex flex-col items-center justify-center z-20 w-screen h-screen inset-0 bg-gray-200 dark:bg-gray-800">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              animate={{ opacity: [0, 1], y: [-10, 0], rotate: [-60, 0] }}
+              onClick={() => setOpen(false)}
+              className="bg-gray-200 p-1 rounded-md dark:bg-gray-700 absolute top-8 right-8 ring-opacity-80 ring-gray-500 dark:ring-gray-200hover:ring-[2px]"
+            >
+              <XIcon className="h-8 w-8 dark:text-gray-400 text-gray-600 -mt-5 -mr-3"/>
+            </motion.button>
             
-            ><a className='hover:text-stack ml-5'>About</a></Link> */}
-                        <Link
-                            href={links[1]}
-                            className="ml-5"
-                        ><a className='hover:text-twitter ml-5 font-extrabold'>projects</a></Link>
-                        <Link
-                            href={links[2]}
-                            className='ml-5'
-                        ><a className='hover:text-twitter ml-5 font-extrabold'>blogs</a></Link>
-                    </div>
-                    <div className='flex items-end justify-end md:pr-5 pr-5'>
-                        <button
+
+            <ul className="flex font-overpass font-bold flex-col gap-12 text-center text-2xl  tracking-widest uppercase w-full bg-white text-hcolor dark:bg-gradient-to-tr dark:from-[#111827] dark:to-black dark:text-twitter items-center justify-center h-screen">
+            {links.map((link,i)=>
+              <motion.li
+              key={link.name}
+                  animate={{
+                    opacity: [0, 1],
+                    y: [-30, 0],
+                  }}       
+                  transition={{ delay: i * 0.1 }}
+                  className="group"
+                >
+                  <Link href={link.href}>
+                    <a
+                      onClick={() => setOpen(false)}
+                      className=" hover:text-primary-500 dark:text-gray-400  hover:font-semibold  transition-all duration-100 ease-out p-2"
+                      >
+                      {link.name}
+                    </a>
+                  </Link>
+                </motion.li>
+                        )
+}
+            </ul>
+          </motion.div>
+        )}
+                <div className='md:flex space-x-3 justify-between'>
+
+                    <div className='md:flex text-white dark:text-white pt-5 pl-2 md:ml-12'>
+
+                        {links.map((link)=>
+
+<Link
+                            href={link.href}
+                            passHref
+                            >
+                        <a className='hover:text-twitter ml-5 font-extrabold md:block hidden'>{link.name}</a>
+                        </Link>
+                                )
+                            }
+                            </div>
+                    <div className='flex items-end justify-end pr-10'>
+            <div className='flex space-x-8 md:mt-0 -mt-2'>
+
+                        <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        animate={{ opacity: [0, 1], y: [-10, 0], rotate: [-60, 0] }}
                             aria-label="Toggle Dark Mode"
                             type="button"
-                            className="pt-5 text-white dark:text-black fixed"
+                            className=" text-white dark:text-black"
                             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                         >
                             <svg
@@ -65,7 +108,17 @@ export default function NavBar() {
 
                                 )}
                             </svg>
-                        </button>
+                        </motion.button>
+            <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            animate={{ opacity: [0, 1], y: [-10, 0], rotate: [-60, 0] }}
+            onClick={() => setOpen(true)}
+            className="md:hidden"
+          >
+            <MenuIcon className='mt-1 h-8 w-8 -mr-3 md:-mr-0 text-white'/>
+          </motion.button> 
+        </div>
                     </div>
                 </div>
                 {/* <div className='md:hidden flex justify-end'>

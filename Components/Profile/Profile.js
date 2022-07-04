@@ -21,7 +21,7 @@ function Profile() {
 
         </div>
 
-        <div className='md:w-4/6 w-5/6 pt-8 break-words ' delay={0.5}>
+        <div className='md:w-4/6 w-5/6 pt-8 break-words' delay={0.5}>
 
 
           <motion.p className='dark:text-darkdesc md:text-lg'
