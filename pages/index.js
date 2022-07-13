@@ -25,9 +25,10 @@ export default function Home() {
         <title>Neeraj M R | Full stack web developer</title>
         <meta name="description" content="Neeraj M R developer portfolio" />
         <meta property="og:title" content="Neeraj M R" />
-        <meta property="og:description" content="Neeraj M R is kerala based web developer" />
+        <meta property="og:description" content="Neeraj M R is a Full Stack Web developer from India" />
         <meta property="og:url" content="https://neerajram.vercel.app/" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://neerajram.vercel.app/Neeraj.jpg" />
         <link rel="icon" href="/neeraj.png" />
       </Head>
       {/* {!loading ? 
