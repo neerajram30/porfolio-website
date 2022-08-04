@@ -41,7 +41,7 @@ function Profile() {
           >
             I am a <span className='dark:text-twitter font-black text-hcolor'>Full Stack</span> web developer,
             <span className='dark:text-twitter font-black text-hcolor'> Machine Learning </span> enthusiast, and most importantly <span className='dark:text-twitter font-black text-hcolor'>Opensource</span> lover.
-            I'm currently learning <span className='dark:text-twitter font-black text-hcolor'>NLP</span> and working on solving some problems using it
+            I'm currently learning <span className='dark:text-twitter font-black text-hcolor'>C++</span> and working on solving some problems using it
 
 
           </motion.p>
