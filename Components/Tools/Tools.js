@@ -90,7 +90,7 @@ function Tools() {
         <motion.p className='mt-10 md:text-lg lg:text-lg text-sm font-bold'
           animate={currentlyLearningAnimation}
         >I'm currently learning
-          <span className='p-1 dark:bg-twitter rounded-sm pl-2 pr-2 text-sm font-semibold ml-4 bg-hcolor text-white font-overpass'> NLP</span>
+          <span className='p-1 dark:bg-twitter rounded-sm pl-2 pr-2 text-sm font-semibold ml-4 bg-hcolor text-white font-overpass'> C++</span>
         </motion.p>
       </div>
     </div>
