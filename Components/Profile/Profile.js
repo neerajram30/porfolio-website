@@ -39,9 +39,9 @@ function Profile() {
               opacity: 1,
             }}
           >
-            I am a <span className='dark:text-twitter font-black text-hcolor'>Full Stack</span> web developer,
-            <span className='dark:text-twitter font-black text-hcolor'> Machine Learning </span> enthusiast, and most importantly <span className='dark:text-twitter font-black text-hcolor'>Opensource</span> lover.
-            I'm currently learning <span className='dark:text-twitter font-black text-hcolor'>C++</span> and working on solving some problems using it
+            <span className='dark:text-twitter font-black text-hcolor'>Full Stack</span> web developer, specialized in 
+            <span className='dark:text-twitter font-black text-hcolor'> MERN Stack </span>. I like to use and contribute to <span className='dark:text-twitter font-black text-hcolor'> Opensource </span> softwares.
+            I'm currently searching for a good problem to be solved by <span className='dark:text-twitter font-black text-hcolor'> Technology</span>.
 
 
           </motion.p>
@@ -65,8 +65,8 @@ function Profile() {
             }}
           >
             I had explored web development technologies and libraries/frameworks like <span className='dark:text-twitter font-black text-hcolor'>React Js</span>,
-            <span className='dark:text-twitter font-black text-hcolor'> Next Js</span>, <span className='dark:text-twitter font-black text-hcolor'>Express</span>. I am curretly learning to develop full fledged api using
-            <span className='dark:text-twitter font-black text-hcolor'> Python Flask </span>framework
+            <span className='dark:text-twitter font-black text-hcolor'> Next Js</span>, <span className='dark:text-twitter font-black text-hcolor'>Express</span>. I recently worked for a Nigeria based organization as 
+            <span className='dark:text-twitter font-black text-hcolor'> Frontend Intern</span>.
           </motion.p>
 
 
@@ -86,10 +86,10 @@ function Profile() {
               opacity: 1,
             }}
           >
-            I'm pursuing a<span className='dark:text-twitter font-black text-hcolor'> Btech </span>computer science degree from
+            I pursuied <span className='dark:text-twitter font-black text-hcolor'> Btech </span>computer science degree from
             <span className='dark:text-twitter font-black text-hcolor'> College Of Engineering Cherthala </span>and
-            expected to pass out in<span className='dark:text-twitter font-black text-hcolor'> July 2022</span>. I had participated in Technical and Non technical
-            events at collge and made a good networks in the college campus
+             passed out in<span className='dark:text-twitter font-black text-hcolor'> July 2022</span>. I had participated in Technical and Non technical
+            events at college and made a good networks in the college campus.
 
           </motion.p>
           <motion.p className='dark:text-darkdesc md:text-lg pt-8'
@@ -107,7 +107,7 @@ function Profile() {
               opacity: 1,
             }}
           >
-            I regularly pushes code to<span className='dark:text-twitter font-black text-hcolor'><a href='https://github.com/neerajram30' target='_blank'> github </a></span> and write blog post on
+            I regularly pushes code to<span className='dark:text-twitter font-black text-hcolor'><a href='https://github.com/neerajram30' target='_blank'> github </a></span> and occasionally write blog post on
             <span className='dark:text-twitter font-black text-hcolor'><a href='https://dev.to/neerajram30' target='_blank'> dev.to </a></span>
           </motion.p>
         </div>
@@ -128,7 +128,7 @@ function Profile() {
             opacity: 1,
           }}
         >
-          <a target='_blank' type='submit' href='https://drive.google.com/file/d/1zj32yY-f2LRf5ZoSwexWQ7JtXD6mkUnm/view?usp=sharing'>
+          <a target='_blank' type='submit' href='https://docs.google.com/document/d/1yx3aN8A6M-x4-zhUWtQqO-2D34otXFMWeiAs2qbwAKU/edit?usp=sharing'>
             <button className='bg-btn h-10 w-28 rounded-sm text-white hover:bg-btn-hover hover:border-white font-overpass font-semibold text-sm'>
               Get resume
             </button>
