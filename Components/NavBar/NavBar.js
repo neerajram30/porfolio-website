@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import {motion} from 'framer-motion'
-import { CodeIcon, MenuIcon, XIcon } from "@heroicons/react/solid";
+import { CodeIcon, MenuIcon, XIcon, HomeIcon } from "@heroicons/react/solid";
 
 export default function NavBar() {
 
@@ -48,6 +48,7 @@ export default function NavBar() {
                       >
                       {link.name}
                     </a>
+                
                   </Link>
                 </motion.li>
                         )
@@ -60,12 +61,14 @@ export default function NavBar() {
                     <div className='md:flex text-white dark:text-white pt-5 pl-2 md:ml-12'>
 
                         {links.map((link)=>
+      
 
 <Link
                             href={link.href}
                             passHref
                             >
-                        <a className='hover:text-twitter ml-5 font-extrabold md:block hidden'>{link.name}</a>
+                        <a className='dark:hover:text-twitter hover:text-hcolor ml-5 font-extrabold md:block hidden'>{link.name}</a>
+                    
                         </Link>
                                 )
                             }
