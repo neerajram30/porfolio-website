@@ -8,6 +8,11 @@ function Profile() {
     <div >
       <div className='flex flex-col md:pl-20 pl-10 pt-24 md:items-start items-start mt-10'>
         <h1 className='md:text-5xl text-3xl w-fit font-black font-overpass' id='head'>Hy, I'm<span className='dark:text-twitter text-hcolor'> Neeraj MR</span> </h1>
+        <div>
+        <h6 className='mt-2 md:text-xl text-md font-overpass font-bold'>
+        ASE at Tata Consultancy Services
+        </h6>
+        </div>
         <div className='flex mt-8'>
 
           <a href='https://github.com/neerajram30' target='_blank' className='mr-5 md:w-10 md:h-10 w-5 h-5 dark:hover:text-black text-3xl hover:text-iconhover'>
@@ -22,7 +27,6 @@ function Profile() {
         </div>
 
         <div className='md:w-4/6 w-5/6 pt-8 break-words' delay={0.5}>
-
 
           <motion.p className='dark:text-darkdesc md:text-lg'
             transition={{
@@ -40,8 +44,7 @@ function Profile() {
             }}
           >
             <span className='dark:text-twitter font-black text-hcolor'>Full Stack</span> web developer, specialized in 
-            <span className='dark:text-twitter font-black text-hcolor'> MERN Stack </span>. I like to use and contribute to <span className='dark:text-twitter font-black text-hcolor'> Opensource </span> softwares.
-            I'm currently searching for a good problem to be solved by <span className='dark:text-twitter font-black text-hcolor'> Technology</span>.
+            <span className='dark:text-twitter font-black text-hcolor'> MERN Stack </span>. I like to use and promote <span className='dark:text-twitter font-black text-hcolor'> Opensource </span> softwares and take part in opensource communities.
 
 
           </motion.p>
@@ -129,7 +132,7 @@ function Profile() {
           }}
         >
           <a target='_blank' type='submit' href='https://docs.google.com/document/d/1yx3aN8A6M-x4-zhUWtQqO-2D34otXFMWeiAs2qbwAKU/edit?usp=sharing'>
-            <button className='bg-btn h-10 w-28 rounded-sm text-white hover:bg-btn-hover hover:border-white font-overpass font-semibold text-sm'>
+            <button className='dark:bg-btn bg-hcolor h-10 w-28 rounded-sm text-white dark:hover:bg-btn-hover hover:bg-hdcolor hover:border-white font-overpass font-semibold text-sm'>
               Get resume
             </button>
 
