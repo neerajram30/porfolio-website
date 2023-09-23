@@ -16,7 +16,6 @@ export default function projects() {
       </Head>
 
       <div>
-      {/* <NavBar/> */}
       <Projects/>
       </div>
 
