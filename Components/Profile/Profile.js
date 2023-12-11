@@ -68,8 +68,8 @@ function Profile() {
             }}
           >
             I had explored web development technologies and libraries/frameworks like <span className='dark:text-twitter font-black text-hcolor'>React Js</span>,
-            <span className='dark:text-twitter font-black text-hcolor'> Next Js</span>, <span className='dark:text-twitter font-black text-hcolor'>Express</span>. I recently worked for a Nigeria based organization as 
-            <span className='dark:text-twitter font-black text-hcolor'> Frontend Intern</span>.
+            <span className='dark:text-twitter font-black text-hcolor'> Next Js</span>, <span className='dark:text-twitter font-black text-hcolor'>Express</span>. I am currently working as a 
+            <span className='dark:text-twitter font-black text-hcolor'> UI developer </span> at TCS.
           </motion.p>
 
 
