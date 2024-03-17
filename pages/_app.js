@@ -9,12 +9,12 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <>
-      <ThemeProvider attribute="class" enableSystem={false}>
+      {/* <ThemeProvider attribute="class" enableSystem={false}> */}
         <NavBar/>
         <Container>
           <Component {...pageProps} key={router.route} />
         </Container>
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
     </>
   )
 }

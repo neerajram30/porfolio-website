@@ -70,7 +70,7 @@ function Tools() {
 
 
   return (
-    <div className='mt-16 md:pl-20 pl-10' id='about' ref={ref}>
+    <div className='mt-16 md:pl-20 pl-10 bg-white pt-16 pb-16'  ref={ref}>
       <div>
         <motion.h2
           animate={animation}
