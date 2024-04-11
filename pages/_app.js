@@ -1,4 +1,3 @@
-import { ThemeProvider } from 'next-themes'
 import "@fontsource/inter";
 import '../styles/globals.css'
 import Container from '../Components/Container/Container';
@@ -12,7 +11,9 @@ function MyApp({ Component, pageProps, router }) {
       {/* <ThemeProvider attribute="class" enableSystem={false}> */}
         <NavBar/>
         <Container>
+          {/* <URQLProvider value={client}> */}
           <Component {...pageProps} key={router.route} />
+          {/* </URQLProvider> */}
         </Container>
       {/* </ThemeProvider> */}
     </>

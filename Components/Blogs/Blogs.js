@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import axios from "axios";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+const API_KEY = "2dca8552-29f1-4f30-95ab-4cff4be9b3e9";
+const HASHNODE_API_URL = "https://api.hashnode.com/";
+
 function Blogs() {
-  const [posts,setPosts] = useState([]);
-  // useEffect(() => {
-  //   post?.sort((a, b) => new Date(b.date) - new Date(a.date));
-  // }, []);
+  const [posts, setPosts] = useState([]);
+  // console.log("Publications >",publications);
+  
+  useEffect(() => {
+    
+
+  }, [])
+  
+  
 
   return (
     <div id="blogs" className="">
-      {posts  && (
+      {posts && (
         <div className="flex flex-col items-center md:items-start">
           <div className="md:mt-10 mt-3 flex flex-col items-center md:ml-10 md:mr-10">
             {/* <div className="md:grid md:grid-cols-2 md:gap-2 flex flex-col pt-10">
@@ -73,9 +83,14 @@ function Blogs() {
 }
 
 // export async function getServerSideProps() {
-//   const res = await fetch(`https://dev.to/api/articles?username=neerajram30`);
+//   const res = await axios.get(`https://dev.to/api/articles?username=neerajram30`);
+//   console.log("RES ",res);
 //   const json = await res.json();
-//   return { props: { post: json } };
+//   return { props: { publications: json } };
 // }
 
+
+
 export default Blogs;
+
+

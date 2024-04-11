@@ -10,6 +10,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@apollo/client": "^3.9.7",
     "@fontsource/inter": "^4.5.11",
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -18,9 +19,11 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@heroicons/react": "^1.0.6",
+    "axios": "^1.6.8",
     "babel-plugin-macros": "^3.1.0",
     "dejavu-sans": "^1.0.0",
     "framer-motion": "^6.3.16",
+    "graphql": "^16.8.1",
     "heroicons": "^1.0.6",
     "next": "^14.0.4",
     "next-themes": "^0.1.1",
@@ -33,7 +36,8 @@
     "react-loader-spinner": "^6.0.0-0",
     "react-reveal": "^1.2.2",
     "react-spinners": "^0.11.0",
-    "smooth-scrollbar-react": "^2.3.0"
+    "smooth-scrollbar-react": "^2.3.0",
+    "urql": "^4.0.6"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

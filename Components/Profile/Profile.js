@@ -13,7 +13,7 @@ function Profile() {
           id="head"
         >
           Hy, I'm
-          <span className="dark:text-twitter text-hcolor"> Neeraj MR</span>{" "}
+          <span className="text-primary"> Neeraj MR</span>{" "}
         </h1>
         <div>
           <h6 className="mt-2 md:text-xl text-md font-overpass font-bold text-black">
@@ -202,9 +202,9 @@ function Profile() {
         >
           <Link
             type="submit"
-            href="https://docs.google.com/document/d/1yx3aN8A6M-x4-zhUWtQqO-2D34otXFMWeiAs2qbwAKU/edit?usp=sharing"
+            href="https://drive.google.com/file/d/1GbmgU_YQuA5fDJVQBUtyDIoBr56RfeKM/view?usp=sharing"
           >
-            <button className="dark:bg-btn bg-hcolor h-10 w-28 rounded-sm text-white dark:hover:bg-btn-hover hover:bg-hdcolor hover:border-white font-overpass font-semibold text-sm">
+            <button className="bg-primary h-10 w-28 rounded-sm text-white  hover:border-white font-overpass font-semibold text-sm">
               Get resume
             </button>
           </Link>
