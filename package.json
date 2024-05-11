@@ -28,7 +28,6 @@
     "next": "^14.0.4",
     "next-themes": "^0.1.1",
     "react": "^18.2.0",
-    "react-animated-text-content": "^1.0.1",
     "react-daisyui": "^5.0.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
