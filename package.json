@@ -32,8 +32,6 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-intersection-observer": "^9.3.4",
-    "react-loader-spinner": "^6.0.0-0",
-    "react-spinners": "^0.11.0",
     "smooth-scrollbar-react": "^2.3.0",
     "urql": "^4.0.6"
   },
