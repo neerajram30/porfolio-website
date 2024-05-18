@@ -16,7 +16,7 @@ function Projects() {
       github: "https://github.com/neerajram30/Netflix-UI-clone",
       technologies: ["Python", "Flask", "Firebase"],
       description: "Helps police officers to find missing people using",
-    },
+    }
   ];
   return (
     <div className="pt-20 p-5 text-black" id="projects">
@@ -182,7 +182,7 @@ function Projects() {
             </motion.div>
           </div> */}
 
-          <div className="md:grid md:gap-4 md:grid-cols-2 flex flex-col lg:grid-cols-3">
+          <div className="md:grid md:gap-10 md:grid-cols-2 flex flex-col lg:grid-cols-3">
             {projects.map(
               ({ title, github, technologies, description }, index) => (
                 <div key={index}>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { CodeIcon, MenuIcon, XIcon, HomeIcon } from "@heroicons/react/solid";
 
+
 export default function NavBar() {
   const links = [
     // { name: "Home", href: "/", id:'' },
@@ -34,9 +35,8 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`bg-white h-14 md:fixed fixed w-full z-10 ${
-        hashShadow ? "shadow-nav" : "shadow-none"
-      }`}
+      className={`bg-white h-14 md:fixed fixed w-full z-10 ${hashShadow ? "shadow-nav" : "shadow-none"
+        }`}
     >
       {open && (
         <motion.div
@@ -93,9 +93,9 @@ export default function NavBar() {
       <div className="flex justify-between items-center h-fit pr-10">
         <div className="mt-[-30px] md:mt-0 md:pt-2">
           <Link href='#'>
-          <h1 className="text-xl md:text-2xl font-black font-overpass text-primary pl-8 md:pl-20">@Neeraj</h1>
+            <div className="text-primary ml-10 flex md:inline-flex bg-blue-300"><div><CodeIcon className="size-8 text-blue-500"/></div><h1 className="ml-3 text-lg pt-[2.5px] font-bold">Neeraj</h1></div>
           </Link>
-          </div>        
+        </div>
         <div className="md:flex space-x-3 justify-between">
           <div className="md:flex pl-2 md:ml-12 pt-3">
             {links.map((link) => (
