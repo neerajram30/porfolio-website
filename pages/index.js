@@ -6,11 +6,8 @@ import Projects from "../Components/Projects/Projects";
 import Blogs from "../Components/Blogs/Blogs";
 import About from "../Components/About/About";
 import Experience from "../Components/Experience/Experience";
-
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { useEffect } from "react";
 import axios from "axios";
-// import { Rings } from 'react-loader-spinner'
 
 const GET_USER_BLOG = `
   query GetUserArticles($page: Int!) {
@@ -89,74 +86,6 @@ export default function Home({ posts }) {
           <Footer />
         </main>
       </div>
-      {/* } */}
     </div>
   );
 }
-
-// export async function getServerSideProps() {
-//   const res = await fetch(`https://dev.to/api/articles?username=neerajram30`);
-//   console.log("RES ",res);
-//   const json = await res.json();
-//   return { props: { publications: json } };
-// }
-
-// export async function getServerSideProps(context) {
-//   console.log("Started");
-//   const res = await fetch("https://api.hashnode.com/", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: "2dca8552-29f1-4f30-95ab-4cff4be9b3e9",
-//     },
-//     body: JSON.stringify({
-//       query:
-//         'query {user(username: "neerajram1998") {publication {posts(page: 0) {title brief slug coverImage dateAdded}}}}',
-//     }),
-//   });
-//   const publications = await res.json();
-//   console.log("PUBLICATIONS ...........",publications);
-//   if (!publications) {
-//     return {
-//       notFound: true,
-//     };
-//   }
-
-//   return {
-//     props: {
-//       publications,
-//     },
-//   };
-// }
-
-// export async function getStaticProps(context) {
-//   console.log("Here");
-//   const client = new ApolloClient({
-//     uri: 'https://api.hashnode.com/',
-//     cache: new InMemoryCache(),
-//   })
-//   console.log(client);
-// //   const { data } = await client.query({
-// //     query: gql`
-// //       query GetPosts {
-// //         user(username: "neerajram1998") {
-// //           publication {
-// //             posts(page: 0) {
-// //               _id
-// //               coverImage
-// //               slug
-// //               title
-// //               brief
-// //             }
-// //           }
-// //         }
-// //       }
-// //     `,
-// //   })
-
-//   return {
-//     props: {
-//       posts: [],
-//     },
-//   }
-// }

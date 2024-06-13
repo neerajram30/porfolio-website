@@ -29,14 +29,10 @@ export default function (props) {
 
   return (
     <div className="text-sm font-semibold font-overpass">
-      {/* <motion.p className='dark:bg-twitter rounded-sm pl-2 pr-2 p-0.5 bg-hcolor text-white' 
+      <motion.p className='rounded-2xl bg-primary text-white px-5 py-2'
         animate={animation}
       >{props.tool}
-      </motion.p> */}
-
-      <p className="rounded-sm pl-2 pr-2 p-0.5 text-white bg-primary">
-        {props.tool}
-      </p>
+      </motion.p>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CodeIcon, MenuIcon, XIcon, HomeIcon } from "@heroicons/react/solid";
-
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
   const links = [
@@ -16,7 +16,9 @@ export default function NavBar() {
   ];
   const { theme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
   const [hashShadow, setHasShadow] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
@@ -33,11 +35,25 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll); // Cleanup
   }, []);
 
+  const handleActiveLink = (linkId, index) => {
+    if (linkId === links[index]?.id) {
+      setActiveLink(linkId);
+    }
+  }
+
+  const spring = {
+    type: "spring",
+    stiffness: 700,
+    damping: 30
+  };
+
   return (
     <nav
-      className={`bg-white h-14 md:fixed fixed w-full z-10 ${hashShadow ? "shadow-nav" : "shadow-none"
+      className={`bg-white h-14 md:fixed fixed w-full z-10 
+      ${hashShadow ? "shadow-nav" : "shadow-none"
         }`}
     >
+
       {open && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -93,20 +109,27 @@ export default function NavBar() {
       <div className="flex justify-between items-center h-fit pr-10">
         <div className="mt-[-30px] md:mt-0 md:pt-2">
           <Link href='#'>
-            <div className="text-primary ml-10 flex md:inline-flex bg-blue-300"><div><CodeIcon className="size-8 text-blue-500"/></div><h1 className="ml-3 text-lg pt-[2.5px] font-bold">Neeraj</h1></div>
+            <div className="text-primary ml-10 flex md:inline-flex bg-blue-300"><div><CodeIcon className="size-8 text-blue-500" /></div><h1 className="ml-3 text-lg pt-[2.5px] font-bold">Neeraj</h1></div>
           </Link>
         </div>
-        <div className="md:flex space-x-3 justify-between">
-          <div className="md:flex pl-2 md:ml-12 pt-3">
-            {links.map((link) => (
+        <div className="md:flex space-x-3 justify-between items-center">
+          <div className="md:flex pl-2 md:ml-12 pt-1 items-center">
+            {links.map((link,index) => (
               <Link
                 href={"#" + link.id}
                 passHref
                 className="text-black ml-5 font-extrabold md:block hidden"
                 key={link.id}
+                onClick={() => handleActiveLink(link.id, index)}
               >
                 {/* <a className='dark:hover:text-twitter hover:text-hcolor ml-5 font-extrabold md:block hidden'>{link.name}</a> */}
+                <motion.div
+                className={`${activeLink === link.id ? 'underline underline-offset-[7px] decoration-primary decoration-4':''}`}
+                // transition={spring}
+                // layout
+                >
                 {link.name}
+                </motion.div>
               </Link>
             ))}
           </div>

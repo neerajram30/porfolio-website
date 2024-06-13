@@ -66,14 +66,11 @@ function Tools() {
       id="skills"
     >
       <div>
-        {/* <motion.h2
+        <motion.h2
           animate={animation}
           className='md:text-3xl text-xl font-extrabold font-overpass'>
           Skills
-        </motion.h2> */}
-        <h2 className="md:text-3xl text-xl font-extrabold font-overpass">
-          Skills
-        </h2>
+        </motion.h2>
         <div className="md:flex md:flex-row flex flex-col md:items-center items-start">
           <div className="mt-5 md:w-1/2 w-10/12 md:text-lg break-words flex flex-wrap mr-1">
             {tools.map((tool, i) => (
@@ -88,16 +85,6 @@ function Tools() {
             ))}
           </div>
         </div>
-        {/* <motion.p
-          className="mt-10 md:text-lg lg:text-lg text-sm font-bold"
-          animate={currentlyLearningAnimation}
-        >
-          I'm currently learning
-          <span className="p-1 dark:bg-twitter rounded-sm pl-2 pr-2 text-sm font-semibold ml-4 bg-hcolor text-white font-overpass">
-            {" "}
-            AWS
-          </span>
-        </motion.p> */}
         
       </div>
     </div>
