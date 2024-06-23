@@ -58,10 +58,7 @@ function Projects() {
         className='md:text-3xl text-xl font-extrabold font-overpass text-center'>
         Projects
       </motion.h2>
-      {/* <h2 className="md:text-3xl text-xl font-extrabold font-overpass text-center">
-        {" "}
-        Projects
-      </h2> */}
+
       <div className="flex flex-col items-center mt-5">
         <div className="flex items-center justify-center">
 
@@ -83,7 +80,7 @@ function Projects() {
                     opacity: 1,
                   }}
                   key={index}>
-                  <Link href={github} target="_blank">
+                  <div>
                     <div className="md:w-72 w-60 h-80 rounded-lg mt-5 shadow-cards bg-white hover:scale-105 transition-all duration-200">
                       <div className="flex justify-between">
                         <div className="w-10 h-10 ml-5 mt-5">
@@ -109,13 +106,15 @@ function Projects() {
                         ))}
                       </div>
                     </div>
-                  </Link>
+                  </div>
                 </motion.div>
               )
             )}
           </div>
         </div>
       </div>
+
+
     </div>
   );
 }
