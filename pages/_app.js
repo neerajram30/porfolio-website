@@ -15,17 +15,14 @@ function MyApp({ Component, pageProps, router }) {
   return (
     !loading ?
       <>
-        {/* <ThemeProvider attribute="class" enableSystem={false}> */}
-
         <NavBar />
         <Container>
           {/* <URQLProvider value={client}> */}
           <Component {...pageProps} key={router.route} />
           {/* </URQLProvider> */}
         </Container>
-        // {/* </ThemeProvider> */}
       </>
-      : 
+      :
       <Loader name="Neeraj" />
   )
 }
