@@ -1,6 +1,6 @@
 import React from "react";
-import Github from "../Icons/Github";
-import Twitter from "../Icons/Twitter";
+import Github from "./Icons/Github";
+import Twitter from "./Icons/Twitter";
 import { motion } from "framer-motion";
 import Link from "next/link";
 

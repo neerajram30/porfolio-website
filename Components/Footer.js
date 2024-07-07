@@ -1,8 +1,8 @@
 import React from "react";
-import Github from "../Icons/Github";
-import Twitter from "../Icons/Twitter";
-import Dev from "../Icons/Dev";
-import Instagram from "../Icons/Instagram";
+import Github from "./Icons/Github";
+import Twitter from "./Icons/Twitter";
+import Dev from "./Icons/Dev";
+import Instagram from "./Icons/Instagram";
 import Link from "next/link";
 
 function Footer() {

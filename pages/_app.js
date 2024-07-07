@@ -1,9 +1,9 @@
 import "@fontsource/inter";
 import '../styles/globals.css'
-import Container from '../Components/Container/Container';
-import NavBar from '../Components/NavBar/NavBar';
+import Container from '../Components/Container';
+import NavBar from '../Components/NavBar';
 import { useEffect, useState } from "react";
-import Loader from "../Components/Loader/Loader";
+import Loader from "../Components/Loader";
 function MyApp({ Component, pageProps, router }) {
   const [loading, setLoading] = useState(true);
 
@@ -14,20 +14,17 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <>
-      {/* { */}
-
-        {/* // !loading ? */}
+      {
+        !loading ?
           <div>
             <NavBar />
             <Container>
-              {/* <URQLProvider value={client}> */}
               <Component {...pageProps} key={router.route} />
-              {/* </URQLProvider> */}
             </Container>
           </div>
-          {/* : */}
-          {/* <Loader name="Neeraj" /> */}
-      {/* } */}
+          :
+          <Loader name="Neeraj" />
+      }
     </>
   )
 }

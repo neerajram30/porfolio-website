@@ -1,13 +1,15 @@
 import Head from "next/head";
 import Tools from "../Components/Tools/Tools";
-import Footer from "../Components/Footer/Footer";
-import Profile from "../Components/Profile/Profile";
-import Projects from "../Components/Projects/Projects";
-import Blogs from "../Components/Blogs/Blogs";
-import About from "../Components/About/About";
-import Experience from "../Components/Experience/Experience";
+import Footer from "../Components/Footer";
+import Profile from "../Components/Profile";
+import Projects from "../Components/Projects";
+import Blogs from "../Components/Blogs";
+import About from "../Components/About";
+import Experience from "../Components/Experience";
 import { useEffect } from "react";
 import axios from "axios";
+import Loader from "../Components/Loader";
+import { MoonLoader } from "react-spinners";
 
 const GET_USER_BLOG = `
   query GetUserArticles($page: Int!) {

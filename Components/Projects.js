@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Github from "../Icons/Github";
+import Github from "./Icons/Github";
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
