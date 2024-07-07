@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import Loader from "../Components/Loader";
 import { MoonLoader } from "react-spinners";
+import NavBar from "../Components/NavBar";
 
 const GET_USER_BLOG = `
   query GetUserArticles($page: Int!) {
@@ -79,6 +80,7 @@ export default function Home({ posts }) {
 
       <div className="bg-[#fafafc]">
         <main className="overflow-hidden">
+        <NavBar />
           <Profile />
           <About />
           <Experience />
@@ -86,6 +88,7 @@ export default function Home({ posts }) {
           <Tools />
           <Blogs />
           <Footer />
+          {/* <Loader/> */}
         </main>
       </div>
     </div>

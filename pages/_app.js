@@ -1,7 +1,6 @@
 import "@fontsource/inter";
-import '../styles/globals.css'
+import '../styles/globals.css';
 import Container from '../Components/Container';
-import NavBar from '../Components/NavBar';
 import { useEffect, useState } from "react";
 import Loader from "../Components/Loader";
 function MyApp({ Component, pageProps, router }) {
@@ -14,17 +13,14 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <>
-      {
-        !loading ?
-          <div>
-            <NavBar />
-            <Container>
-              <Component {...pageProps} key={router.route} />
-            </Container>
-          </div>
-          :
-          <Loader name="Neeraj" />
-      }
+      <Container>
+        {
+          !loading ?
+            <Component {...pageProps} key={router.route} />
+            :
+            <Loader name="Neeraj" />
+        }
+      </Container>
     </>
   )
 }
