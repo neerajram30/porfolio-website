@@ -13,17 +13,22 @@ function MyApp({ Component, pageProps, router }) {
   }, [])
 
   return (
-    !loading ?
-      <>
-        <NavBar />
-        <Container>
-          {/* <URQLProvider value={client}> */}
-          <Component {...pageProps} key={router.route} />
-          {/* </URQLProvider> */}
-        </Container>
-      </>
-      :
-      <Loader name="Neeraj" />
+    <>
+      {/* { */}
+
+        {/* // !loading ? */}
+          <div>
+            <NavBar />
+            <Container>
+              {/* <URQLProvider value={client}> */}
+              <Component {...pageProps} key={router.route} />
+              {/* </URQLProvider> */}
+            </Container>
+          </div>
+          {/* : */}
+          {/* <Loader name="Neeraj" /> */}
+      {/* } */}
+    </>
   )
 }
 

@@ -35,7 +35,7 @@ function Loader(props) {
                 duration: 3,
                 ease: "easeInOut",
             },
-            stroke:'#646FD4'
+            stroke: '#646FD4'
         }
     };
     const fillVariants = {
@@ -45,16 +45,41 @@ function Loader(props) {
             transition: {
                 delay: 3,
                 duration: 5,
-                ease: "easeInOut"
+                ease: "easeInOut",
+                repeat: Infinity, // Repeat indefinitely
+                repeatType: "mirror"
             }
         }
     };
 
+
+    const pathVariants = {
+        hidden: { pathLength: 0, opacity: 1 },
+        visible: {
+            pathLength: 1,
+            opacity: 1,
+            transition: {
+                duration: 2,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatType: "mirror"
+            },
+        },
+        reverse: {
+            pathLength: 0,
+            opacity: 1,
+            transition: {
+                duration: 2,
+                ease: "easeInOut"
+            },
+        },
+    };
+
     return (
-        <div className='bg-white h-screen'>
+        <div className='bg-white h-screen fixed'>
 
             <svg viewBox="0 0 800 200" className="w-full h-full">
-                <defs>
+                {/* <defs>
                     <mask id="text-mask">
                         <motion.text
                             x="50%"
@@ -71,9 +96,9 @@ function Loader(props) {
                             {text}
                         </motion.text>
                     </mask>
-                </defs>
-                <rect width="100%" height="100%" fill="#000" mask="url(#text-mask)" />
-                <motion.text
+                </defs> */}
+                {/* <rect width="100%" height="100%" fill="#000" mask="url(#text-mask)" /> */}
+                {/* <motion.text
                     x="50%"
                     y="50%"
                     textAnchor="middle"
@@ -86,7 +111,27 @@ function Loader(props) {
                     variants={fillVariants}
                 >
                     {text}
-                </motion.text>
+                </motion.text> */}
+                <line
+                    x1="50"
+                    y1="100"
+                    x2="250"
+                    y2="100"
+                    stroke="#ccc"
+                    strokeWidth="5"
+                />
+                {/* Animated Line */}
+                <motion.line
+                    x1="50"
+                    y1="100"
+                    x2="250"
+                    y2="100"
+                    stroke="#00f"
+                    strokeWidth="5"
+                    variants={pathVariants}
+                    initial="hidden"
+                    animate="visible"
+                />
             </svg>
         </div>
     );
