@@ -1,12 +1,13 @@
+"use client";
 import React from "react";
 import Github from "./Icons/Github";
 import Twitter from "./Icons/Twitter";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
+import Image from "next/image";
 function Profile() {
   return (
-    <div className="h-auto md:h-screen lg:h-screen bg-white">
+    <div className="h-auto md:h-screen lg:h-screen md:flex w-screen">
       <div className="flex flex-col md:pl-20 pl-10 pt-24 md:items-start items-start mt-10">
         <h1
           className="md:text-5xl text-3xl w-fit font-black font-overpass text-black" 
@@ -16,9 +17,9 @@ function Profile() {
           <span className="text-primary"> Neeraj MR</span>{" "}
         </h1>
         <div>
-          <h6 className="mt-2 md:text-xl text-md font-overpass font-bold text-black">
+          <h6 className="mt-2 md:text-xl text-md font-bold text-black">
             {/* ASE at Tata Consultancy Services */}
-            Frontend Developer
+            Fullstack Developer
           </h6>
         </div>
         <div className="flex mt-8">
@@ -37,7 +38,7 @@ function Profile() {
           </Link>
         </div>
 
-        <div className="md:w-4/6 w-5/6 pt-8 break-words">
+        <div className="md:w-3/6 w-5/6 pt-8 break-words">
           <p className="md:text-lg text-black">
             Passionate web developer with a strong understanding of front-end
             development principles. Adept at crafting clean, reusable, and
@@ -70,6 +71,10 @@ function Profile() {
             </button>
           </Link>
         </motion.div>
+      </div>
+
+      <div className="md:mt-32 md:pl-0 md:pr-32 mt-2 pr-20 pl-20 flex justify-center w-screen md:w-fit md:block">
+          <Image src='/illustration.png' width={1000} height={1000} alt="image"/>
       </div>
     </div>
   );

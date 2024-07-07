@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+"use client";
+import React, { useEffect } from 'react';
+import { useState } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -49,7 +51,7 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`bg-white h-14 md:fixed fixed w-full z-10 
+      className={`bg-white h-14 md:fixed fixed w-screen z-10 p-0
       ${hashShadow ? "shadow-nav" : "shadow-none"
         }`}
     >

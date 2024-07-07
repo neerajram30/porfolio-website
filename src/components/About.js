@@ -1,4 +1,4 @@
-import ArrowRight from "./Icons/ArrowRight";
+
 
 function About() {
   const about = [
@@ -8,7 +8,7 @@ function About() {
     "Experience in working with AWS services",
   ];
   return (
-    <div className="pt-16 md:pl-20 pl-10 pb-16 text-black" id="about">
+    <div className="pt-16 md:pl-20 pl-10 pb-16 text-black w-screen" id="about">
       <div className="md:flex md:justify-around">
         <div className="w-2/5">
           <h2 className="md:text-3xl text-xl font-extrabold font-overpass">

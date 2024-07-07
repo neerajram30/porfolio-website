@@ -17,7 +17,7 @@ function Experience() {
   ];
   return (
     <div
-      className="pt-20 md:pl-20 pl-10 bg-white flex flex-col justify-center items-center pb-10 text-black"
+      className="pt-20 md:pl-20 pl-10 bg-white flex flex-col justify-center items-center pb-10 text-black w-screen"
       id="experience"
     >
       {/* <div className=""> */}

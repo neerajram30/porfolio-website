@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -61,7 +62,7 @@ function Tools() {
 
   return (
     <div
-      className="mt-16 md:pl-20 pl-10 bg-white pt-24 pb-24 text-black"
+      className="mt-16 md:pl-20 pl-10 bg-white pt-24 pb-24 text-black w-screen"
       ref={ref}
       id="skills"
     >

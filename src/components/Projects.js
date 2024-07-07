@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from "react";
 import Github from "./Icons/Github";
 import { motion, useAnimation } from "framer-motion";
@@ -49,7 +50,7 @@ function Projects() {
     }
   ];
   return (
-    <div className="pt-20 p-5 text-black" id="projects"
+    <div className="pt-20 p-5 text-black w-screen" id="projects"
       ref={ref}
 
     >

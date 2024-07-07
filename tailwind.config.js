@@ -2,7 +2,11 @@ import daisyui from "daisyui"
 
 module.exports = {
   // darkMode: 'class',
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './Components/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -47,8 +51,8 @@ module.exports = {
    
     extend: {
       fontFamily:{
-        sans:['Inter','sans-serif'],
-        overpass:['Overpass','sans-serif'],
+        // sans:['Inter','sans-serif'],
+        // overpass:['Overpass','sans-serif'],
         
       },
     },

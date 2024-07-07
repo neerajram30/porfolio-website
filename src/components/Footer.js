@@ -24,7 +24,7 @@ function Footer() {
     },
   ];
   return (
-    <div className="flex flex-col items-center pt-0 md:pt-5 pb-10">
+    <div className="flex flex-col items-center pt-0 md:pt-5 pb-10 w-screen">
       <div className="flex text-center md:space-x-1 space-x-8">
         {socialLinks.map(({ title, link, icon }, i) => (
           <Link
