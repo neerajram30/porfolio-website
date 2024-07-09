@@ -1,9 +1,10 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import Github from "./Icons/Github";
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
+import Tool from "./Tools/Tool";
 
 function Projects() {
   const [loaded, setLoaded] = useState(false);
@@ -24,46 +25,45 @@ function Projects() {
           duration: 0.3,
         },
       });
-
     } else {
       animation.start({
         y: "30px",
         opacity: 0,
       });
-
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
   const projects = [
     {
+      title: "God's Eye",
+      github: "https://github.com/neerajram30/Netflix-UI-clone",
+      technologies: ["Python", "Flask", "Dlib"],
+      description: "Helps police officers to find missing people using",
+    },
+    {
       title: "Netflix UI Clone",
       github: "https://github.com/neerajram30/Netflix-UI-clone",
       technologies: ["React", "Firebase"],
       description: "Netflix clone app powered by TMDB database and firebase",
     },
-    {
-      title: "God's Eye",
-      github: "https://github.com/neerajram30/Netflix-UI-clone",
-      technologies: ["Python", "Flask", "Firebase"],
-      description: "Helps police officers to find missing people using",
-    }
   ];
   return (
-    <div className="pt-10 md:pl-20 pl-10 md:pr-20 pr-10 pb-10 text-white w-screen" id="projects"
+    <div
+      className="pt-10 md:pl-20 pl-10 md:pr-20 pr-10 pb-10 text-white w-screen"
+      id="projects"
       ref={ref}
-
     >
       <motion.h2
         animate={animation}
-        className='md:text-3xl text-xl font-bold text-center'>
+        className="md:text-3xl text-xl font-bold text-center"
+      >
         Projects
       </motion.h2>
 
       <div className="flex flex-col items-center mt-5">
         <div className="flex items-center justify-center">
-
-          <div className="md:grid md:gap-10 md:grid-cols-2 flex flex-col lg:grid-cols-3">
+          {/* <div className="md:grid md:gap-10 md:grid-cols-2 flex flex-col lg:grid-cols-3">
             {projects.map(
               ({ title, github, technologies, description }, index) => (
                 <motion.div
@@ -111,11 +111,34 @@ function Projects() {
                 </motion.div>
               )
             )}
+          </div> */}
+
+          <div className="w-screen md:px-32 px-2">
+            {projects.map((item) => (
+              <div className="shadow-cards flex h-40 bg-[#0e131a] mt-5 rounded-lg">
+                <div className="bg-[#000] md:w-1/6 w-2/6 h-full flex justify-center items-center">
+                  image spot
+                </div>
+                <div className="md:px-8 py-3 px-4">
+                  <h6 className="text-2xl font-semibold">{item.title}</h6>
+                  <p className="md:mt-5 mt-2">
+                    {item.description}
+                  </p>
+
+                  <div className="flex md:mt-5 mt-3">
+                  {item.technologies.map((tech,i)=>
+                    <div key={item.title+i} className="rounded-2xl bg-primary text-white px-3 py-1 mr-2 text-sm font-semibold">{tech}</div>
+                  
+                  )}
+                </div>
+                </div>
+
+                
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-
     </div>
   );
 }

@@ -61,7 +61,7 @@ export default function NavBar() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed flex flex-col items-center justify-end z-20 w-screen h-screen inset-0 bg-gray-200"
+          className="fixed flex flex-col items-center justify-end z-20 w-screen h-screen inset-0 bg-[#161d27]"
         >
           <motion.button
             whileHover={{ scale: 1.1 }}
@@ -70,10 +70,10 @@ export default function NavBar() {
             onClick={() => setOpen(false)}
             className="p-1 rounded-md dark:bg-gray-700 absolute top-8 right-8 ring-opacity-80 ring-gray-500 dark:ring-gray-200hover:ring-[2px]"
           >
-            <XIcon className="h-8 w-8 text-gray-600 -mt-5 -mr-3" />
+            <XIcon className="h-8 w-8 text-white -mt-5 -mr-3" />
           </motion.button>
 
-          <ul className="flex font-overpass font-bold flex-col gap-12 text-center text-2xl  tracking-widest w-full bg-white text-hcolor items-center justify-center h-screen">
+          <ul className="flex font-bold flex-col gap-12 text-center text-2xl  tracking-widest w-full bg-[#161d27] text-white items-center justify-center h-screen">
             {links.map((link, i) => (
               <motion.li
                 key={link.name}
@@ -87,7 +87,7 @@ export default function NavBar() {
                 <Link href={"#" + link.id}>
                   <span
                     onClick={() => setOpen(false)}
-                    className="text-black  hover:font-semibold  transition-all duration-100 ease-out p-2"
+                    className="text-white  hover:font-semibold  transition-all duration-100 ease-out p-2"
                   >
                     {link.name}
                   </span>
@@ -105,7 +105,7 @@ export default function NavBar() {
           onClick={() => setOpen(true)}
           className="md:hidden"
         >
-          <MenuIcon className="mt-1 h-8 w-8 -mr-3 md:-mr-0 text-black" />
+          <MenuIcon className="mt-1 h-8 w-8 -mr-3 md:-mr-0 text-white" />
         </motion.button>
       </div>
       <div className="flex justify-between items-center h-fit pr-10">

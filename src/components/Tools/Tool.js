@@ -28,7 +28,7 @@ export default function Tool (props) {
   }, [props.inView]);
 
   return (
-    <div className="text-sm font-semibold font-overpass">
+    <div className="text-sm font-semibold">
       <motion.p className='rounded-lg bg-primary text-white md:px-5 md:py-2 px-3 py-1'
         animate={animation}
       >{props.tool}
