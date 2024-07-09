@@ -13,7 +13,7 @@ function Profile() {
           className="md:text-5xl text-3xl w-fit font-black font-overpass text-black" 
           id="head"
         >
-          Hy, I'm
+          <span>{"Hy, I'm"}</span>
           <span className="text-primary"> Neeraj MR</span>{" "}
         </h1>
         <div>

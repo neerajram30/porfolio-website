@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export default function (props) {
+export default function Tool (props) {
   const [loaded, setLoaded] = useState(false);
   const animation = useAnimation();
   useEffect(() => {
