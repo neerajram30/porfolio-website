@@ -22,7 +22,7 @@ function Experience() {
     >
       {/* <div className=""> */}
       {/* <div className="w-2/5"> */}
-      <h2 className="md:text-3xl text-xl font-extrabold font-overpass">
+      <h2 className="md:text-3xl text-xl font-bold">
         {" "}
         Experience
       </h2>
@@ -30,7 +30,7 @@ function Experience() {
       {/* <div className=""> */}
         <ul className="steps steps-vertical flex flex-col md:items-center items-start">
           {experience.map((exp,i) => (
-            <li key={i} className="w-full md:pl-20 step step-primary after:!text-white before:!text-white before:!w-1">
+            <li key={i} className="w-fit md:pl-20 step step-primary after:!text-white before:!text-white before:!w-1">
               <div className="md:ml-[-210px] ml-10 absolute text-md w-48 md:text-end text-start pl-2 md:pl-0 mt-[-80px] md:mt-0">{exp.experience}</div>
               <div className="flex flex-col items-start md:p-5 p-3 md:w-[500px] w-72 rounded-md shadow-cards mb-5 md:mt-10 mt-20 mr-10">
                 <h6 className="md:text-xl font-semibold text-start text-md">{exp.company}</h6>

@@ -62,20 +62,19 @@ function Tools() {
 
   return (
     <div
-      className="mt-16 md:pl-20 pl-10 bg-white pt-24 pb-24 text-black w-screen"
+      className=""
       ref={ref}
       id="skills"
     >
       <div>
-        <motion.h2
-          animate={animation}
-          className='md:text-3xl text-xl font-extrabold font-overpass'>
-          Skills
-        </motion.h2>
+        <h2
+          className='md:text-2xl text-xl font-semibold'>
+          My Skills
+        </h2>
         <div className="md:flex md:flex-row flex flex-col md:items-center items-start">
-          <div className="mt-5 md:w-1/2 w-10/12 md:text-lg break-words flex flex-wrap mr-1">
+          <div className="mt-5 md:text-lg break-words flex flex-wrap mr-1">
             {tools.map((tool, i) => (
-              <div className="mt-2 mr-2" key={i}>
+              <div className="mt-3 md:mr-4 mr-2" key={i}>
                 <Tool
                   tool={tool}
                   key={i}

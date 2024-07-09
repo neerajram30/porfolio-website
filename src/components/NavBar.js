@@ -51,7 +51,7 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`bg-white h-14 md:fixed fixed w-screen z-10 p-0
+      className={`bg-[#161d27] h-14 md:fixed fixed w-screen z-10 p-0
       ${hashShadow ? "shadow-nav" : "shadow-none"
         }`}
     >
@@ -120,7 +120,7 @@ export default function NavBar() {
               <Link
                 href={"#" + link.id}
                 passHref
-                className="text-black ml-5 font-extrabold md:block hidden"
+                className="text-white ml-5 font-semibold md:block hidden"
                 key={link.id}
                 onClick={() => handleActiveLink(link.id, index)}
               >

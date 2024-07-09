@@ -29,7 +29,7 @@ export default function Tool (props) {
 
   return (
     <div className="text-sm font-semibold font-overpass">
-      <motion.p className='rounded-2xl bg-primary text-white px-5 py-2'
+      <motion.p className='rounded-lg bg-primary text-white md:px-5 md:py-2 px-3 py-1'
         animate={animation}
       >{props.tool}
       </motion.p>

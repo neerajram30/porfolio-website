@@ -50,13 +50,13 @@ function Projects() {
     }
   ];
   return (
-    <div className="pt-20 p-5 text-black w-screen" id="projects"
+    <div className="pt-10 md:pl-20 pl-10 md:pr-20 pr-10 pb-10 text-white w-screen" id="projects"
       ref={ref}
 
     >
       <motion.h2
         animate={animation}
-        className='md:text-3xl text-xl font-extrabold font-overpass text-center'>
+        className='md:text-3xl text-xl font-bold text-center'>
         Projects
       </motion.h2>
 
