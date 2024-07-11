@@ -115,7 +115,7 @@ function Projects() {
 
           <div className="w-screen md:px-32 px-2">
             {projects.map((item) => (
-              <div className="shadow-cards flex h-40 bg-[#0e131a] mt-5 rounded-lg">
+              <div className="shadow-cards flex h-40 bg-[#0e131a] mt-5 rounded-lg" key={item.title}>
                 <div className="bg-[#000] md:w-1/6 w-2/6 h-full flex justify-center items-center">
                   image spot
                 </div>
