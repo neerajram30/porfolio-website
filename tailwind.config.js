@@ -46,7 +46,7 @@ module.exports = {
       "inverse": "0 -1px 2px 0 rgba(0, 0, 0, 0.05)",
       "nav":"0px 1px 8px 0px rgba(100, 100, 111, 0.2)",
       "project":"0px 0px 1px 1px rgba(0, 0, 0, 0.05)",
-      "cards":"0px 2px 8px 0px rgba(99, 99, 99, 0.2)",
+      "cards":"box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
       "bgglow": "0 0 20px 5px rgba(15, 32, 39, 0.6);"
     },
     backgroundImage: {
