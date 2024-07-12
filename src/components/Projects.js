@@ -5,6 +5,8 @@ import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import Tool from "./Tools/Tool";
+import Image from "next/image";
+import { StarIcon } from "@heroicons/react/solid";
 
 function Projects() {
   const [loaded, setLoaded] = useState(false);
@@ -47,6 +49,7 @@ function Projects() {
       technologies: ["React", "Firebase"],
       description: "Netflix clone app powered by TMDB database and firebase",
     },
+    
   ];
   return (
     <div
@@ -113,21 +116,24 @@ function Projects() {
             )}
           </div> */}
 
-          <div className="w-screen md:px-32 px-2">
+          <div className="w-screen md:px-2 px-5 md:flex md:flex-wrap md:justify-center block">
             {projects.map((item) => (
-              <div className="shadow-cards flex h-40 bg-[#0e131a] mt-5 rounded-lg" key={item.title}>
-                <div className="bg-[#000] md:w-1/6 w-2/6 h-full flex justify-center items-center">
-                  image spot
+              <div className="hover:shadow-cards flex md:h-44 h-auto hover:cursor-pointer hover:bg-[#0e131a] mt-5 rounded-lg md:w-5/12 md:mx-5 md:py-0 py-3" key={item.title}>
+                <div className="md:w-2/6 w-2/6 h-full flex justify-center items-start md:mt-2 md:pl-0 pl-2">
+                  <Image src="/placeholder.jpg" width={160} height={70}/>
                 </div>
-                <div className="md:px-8 py-3 px-4">
-                  <h6 className="text-2xl font-semibold">{item.title}</h6>
-                  <p className="md:mt-5 mt-2">
+                <div className="md:px-2 md:pr-8 py-3 px-4 w-4/6">
+                  <h6 className="text-xl font-semibold">{item.title}</h6>
+                  <p className="mt-2 md:text-md text-sm">
                     {item.description}
                   </p>
-
-                  <div className="flex md:mt-5 mt-3">
+                  <div className="text-xs flex h-8 justify-start items-center">
+                    <StarIcon className="size-3"/>
+                    <p className="ml-2 font-semibold md:mt-0 mt-[-2px]">0</p>
+                  </div>
+                  <div className="flex md:mt-2 mt-3">
                   {item.technologies.map((tech,i)=>
-                    <div key={item.title+i} className="rounded-2xl bg-primary text-white px-3 py-1 mr-2 text-sm font-semibold">{tech}</div>
+                    <div key={item.title+i} className="rounded-2xl bg-primary text-white px-3 py-1 mr-2 text-xs font-semibold">{tech}</div>
                   
                   )}
                 </div>
