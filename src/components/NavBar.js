@@ -13,7 +13,7 @@ export default function NavBar() {
     { name: "About", href: "/about", id: "about" },
     { name: "Experience", href: "/experience", id: "experience" },
     { name: "Projects", href: "/projects", id: "projects" },
-    { name: "Skills", href: "/skills", id: "skills" },
+    // { name: "Skills", href: "/skills", id: "skills" },
     // { name: "Blogs", href: "/blogs", id:'blogs' },
   ];
   const { theme, setTheme } = useTheme();
