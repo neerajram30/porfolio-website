@@ -46,6 +46,33 @@ function Experience() {
       </ul>
       {/* </div> */}
       {/* </div> */}
+
+      <div className="steps steps-vertical">
+      <div className="step step-primary">
+        <div className="step-content">
+          <div className="step-title">Step 1</div>
+          <div className="step-description">Description for step 1.</div>
+        </div>
+      </div>
+      <div className="step step-secondary">
+        <div className="step-content">
+          <div className="step-title">Step 2</div>
+          <div className="step-description">Description for step 2.</div>
+        </div>
+      </div>
+      <div className="step step-accent">
+        <div className="step-content">
+          <div className="step-title">Step 3</div>
+          <div className="step-description">Description for step 3.</div>
+        </div>
+      </div>
+      <div className="step step-info">
+        <div className="step-content">
+          <div className="step-title">Step 4</div>
+          <div className="step-description">Description for step 4.</div>
+        </div>
+      </div>
+    </div>
     </div>
   );
 }
