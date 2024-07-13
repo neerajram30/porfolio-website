@@ -58,7 +58,7 @@ function Experience() {
       </ul> */}
       <div className="md:px-20">
         {experience.map((exp, i) => (
-          <div className="collapse collapse-plus bg-[#161d27] rounded-none mt-2">
+          <div className="collapse collapse-plus bg-[#161d27] rounded-none mt-2" key={exp.company + i}>
             <input type="radio" name="my-accordion-3" defaultChecked />
             <div className="collapse-title md:text-xl text-sm font-medium">
               <div className="flex justify-between">

@@ -12,13 +12,9 @@ function About() {
         <div className="md:justify-around md:w-1/2 md:pr-32">
           <h2 className="md:text-2xl text-xl font-semibold">About me</h2>
           <p className="mt-5 text-lg">
-            I am a Software Engineer with strong fundamental knowledge in
-            Computer Science and an eager learner's mentality. Currently working
-            at TCS as a Frontend Web Developer. In this role, I am exploring web
-            technologies and solving problems using them. Most of my work is
-            related to React and its ecosystem. As a Front-End Developer, I work
-            closely with architects, designers, and backend teams to deliver
-            high-quality UI/UX at scale.
+            {
+              "I am a Software Engineer with strong fundamental knowledge in Computer Science and an eager learner's mentality. Currently working at TCS as a Frontend Web Developer. In this role, I am exploring web technologies and solving problems using them. Most of my work is related to React and its ecosystem. As a Front-End Developer, I work closely with architects, designers, and backend teams to deliver high-quality UI/UX at scale."
+            }
           </p>
         </div>
 
