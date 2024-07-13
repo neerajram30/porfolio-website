@@ -16,7 +16,7 @@ export default function Home() {
         <Projects/>
         <Experience/>
         {/* <Tools/> */}
-        {/* <Footer/> */}
+        <Footer/>
     </main>
   );
 }

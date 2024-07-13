@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/solid";
 import axios from "axios";
+import Bubbles from "./Bubbles";
 
 function Projects() {
   const [loaded, setLoaded] = useState(false);
@@ -45,14 +46,17 @@ function Projects() {
         "Helps police officers to find missing people using Artificial Intelligence",
       owner: "neerajram30",
       repo: "God-s-Eye",
+      image:'/portfolio.png'
+
     },
     {
-      title: "Netflix UI Clone",
-      github: "https://github.com/neerajram30/Netflix-UI-clone",
-      technologies: ["React", "Firebase"],
-      description: "Netflix clone app powered by TMDB database and firebase",
+      title: "Portfolio Website",
+      github: "https://github.com/neerajram30/porfolio-website",
+      technologies: ["Nextjs", "Tailwind CSS", "DaisyUI"],
+      description: "My personal portfolio website showcasing side projects and experience",
       owner: "neerajram30",
-      repo: "Netflix-UI-clone",
+      repo: "porfolio-website",
+      image:'/portfolio.png'
     },
   ];
 
@@ -98,9 +102,11 @@ function Projects() {
                 key={item.title}
               >
                 <div className="md:w-2/6 w-2/6 h-full flex justify-center items-start md:mt-2 md:pl-0 pl-2">
-                  <Image src="/placeholder.jpg" width={160} height={70} />
+                  <div className="h-fit w-fit shadow-cards p-1">
+                  <Image src={item.image} width={160} height={70} alt={item.title}/>
+                  </div>
                 </div>
-                <div className="md:px-2 md:pr-8 py-3 px-4 w-4/6">
+                <div className="md:px-2 md:pr-8 py-2 px-4 w-4/6">
                   <h6 className="text-xl font-semibold">{item.title}</h6>
                   <p className="mt-2 md:text-md text-sm">{item.description}</p>
                   <div className="text-xs flex h-8 justify-start items-center">
@@ -109,15 +115,8 @@ function Projects() {
                       {starsDetails[i] ? starsDetails[i] : 0}
                     </p>
                   </div>
-                  <div className="flex md:mt-2 mt-3">
-                    {item.technologies.map((tech, i) => (
-                      <div
-                        key={item.title + i}
-                        className="rounded-2xl bg-primary text-white px-3 py-1 mr-2 text-xs font-semibold"
-                      >
-                        {tech}
-                      </div>
-                    ))}
+                  <div className="flex md:mt-0 mt-1">
+                    <Bubbles data={item.technologies}/>
                   </div>
                 </div>
               </div>

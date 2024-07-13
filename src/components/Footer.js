@@ -4,38 +4,48 @@ import Twitter from "./Icons/Twitter";
 import Dev from "./Icons/Dev";
 import Instagram from "./Icons/Instagram";
 import Link from "next/link";
+import { socials } from "@/config/socialLinks";
 
 function Footer() {
-  const socialLinks = [
-    {
-      title: "github",
-      link: "https://github.com/neerajram30",
-      icon: <Github />,
-    },
-    {
-      title: "twitter",
-      link: "https://twitter.com/neeraJramachaN2",
-      icon: <Twitter />,
-    },
-    {
-      title: "instagram",
-      link: "https://www.instagram.com/neeraj_ramachandran",
-      icon: <Instagram />,
-    },
-  ];
   return (
-    <div className="flex flex-col items-center pt-0 md:pt-5 pb-10 w-screen">
-      <div className="flex text-center md:space-x-1 space-x-8">
-        {socialLinks.map(({ title, link, icon }, i) => (
-          <Link
-            key={title + i}
-            href={link}
-            target="_blank"
-            className="m-2 md:w-12 md:h-12 w-5 h-5 md:text-3xl text-2xl text-black"
-          >
-            {icon}
-          </Link>
-        ))}
+    <div className="pt-10 md:pl-20 pl-10 md:pr-20 pr-10 pb-10 text-white w-screen">
+      <div className="md:flex justify-between w-full mb-14">
+        <div className="w-3/4">
+          <h6 className="text-2xl font-semibold mb-2">Contact</h6>
+          <div>
+            <Link
+              href="mailto:neerajramachardn30@gmail.com"
+              className="text-lg"
+            >
+              neerajramachandran30@gmail.com
+            </Link>
+          </div>
+          <div>
+            <Link href="tel:+918129390516" className="text-lg">
+              +91 8129390516
+            </Link>
+          </div>
+        </div>
+        <div className="w-1/4 md:mt-0 mt-10">
+          <h6 className="text-2xl font-semibold mb-5">Social</h6>
+          <div className="flex">
+            {socials.map((social) => (
+              <Link
+                title={social.title}
+                href={social.link}
+                key={social.title + social.id}
+                className="md:w-10 md:h-10 w-5 h-5 text-xl text-white md:mr-0 mr-5"
+              >
+                {social.icon}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+      <hr className="text-white bg-white" />
+
+      <div className="text-center pt-8">
+        <p className="text-xs">© Copyright 2024 . Made by Neeraj M R. Powered by Next js</p>
       </div>
     </div>
   );

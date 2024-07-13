@@ -5,12 +5,14 @@ import Twitter from "./Icons/Twitter";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { SiGithub, SiGmail, SiInstagram, SiLinkedin, SiX } from "react-icons/si";
+import { socials } from "@/config/socialLinks";
 function Profile() {
   return (
     <div className="h-screen md:h-screen lg:h-screen w-screen">
       <div className="flex flex-col md:pl-52 pl-10 pt-24 md:items-start items-start mt-10">
         <h1
-          className="md:text-5xl text-3xl w-fit font-black font-overpass text-white" 
+          className="md:text-5xl text-3xl w-fit font-black font-overpass text-white"
           id="head"
         >
           <span>{"Hy, I'm "}</span>
@@ -22,7 +24,6 @@ function Profile() {
             Fullstack Developer
           </h6>
         </div>
-        
 
         <div className="md:w-3/6 w-5/6 pt-8 break-words">
           <p className="md:text-lg text-white">
@@ -59,25 +60,20 @@ function Profile() {
         </motion.div>
 
         <div className="flex mt-8">
-          <Link
-            href="https://github.com/neerajram30"
-            className="mr-5 md:w-10 md:h-10 w-5 h-5 dark:hover:text-black text-3xl hover:text-iconhover text-white"
-          >
-            <Github />
-          </Link>
-
-          <Link
-            href="https://twitter.com/neeraJramachaN2"
-            className="mr-5 md:w-10 md:h-10 w-5 h-5 hover:text-twitter text-3xl text-white"
-          >
-            <Twitter />
-          </Link>
+          
+          {socials.map((social) => (
+            <Link
+              title={social.title}
+              href={social.link}
+              key={social.title + social.id}
+              className="md:w-10 md:h-10 w-5 h-5 text-xl text-white md:mr-0 mr-5"
+            >
+              {social.icon}
+            </Link>
+          ))}
         </div>
       </div>
-
-      {/* <div className="md:mt-32 md:pl-0 md:pr-32 mt-2 pr-20 pl-20 flex justify-center w-screen md:w-fit md:block">
-          <Image src='/illustration.png' width={1000} height={1000} alt="image"/>
-      </div> */}
+      
     </div>
   );
 }

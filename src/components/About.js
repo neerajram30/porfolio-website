@@ -1,12 +1,5 @@
 import Tools from "./Tools/Tools";
-
 function About() {
-  const about = [
-    "Software engineer with 1+ years of industrial experience",
-    "1+ year of experience working with one of the major web front-end library React js",
-    "1 year of experience with Material UI",
-    "Experience in working with AWS services",
-  ];
   return (
     <div
       className="pt-10 md:pl-20 pl-10 md:pr-20 pr-10 pb-10 text-white w-screen bg-[#0e131a]"
@@ -18,20 +11,17 @@ function About() {
       <div className="md:flex mt-10 min-h-96">
         <div className="md:justify-around md:w-1/2 md:pr-32">
           <h2 className="md:text-2xl text-xl font-semibold">About me</h2>
-          {/* <ul className="mt-2 pr-10">
-          {about.map((item, i) => (
-            <li className="flex items-center md:text-lg" key={i}>
-              {item}
-            </li>
-          ))}
-        </ul> */}
           <p className="mt-5 text-lg">
-            Passionate web developer with a strong understanding of front-end
-            development principles. Adept at crafting clean, reusable, and
-            performant UI components using React, Redux, and modern JavaScript
-            practices.
+            I am a Software Engineer with strong fundamental knowledge in
+            Computer Science and an eager learner's mentality. Currently working
+            at TCS as a Frontend Web Developer. In this role, I am exploring web
+            technologies and solving problems using them. Most of my work is
+            related to React and its ecosystem. As a Front-End Developer, I work
+            closely with architects, designers, and backend teams to deliver
+            high-quality UI/UX at scale.
           </p>
         </div>
+
         <div className="md:w-1/2 md:pr-10 mt-5 md:mt-0">
           <Tools />
         </div>
