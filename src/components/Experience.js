@@ -31,9 +31,9 @@ function Experience() {
             key={i}
             className="w-fit md:pl-20 step step-primary after:!text-white before:!text-white before:!w-1"
           >
-            <div className="md:ml-[-210px] ml-10 absolute text-md w-48 md:text-end text-start pl-2 md:pl-0 mt-[-80px] md:mt-0">
+            {/* <div className="md:ml-[-210px] ml-10 absolute text-md w-48 md:text-end text-start pl-2 md:pl-0 mt-[-80px] md:mt-0">
               {exp.experience}
-            </div>
+            </div> */}
             <div className="flex flex-col items-start md:p-5 p-3 md:w-[500px] w-72 rounded-md shadow-cards mb-5 md:mt-10 mt-20 mr-10">
               <h6 className="md:text-xl font-semibold text-start text-md">
                 {exp.company}
@@ -46,33 +46,6 @@ function Experience() {
       </ul>
       {/* </div> */}
       {/* </div> */}
-
-      <div className="steps steps-vertical">
-      <div className="step step-primary">
-        <div className="step-content">
-          <div className="step-title">Step 1</div>
-          <div className="step-description">Description for step 1.</div>
-        </div>
-      </div>
-      <div className="step step-secondary">
-        <div className="step-content">
-          <div className="step-title">Step 2</div>
-          <div className="step-description">Description for step 2.</div>
-        </div>
-      </div>
-      <div className="step step-accent">
-        <div className="step-content">
-          <div className="step-title">Step 3</div>
-          <div className="step-description">Description for step 3.</div>
-        </div>
-      </div>
-      <div className="step step-info">
-        <div className="step-content">
-          <div className="step-title">Step 4</div>
-          <div className="step-description">Description for step 4.</div>
-        </div>
-      </div>
-    </div>
     </div>
   );
 }
