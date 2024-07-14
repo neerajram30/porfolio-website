@@ -1,5 +1,5 @@
 import About from "@/components/About";
-import Experience from "@/components/Experience";
+import Experiences from "@/components/Experiences";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import Profile from "@/components/Profile";
@@ -12,9 +12,15 @@ export default function Home() {
     <main className="flex flex-col items-start overflow-x-hidden">
         <NavBar/>
         <Profile/>
+        <section id="about">
         <About/>
+        </section>
+        <section id="projects">
         <Projects/>
-        <Experience/>
+        </section>
+        <section id="experience">
+        <Experiences/>
+        </section>
         {/* <Tools/> */}
         <Footer/>
     </main>

@@ -26,3 +26,11 @@ background: #161d27;
   /* @apply bg-glow; */
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%)
 }
+
+.nav-link.active{
+  text-decoration: underline 3px #646FD4;
+  text-underline-offset: 8px;
+}
+/* .nav-link{
+  color: red;
+} */

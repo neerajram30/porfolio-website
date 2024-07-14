@@ -11,8 +11,8 @@ export default function NavBar() {
   const links = [
     // { name: "Home", href: "/", id:'' },
     { name: "About", href: "/about", id: "about" },
-    { name: "Experience", href: "/experience", id: "experience" },
     { name: "Projects", href: "/projects", id: "projects" },
+    { name: "Experience", href: "/experience", id: "experience" },
     // { name: "Skills", href: "/skills", id: "skills" },
     // { name: "Blogs", href: "/blogs", id:'blogs' },
   ];
@@ -35,6 +35,34 @@ export default function NavBar() {
     }
 
     return () => window.removeEventListener("scroll", handleScroll); // Cleanup
+  }, []);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const handleScroll = () => {
+      let current = null;
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop) {
+          current = section.id;
+        }
+      });
+      navLinks.forEach((link) => {
+        link.classList.remove('active'); // Remove active class from all links
+        if (link.href.includes(`#${current}`)) {
+          link.classList.add('active'); // Add active class to matching link
+        }
+      });
+
+      setActiveLink(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup function to remove event listener on component unmount
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleActiveLink = (linkId, index) => {
@@ -120,15 +148,12 @@ export default function NavBar() {
               <Link
                 href={"#" + link.id}
                 passHref
-                className="text-white ml-5 font-semibold md:block hidden"
+                className="nav-link text-white ml-5 font-semibold md:block hidden"
                 key={link.id}
-                onClick={() => handleActiveLink(link.id, index)}
+                // onClick={() => handleActiveLink(link.id, index)}
               >
-                {/* <a className='dark:hover:text-twitter hover:text-hcolor ml-5 font-extrabold md:block hidden'>{link.name}</a> */}
                 <motion.div
-                className={`${activeLink === link.id ? 'underline underline-offset-[7px] decoration-primary decoration-4':''}`}
-                // transition={spring}
-                // layout
+                // className={`${activeLink === link.id ? 'underline underline-offset-[7px] decoration-primary decoration-2':''}`}
                 >
                 {link.name}
                 </motion.div>

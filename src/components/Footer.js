@@ -1,15 +1,68 @@
-import React from "react";
-import Github from "./Icons/Github";
-import Twitter from "./Icons/Twitter";
-import Dev from "./Icons/Dev";
-import Instagram from "./Icons/Instagram";
+"use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { socials } from "@/config/socialLinks";
-
+import { useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 function Footer() {
+  const [loaded, setLoaded] = useState(false);
+  const { ref, inView } = useInView();
+  const animation = useAnimation();
+  const currentlyLearningAnimation = useAnimation();
+
+  useEffect(() => {
+    if (loaded) return;
+    if (inView) {
+      setLoaded(true);
+      animation.start({
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: "tween",
+          duration: 0.3,
+        },
+      });
+      currentlyLearningAnimation.start({
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: "tween",
+          duration: 0.3,
+          delay: 1.1,
+        },
+      });
+    } else {
+      animation.start({
+        y: "30px",
+        opacity: 0,
+      });
+      currentlyLearningAnimation.start({
+        y: "30px",
+        opacity: 0,
+      });
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView]);
   return (
-    <div className="pt-10 md:pl-20 pl-10 md:pr-20 pr-10 pb-10 text-white w-screen">
-      <div className="md:flex justify-between w-full mb-14">
+    <div className="pt-10 md:pl-20 pl-10 md:pr-20 pr-10 pb-10 text-white w-screen" ref={ref}>
+      <motion.div 
+      className="md:flex justify-between w-full mb-14"
+      transition={{
+        duration: 0.3,
+        delay: 0.5,
+        type: "tween",
+      }}
+      initial={{
+        y: "30px",
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      >
         <div className="w-3/4">
           <h6 className="text-2xl font-semibold mb-2">Contact</h6>
           <div>
@@ -41,11 +94,26 @@ function Footer() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
       <hr className="text-white bg-white" />
 
       <div className="text-center pt-8">
-        <p className="text-xs">© Copyright 2024 . Made by Neeraj M R. Powered by Next js</p>
+        <motion.p 
+        className="text-xs"
+        transition={{
+          duration: 0.3,
+          delay: 0.5,
+          type: "tween",
+        }}
+        initial={{
+          y: "30px",
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        >© Copyright 2024 . Made by Neeraj M R. Powered by Next js</motion.p>
       </div>
     </div>
   );

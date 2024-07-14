@@ -1,38 +1,118 @@
 "use client";
-import React from "react";
-import Github from "./Icons/Github";
-import Twitter from "./Icons/Twitter";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import { SiGithub, SiGmail, SiInstagram, SiLinkedin, SiX } from "react-icons/si";
 import { socials } from "@/config/socialLinks";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+
 function Profile() {
+  const [loaded, setLoaded] = useState(false);
+  const { ref, inView } = useInView();
+  const animation = useAnimation();
+  const currentlyLearningAnimation = useAnimation();
+
+  useEffect(() => {
+    if (loaded) return;
+    if (inView) {
+      setLoaded(true);
+      animation.start({
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: "tween",
+          duration: 0.3,
+        },
+      });
+      currentlyLearningAnimation.start({
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: "tween",
+          duration: 0.3,
+          delay: 1.1,
+        },
+      });
+    } else {
+      animation.start({
+        y: "30px",
+        opacity: 0,
+      });
+      currentlyLearningAnimation.start({
+        y: "30px",
+        opacity: 0,
+      });
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView]);
+
   return (
-    <div className="h-screen md:h-screen lg:h-screen w-screen">
+    <div className="h-screen md:h-screen lg:h-screen w-screen" ref={ref}>
       <div className="flex flex-col md:pl-52 pl-10 pt-24 md:items-start items-start mt-10">
-        <h1
+        <motion.h1
           className="md:text-5xl text-3xl w-fit font-black font-overpass text-white"
           id="head"
+          transition={{
+            duration: 0.3,
+            delay: 0.5,
+            type: "tween",
+          }}
+          initial={{
+            y: "30px",
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
         >
           <span>{"Hy, I'm "}</span>
           <span className="text-primary">Neeraj MR</span>{" "}
-        </h1>
-        <div>
+        </motion.h1>
+        <motion.div
+          transition={{
+            duration: 0.3,
+            delay: 0.5,
+            type: "tween",
+          }}
+          initial={{
+            y: "30px",
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+        >
           <h6 className="mt-2 md:text-xl text-md font-bold text-white">
             {/* ASE at Tata Consultancy Services */}
             Fullstack Developer
           </h6>
-        </div>
+        </motion.div>
 
-        <div className="md:w-3/6 w-5/6 pt-8 break-words">
+        <motion.div
+          className="md:w-3/6 w-5/6 pt-8 break-words"
+          transition={{
+            duration: 0.3,
+            delay: 0.5,
+            type: "tween",
+          }}
+          initial={{
+            y: "30px",
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+        >
           <p className="md:text-lg text-white">
             Passionate web developer with a strong understanding of front-end
             development principles. Adept at crafting clean, reusable, and
             performant UI components using React, Redux, and modern JavaScript
             practices.
           </p>
-        </div>
+        </motion.div>
         <motion.div
           className="mt-12"
           transition={{
@@ -59,8 +139,22 @@ function Profile() {
           </Link>
         </motion.div>
 
-        <div className="flex mt-8">
-          
+        <motion.div
+          className="flex mt-8"
+          transition={{
+            duration: 0.3,
+            delay: 0.5,
+            type: "tween",
+          }}
+          initial={{
+            y: "30px",
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+        >
           {socials.map((social) => (
             <Link
               title={social.title}
@@ -71,9 +165,8 @@ function Profile() {
               {social.icon}
             </Link>
           ))}
-        </div>
+        </motion.div>
       </div>
-      
     </div>
   );
 }

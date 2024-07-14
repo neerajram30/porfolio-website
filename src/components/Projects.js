@@ -6,6 +6,7 @@ import Image from "next/image";
 import { StarIcon } from "@heroicons/react/solid";
 import axios from "axios";
 import Bubbles from "./Bubbles";
+import Project from "./Project";
 
 function Projects() {
   const [loaded, setLoaded] = useState(false);
@@ -46,17 +47,17 @@ function Projects() {
         "Helps police officers to find missing people using Artificial Intelligence",
       owner: "neerajram30",
       repo: "God-s-Eye",
-      image:'/portfolio.png'
-
+      image: "/portfolio.png",
     },
     {
       title: "Portfolio Website",
       github: "https://github.com/neerajram30/porfolio-website",
       technologies: ["Nextjs", "Tailwind CSS", "DaisyUI"],
-      description: "My personal portfolio website showcasing side projects and experience",
+      description:
+        "My personal portfolio website showcasing side projects and experience",
       owner: "neerajram30",
       repo: "porfolio-website",
-      image:'/portfolio.png'
+      image: "/portfolio.png",
     },
   ];
 
@@ -97,29 +98,13 @@ function Projects() {
         <div className="flex items-center justify-center">
           <div className="w-screen md:px-2 px-5 md:flex md:flex-wrap md:justify-center block">
             {projects.map((item, i) => (
-              <div
-                className="hover:shadow-cards flex md:h-44 h-auto hover:cursor-pointer hover:bg-[#0e131a] mt-5 rounded-lg md:w-5/12 md:mx-5 md:py-0 py-3"
-                key={item.title}
-              >
-                <div className="md:w-2/6 w-2/6 h-full flex justify-center items-start md:mt-2 md:pl-0 pl-2">
-                  <div className="h-fit w-fit shadow-cards p-1">
-                  <Image src={item.image} width={160} height={70} alt={item.title}/>
-                  </div>
-                </div>
-                <div className="md:px-2 md:pr-8 py-2 px-4 w-4/6">
-                  <h6 className="text-xl font-semibold">{item.title}</h6>
-                  <p className="mt-2 md:text-md text-sm">{item.description}</p>
-                  <div className="text-xs flex h-8 justify-start items-center">
-                    <StarIcon className="size-3" />
-                    <p className="ml-2 font-semibold">
-                      {starsDetails[i] ? starsDetails[i] : 0}
-                    </p>
-                  </div>
-                  <div className="flex md:mt-0 mt-1">
-                    <Bubbles data={item.technologies}/>
-                  </div>
-                </div>
-              </div>
+              <Project
+                data={item}
+                key={item.title + "_" + i}
+                starsDetails={starsDetails[i]}
+                delay={i / 30 + 0.05}
+                inView={inView}
+              />
             ))}
           </div>
         </div>
