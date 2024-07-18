@@ -10,7 +10,7 @@ import Project from "./Project";
 
 function Projects() {
   const [loaded, setLoaded] = useState(false);
-  const [starsDetails, setStarsDetails] = useState([]);
+  const [starsDetails, setStarsDetails] = useState(null);
   const { ref, inView } = useInView();
 
   const animation = useAnimation();
@@ -70,7 +70,11 @@ function Projects() {
           `https://api.github.com/repos/${owner}/${repo}`
         );
         const stars = response?.data?.stargazers_count;
-        starsData.push(stars);
+        console.log("Stars",stars);
+        starsData.push({[repo]:stars});
+        setStarsDetails((prev)=> {
+          return {...prev, [repo]:stars}
+        })
       } catch (error) {
         console.log("error11");
       }
@@ -78,7 +82,8 @@ function Projects() {
     projects.map((item) => {
       getStars(item.owner, item.repo);
     });
-    setStarsDetails(starsData);
+    // console.log("Stars data",starsData);
+    // setStarsDetails(starsData);
   }, []);
 
   return (
@@ -101,7 +106,7 @@ function Projects() {
               <Project
                 data={item}
                 key={item.title + "_" + i}
-                starsDetails={starsDetails[i]}
+                starsDetails={starsDetails}
                 delay={i / 30 + 0.05}
                 inView={inView}
               />

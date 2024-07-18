@@ -37,6 +37,7 @@ function Project(props) {
       key={data.title}
       animate={animation}
     >
+      
       <div className="md:w-2/6 w-2/6 h-full flex justify-center items-start md:mt-2 md:pl-0 pl-2">
         <div className="h-fit w-fit shadow-cards p-1">
           <Image src={data.image} width={160} height={70} alt={data.title} />
@@ -48,7 +49,7 @@ function Project(props) {
         <div className="text-xs flex h-8 justify-start items-center">
           <StarIcon className="size-3" />
           <p className="ml-2 font-semibold">
-            {starsDetails ? starsDetails : 0}
+            {starsDetails && starsDetails[data.repo]}
           </p>
         </div>
         <div className="flex md:mt-0 mt-1">

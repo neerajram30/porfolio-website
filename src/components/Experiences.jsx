@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Experience from "./Experience";
 import { useInView } from "react-intersection-observer";
-import { useAnimation } from "framer-motion";
+import { useAnimation, motion } from "framer-motion";
 
 function Experiences() {
   const [loaded, setLoaded] = useState(false);
@@ -59,6 +59,7 @@ function Experiences() {
         {" "}
         Experience
       </h2>
+      {/* <motion.div variants={underlineVariants} animate="hover" /> */}
       <div className="md:px-20 mt-5">
         {experience.map((exp, i) => (
           <Experience
