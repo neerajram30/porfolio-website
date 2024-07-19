@@ -4,12 +4,15 @@ import React, { useEffect, useState } from "react";
 import Bubbles from "./Bubbles";
 import { useInView } from "react-intersection-observer";
 import { useAnimation, motion } from "framer-motion";
+import LinkArrow from "./Icons/LinkArrow";
+import Link from "next/link";
+import Github from "./Icons/Github";
 
 function Project(props) {
-  const { data, starsDetails, inView, delay} = props;
+  const { data, starsDetails, inView, delay } = props;
   const [loaded, setLoaded] = useState(false);
   const animation = useAnimation();
-  
+
   useEffect(() => {
     if (loaded) return;
     if (props.inView) {
@@ -33,20 +36,27 @@ function Project(props) {
   }, [inView]);
   return (
     <motion.div
-      className="hover:shadow-cards flex md:h-44 h-auto hover:cursor-pointer bg-[#0e131a] mt-5 rounded-lg md:w-5/12 md:mx-5 md:py-0 py-3"
+      className="hover:shadow-cards flex md:h-48 h-auto hover:cursor-pointer bg-[#0e131a] mt-5 rounded-lg md:w-5/12 md:mx-5 md:py-2 py-3"
       key={data.title}
       animate={animation}
     >
-      
-      <div className="md:w-2/6 w-2/6 h-full flex justify-center items-start md:mt-2 md:pl-0 pl-2">
+      <div className="md:w-2/6 w-2/6 h-full flex justify-center items-start md:pt-8 pl-3 md:block hidden">
         <div className="h-fit w-fit shadow-cards p-1">
           <Image src={data.image} width={160} height={70} alt={data.title} />
         </div>
       </div>
-      <div className="md:px-2 md:pr-8 py-2 px-4 w-4/6">
-        <h6 className="text-xl font-semibold">{data.title}</h6>
-        <p className="mt-2 md:text-md text-sm">{data.description}</p>
-        <div className="text-xs flex h-8 justify-start items-center">
+      <div className="md:px-2 md:pr-8 py-3 px-6 md:w-4/6 w-full">
+        <div className="flex items-center">
+          <h6 className="text-xl font-semibold">{data.title}</h6>
+          <Link className="ml-4" href={data.link}>
+            <LinkArrow classNames="size-4 hover:scale-105 transition-all duration-500" />
+          </Link>
+          <Link className="ml-3 hover:scale-105 transition-all duration-500 text-sm" href={data.github}>
+            <Github/>
+          </Link>
+        </div>
+        <p className="md:mt-2 mt-5 text-md">{data.description}</p>
+        <div className="text-xs flex h-8 justify-start items-center mt-2 md:mt-0">
           <StarIcon className="size-3" />
           <p className="ml-2 font-semibold">
             {starsDetails && starsDetails[data.repo]}

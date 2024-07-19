@@ -2,10 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Image from "next/image";
-import { StarIcon } from "@heroicons/react/solid";
 import axios from "axios";
-import Bubbles from "./Bubbles";
 import Project from "./Project";
 
 function Projects() {
@@ -41,13 +38,14 @@ function Projects() {
   const projects = [
     {
       title: "God's Eye",
-      github: "https://github.com/neerajram30/Netflix-UI-clone",
+      github: "https://github.com/neerajram30/God-s-Eye",
       technologies: ["Python", "Flask", "Dlib"],
       description:
         "Helps police officers to find missing people using Artificial Intelligence",
       owner: "neerajram30",
       repo: "God-s-Eye",
-      image: "/portfolio.png",
+      image: "/godeye.jpg",
+      link:"https://github.com/neerajram30/God-s-Eye"
     },
     {
       title: "Portfolio Website",
@@ -58,6 +56,7 @@ function Projects() {
       owner: "neerajram30",
       repo: "porfolio-website",
       image: "/portfolio.png",
+      link:"https://neerajram.netlify.app/"
     },
   ];
 
