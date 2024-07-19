@@ -1,28 +1,41 @@
+"use client";
 import About from "@/components/About";
 import Experiences from "@/components/Experiences";
 import Footer from "@/components/Footer";
+import Loader from "@/components/Loader";
 import NavBar from "@/components/NavBar";
 import Profile from "@/components/Profile";
 import Projects from "@/components/Projects";
-import Tools from "@/components/Tools/Tools";
-
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    const timeout = setTimeout(() => {
+      setLoading(false);
+      // timeout = null;
+    }, 5000);
+    return () => clearTimeout(timeout);
+  }, []);
   return (
     <main className="flex flex-col items-start overflow-x-hidden">
-        <NavBar/>
-        <Profile/>
+      {!loading ?<>
+        <NavBar />
+        <Profile />
         <section id="about">
-        <About/>
+          <About />
         </section>
         <section id="projects">
-        <Projects/>
+          <Projects />
         </section>
         <section id="experience">
-        <Experiences/>
+          <Experiences />
         </section>
-        {/* <Tools/> */}
-        <Footer/>
+        <Footer />
+      </>:
+      <Loader/>
+      }
     </main>
   );
 }
