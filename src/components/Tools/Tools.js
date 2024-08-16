@@ -10,19 +10,17 @@ function Tools() {
   const animation = useAnimation();
   const currentlyLearningAnimation = useAnimation();
   const tools = [
-    "Java",
     "Javascript",
     "React Js",
-    "Next Js",
-    "Node Js",
-    "Express",
-    "MongoDB",
-    "Python",
-    "Flask",
-    "Fast api",
-    "PostgreSQL",
-    "C",
-    "C++",
+    "Node JS",
+    "Next JS",
+    "Tailwind CSS",
+    "GraphQL",
+    "Git",
+    "Github",
+    "Aws Services",
+    "CI/CD Pipeline",
+    "Docker",
   ];
 
   useEffect(() => {
