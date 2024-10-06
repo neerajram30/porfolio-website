@@ -42,7 +42,7 @@ function Experiences() {
     {
       company: "TCS",
       designation: "Assistant System Engineer Trainee",
-      work: "Attended the TCS Initial Learning Program (IPL) at the TCS center in Kochi. It was a great opportunity to gain some industry insights by working alongside an experienced Talent & Development (TD) team. I learned Java and the basics of web development, and even worked on a mini-project that we presented to the TD heads.",
+      work: "Attended the TCS Initial Learning Program (ILP) at the TCS center in Kochi. It was a great opportunity to gain some industry insights by working alongside an experienced Talent & Development (TD) team. I learned Java and the basics of web development, and even worked on a mini-project that we presented to the TD heads.",
       experience: "Sep 2022 - Nov 2022",
       location: "Kochi",
       website: { display: "tcs.com", link: "https://www.tcs.com/" },
