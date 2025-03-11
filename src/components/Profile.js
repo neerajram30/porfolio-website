@@ -86,7 +86,7 @@ function Profile() {
         >
           <h6 className="mt-2 md:text-xl text-md font-bold text-white">
             {/* ASE at Tata Consultancy Services */}
-            Fullstack Developer
+            Frontend Developer
           </h6>
         </motion.div>
 
@@ -109,7 +109,7 @@ function Profile() {
           <p className="md:text-lg text-white">
             Passionate web developer with a strong understanding of front-end
             development principles. Adept at crafting clean, reusable, and
-            performant UI components using React, Redux, and modern JavaScript
+            performant UI components using React JS, Redux, and modern JavaScript
             practices.
           </p>
         </motion.div>
@@ -130,8 +130,9 @@ function Profile() {
           }}
         >
           <Link
+            target="_blank"
             type="submit"
-            href="https://drive.google.com/file/d/1AjJjNmpLZnDZo3PkDouYOJjtoVk3paUX/view?usp=sharing"
+            href="https://drive.google.com/file/d/1GbmgU_YQuA5fDJVQBUtyDIoBr56RfeKM/view"
           >
             <button className="mb-5 bg-primary h-10 w-28 rounded-sm text-white  hover:border-white font-overpass font-semibold text-sm">
               Get resume

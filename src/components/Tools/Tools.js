@@ -11,16 +11,17 @@ function Tools() {
   const currentlyLearningAnimation = useAnimation();
   const tools = [
     "Javascript",
-    "React Js",
+    "React JS",
     "Node JS",
     "Next JS",
     "Tailwind CSS",
-    "GraphQL",
+    "Typescript",
+    "Redux",
+    "Zustand",
+    "React Query",
     "Git",
-    "Github",
-    "Aws Services",
+    "AWS Lambda",
     "CI/CD Pipeline",
-    "Docker",
   ];
 
   useEffect(() => {
