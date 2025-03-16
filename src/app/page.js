@@ -6,6 +6,7 @@ import Loader from "@/components/Loader";
 import NavBar from "@/components/NavBar";
 import Profile from "@/components/Profile";
 import Projects from "@/components/Projects";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -19,23 +20,34 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, []);
   return (
-    <main className="flex flex-col items-start overflow-x-hidden">
-      {!loading ?<>
-        <NavBar />
-        <Profile />
-        <section id="about">
-          <About />
-        </section>
-        <section id="projects">
-          <Projects />
-        </section>
-        <section id="experience">
-          <Experiences />
-        </section>
-        <Footer />
-      </>:
-      <Loader/>
-      }
-    </main>
+    <>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="SS5GO0NWJv7wWHeWAgKj--lo-fU-WiuBrogioNJbUnM"
+        />
+         <meta name="description" content="Neeraj M R React developer"/>
+      </Head>
+      <main className="flex flex-col items-start overflow-x-hidden">
+        {!loading ? (
+          <>
+            <NavBar />
+            <Profile />
+            <section id="about">
+              <About />
+            </section>
+            <section id="projects">
+              <Projects />
+            </section>
+            <section id="experience">
+              <Experiences />
+            </section>
+            <Footer />
+          </>
+        ) : (
+          <Loader />
+        )}
+      </main>
+    </>
   );
 }
