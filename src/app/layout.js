@@ -7,7 +7,8 @@ const space_grotesk = Space_Grotesk({ subsets: ["latin"] });
 export const metadata = {
   title: "Neeraj MR | Full stack developer",
   description: "Neeraj's developer portfolio",
-  ogImage: 'https://neerajram.netlify.app/portfolio.png'
+  ogImage: 'https://neerajram.netlify.app/portfolio.png',
+  verification: { google: "SS5GO0NWJv7wWHeWAgKj--lo-fU-WiuBrogioNJbUnM" },
 };
 
 export default async function RootLayout({ children }) {

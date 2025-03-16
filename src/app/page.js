@@ -21,13 +21,13 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Head>
+      {/* <Head>
         <meta
           name="google-site-verification"
           content="SS5GO0NWJv7wWHeWAgKj--lo-fU-WiuBrogioNJbUnM"
         />
          <meta name="description" content="Neeraj M R React developer"/>
-      </Head>
+      </Head> */}
       <main className="flex flex-col items-start overflow-x-hidden">
         {!loading ? (
           <>
