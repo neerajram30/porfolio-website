@@ -81,9 +81,7 @@ function Projects() {
     projects.map((item) => {
       getStars(item.owner, item.repo);
     });
-    // console.log("Stars data",starsData);
-    // setStarsDetails(starsData);
-  }, []);
+  }, [projects]);
 
   return (
     <div

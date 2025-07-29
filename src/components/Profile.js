@@ -107,10 +107,14 @@ function Profile() {
           }}
         >
           <p className="md:text-lg text-white">
-            Passionate web developer with a strong understanding of front-end
-            development principles. Adept at crafting clean, reusable, and
-            performant UI components using React JS, Redux, and modern JavaScript
-            practices.
+            Passionate Software Engineer with a strong understanding of Fronend and Backend 
+            technologies, including React JS, Redux, Node.js, and Express.js.
+            Experienced in building scalable web applications and implementing
+            responsive designs. Proficient in collaborating with cross-functional
+            teams to deliver high-quality software solutions that meet
+            user requirements. Committed to continuous learning and staying
+            updated with the latest industry trends and best practices in software
+            development.
           </p>
         </motion.div>
         <motion.div
