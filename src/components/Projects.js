@@ -45,7 +45,7 @@ function Projects() {
       owner: "neerajram30",
       repo: "God-s-Eye",
       image: "/godeye.jpg",
-      link:"https://github.com/neerajram30/God-s-Eye"
+      link: "https://github.com/neerajram30/God-s-Eye",
     },
     {
       title: "Portfolio Website",
@@ -56,7 +56,7 @@ function Projects() {
       owner: "neerajram30",
       repo: "porfolio-website",
       image: "/portfolio.png",
-      link:"https://neerajram.netlify.app/"
+      link: "https://neerajram.netlify.app/",
     },
   ];
 
@@ -69,11 +69,11 @@ function Projects() {
           `https://api.github.com/repos/${owner}/${repo}`
         );
         const stars = response?.data?.stargazers_count;
-        console.log("Stars",stars);
-        starsData.push({[repo]:stars});
-        setStarsDetails((prev)=> {
-          return {...prev, [repo]:stars}
-        })
+        console.log("Stars", stars);
+        starsData.push({ [repo]: stars });
+        setStarsDetails((prev) => {
+          return { ...prev, [repo]: stars };
+        });
       } catch (error) {
         console.log("error11");
       }
@@ -81,7 +81,7 @@ function Projects() {
     projects.map((item) => {
       getStars(item.owner, item.repo);
     });
-  }, [projects]);
+  }, []);
 
   return (
     <div

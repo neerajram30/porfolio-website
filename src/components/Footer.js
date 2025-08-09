@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { socials } from "@/config/socialLinks";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { socials } from "./config/socialLinks";
 function Footer() {
   const [loaded, setLoaded] = useState(false);
   const { ref, inView } = useInView();
@@ -89,7 +89,7 @@ function Footer() {
                 key={social.title + social.id}
                 className="md:w-10 md:h-10 w-5 h-5 text-xl text-white md:mr-0 mr-5"
               >
-                {social.icon}
+                <social.icon/>
               </Link>
             ))}
           </div>

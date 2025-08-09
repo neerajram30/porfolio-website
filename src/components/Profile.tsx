@@ -1,9 +1,10 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
-import { socials } from "@/config/socialLinks";
+
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { socials } from "./config/socialLinks";
 
 function Profile() {
   const [loaded, setLoaded] = useState(false);
@@ -107,14 +108,14 @@ function Profile() {
           }}
         >
           <p className="md:text-lg text-white">
-            Passionate Software Engineer with a strong understanding of Fronend and Backend 
-            technologies, including React JS, Redux, Node.js, and Express.js.
-            Experienced in building scalable web applications and implementing
-            responsive designs. Proficient in collaborating with cross-functional
-            teams to deliver high-quality software solutions that meet
-            user requirements. Committed to continuous learning and staying
-            updated with the latest industry trends and best practices in software
-            development.
+            Passionate Software Engineer with a strong understanding of Fronend
+            and Backend technologies, including React JS, Redux, Node.js, and
+            Express.js. Experienced in building scalable web applications and
+            implementing responsive designs. Proficient in collaborating with
+            cross-functional teams to deliver high-quality software solutions
+            that meet user requirements. Committed to continuous learning and
+            staying updated with the latest industry trends and best practices
+            in software development.
           </p>
         </motion.div>
         <motion.div
@@ -167,7 +168,7 @@ function Profile() {
               key={social.title + social.id}
               className="md:w-10 md:h-10 w-5 h-5 text-xl text-white md:mr-0 mr-5"
             >
-              {social.icon}
+              <social.icon />
             </Link>
           ))}
         </motion.div>

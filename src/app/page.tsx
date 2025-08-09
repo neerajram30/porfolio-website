@@ -1,14 +1,13 @@
 "use client";
-import About from "@/components/About";
-import Experiences from "@/components/Experiences";
-import Footer from "@/components/Footer";
-import Loader from "@/components/Loader";
-import NavBar from "@/components/NavBar";
-import Profile from "@/components/Profile";
-import Projects from "@/components/Projects";
-import Head from "next/head";
-import { useEffect, useState } from "react";
 
+import { useEffect, useState } from "react";
+import NavBar from "../components/NavBar";
+import Profile from "../components/Profile";
+import About from "../components/About";
+import Projects from "../components/Projects";
+import Experiences from "../components/Experiences";
+import Footer from "../components/Footer";
+import Loader from "../components/Loader";
 export default function Home() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
