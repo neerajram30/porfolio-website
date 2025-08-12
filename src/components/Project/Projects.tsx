@@ -63,13 +63,11 @@ function Projects() {
   useEffect(() => {
     let starsData = [];
     const getStars = async (owner, repo) => {
-      console.log(owner + "," + repo);
       try {
         const response = await axios.get(
           `https://api.github.com/repos/${owner}/${repo}`
         );
         const stars = response?.data?.stargazers_count;
-        console.log("Stars", stars);
         starsData.push({ [repo]: stars });
         setStarsDetails((prev) => {
           return { ...prev, [repo]: stars };

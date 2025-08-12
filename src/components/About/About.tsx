@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import Tools from "./Tools/Tools";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Tools from '../Tools/Tools'
 function About() {
   const [loaded, setLoaded] = useState(false);
   const { ref, inView } = useInView();

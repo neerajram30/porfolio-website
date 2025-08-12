@@ -5,7 +5,6 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CodeIcon, MenuIcon, XIcon, HomeIcon } from "@heroicons/react/solid";
-import { usePathname } from "next/navigation";
 
 export default function NavBar() {
   const links = [

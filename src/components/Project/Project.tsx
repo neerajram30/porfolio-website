@@ -1,14 +1,31 @@
 import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import Bubbles from "./Bubbles";
+import Bubbles from "../assets/Bubbles";
 import { useInView } from "react-intersection-observer";
 import { useAnimation, motion } from "framer-motion";
-import LinkArrow from "./Icons/LinkArrow";
+import LinkArrow from "../Icons/LinkArrow";
 import Link from "next/link";
-import Github from "./Icons/Github";
+import Github from "../Icons/Github";
 
-function Project(props) {
+interface ProjectDataI {
+  title: string;
+  image: string;
+  link: string;
+  github: string;
+  description: string;
+  technologies: string[];
+  repo: string;
+}
+
+interface ProjectI {
+  data: ProjectDataI;
+  starsDetails: object;
+  inView: boolean;
+  delay: number;
+}
+
+function Project(props: ProjectI) {
   const { data, starsDetails, inView, delay } = props;
   const [loaded, setLoaded] = useState(false);
   const animation = useAnimation();
@@ -51,8 +68,11 @@ function Project(props) {
           <Link className="ml-4" href={data.link}>
             <LinkArrow classNames="size-4 hover:scale-105 transition-all duration-500" />
           </Link>
-          <Link className="ml-3 hover:scale-105 transition-all duration-500 text-sm" href={data.github}>
-            <Github/>
+          <Link
+            className="ml-3 hover:scale-105 transition-all duration-500 text-sm"
+            href={data.github}
+          >
+            <Github />
           </Link>
         </div>
         <p className="md:mt-2 mt-5 text-md">{data.description}</p>

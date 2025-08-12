@@ -5,7 +5,7 @@ interface Social {
   id: number;
   title: string;
   link: string;
-  icon: ComponentType;
+  icon: ComponentType<{className?:string}>;
 }
 
 export const socials: Social[] = [

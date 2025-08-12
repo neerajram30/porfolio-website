@@ -1,11 +1,33 @@
-"use client"
+"use client";
 import { LocationMarkerIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Bubbles from "./Bubbles";
-import { useAnimation } from "framer-motion";
+import Bubbles from "../assets/Bubbles";
+import { useAnimation, motion } from "framer-motion";
 
-function Experience(props) {
+interface WebsiteI {
+  link: string;
+  display: string;
+}
+
+interface DataI {
+  designation: string;
+  company: string;
+  experience: string;
+  location: string;
+  work: string;
+  skills: string[];
+  website: WebsiteI;
+}
+
+interface ExperienceI {
+  data: DataI;
+  index: number;
+  delay: number;
+  inView?: boolean;
+}
+
+function Experience(props: ExperienceI) {
   const { data, index, delay, inView } = props;
   const animation = useAnimation();
   const [loaded, setLoaded] = useState(false);
@@ -32,11 +54,10 @@ function Experience(props) {
   }, [inView]);
 
   return (
-    <div
+    <motion.div
       className="collapse collapse-plus bg-[#161d27] rounded-none mt-2"
       //   key={data.company + index}
       animate={animation}
-
     >
       <input type="radio" name="my-accordion-3" defaultChecked={index === 0} />
       <div className="collapse-title md:text-xl text-sm font-medium">
@@ -79,7 +100,7 @@ function Experience(props) {
           <Bubbles data={data.skills} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { inView, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export default function Tool (props) {
+interface ToolI {
+  tool: string;
+  delay: number;
+  key: number;
+  inView?:boolean;
+}
+
+
+export default function Tool (props: ToolI) {
   const [loaded, setLoaded] = useState(false);
   const animation = useAnimation();
   useEffect(() => {

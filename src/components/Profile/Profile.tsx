@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { socials } from "./config/socialLinks";
+import { socials } from "../config/socialLinks";
 
 function Profile() {
   const [loaded, setLoaded] = useState(false);

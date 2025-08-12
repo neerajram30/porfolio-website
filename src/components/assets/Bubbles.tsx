@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 function Bubbles(props) {
   const { data } = props;
   return (

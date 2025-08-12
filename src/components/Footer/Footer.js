@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { socials } from "./config/socialLinks";
+import { socials } from "../config/socialLinks";
 function Footer() {
   const [loaded, setLoaded] = useState(false);
   const { ref, inView } = useInView();
@@ -88,6 +88,7 @@ function Footer() {
                 href={social.link}
                 key={social.title + social.id}
                 className="md:w-10 md:h-10 w-5 h-5 text-xl text-white md:mr-0 mr-5"
+                target="_blank"
               >
                 <social.icon/>
               </Link>
