@@ -5,7 +5,7 @@ import Profile from "../components/Profile/Profile";
 import Projects from "../components/Project/Projects";
 import Experiences from "../components/Experience/Experiences";
 import Loader from "../components/assets/Loader";
-import About from "src/components/About/About";
+import About from "../components/About/About";
 import Footer from '../components/Footer/Footer'
 export default function Home() {
   const [loading, setLoading] = useState(false);
