@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -17,7 +17,7 @@ export default function NavBar() {
   ];
   const { theme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('');
+  const [activeLink, setActiveLink] = useState("");
   const [hashShadow, setHasShadow] = useState(false);
 
   useEffect(() => {
@@ -37,8 +37,9 @@ export default function NavBar() {
   }, []);
 
   useEffect(() => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll("section");
+    const navLinks: NodeListOf<HTMLAnchorElement> =
+      document.querySelectorAll(".nav-link");
 
     const handleScroll = () => {
       let current = null;
@@ -49,40 +50,38 @@ export default function NavBar() {
         }
       });
       navLinks.forEach((link) => {
-        link.classList.remove('active'); // Remove active class from all links
-        if (link.href.includes(`#${current}`)) {
-          link.classList.add('active'); // Add active class to matching link
+        link.classList.remove("active"); // Remove active class from all links
+        if (current && link.hash === `#${current}`) {
+          link.classList.add("active"); // Add active class to matching link
         }
       });
 
       setActiveLink(current);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Cleanup function to remove event listener on component unmount
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleActiveLink = (linkId, index) => {
     if (linkId === links[index]?.id) {
       setActiveLink(linkId);
     }
-  }
+  };
 
   const spring = {
     type: "spring",
     stiffness: 700,
-    damping: 30
+    damping: 30,
   };
 
   return (
     <nav
       className={`bg-[#161d27] h-14 md:fixed fixed w-screen z-10 p-0
-      ${hashShadow ? "shadow-nav" : "shadow-none"
-        }`}
+      ${hashShadow ? "shadow-nav" : "shadow-none"}`}
     >
-
       {open && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -137,13 +136,18 @@ export default function NavBar() {
       </div>
       <div className="flex justify-between items-center h-fit pr-10">
         <div className="mt-[-30px] md:mt-0 md:pt-2">
-          <Link href='#'>
-            <div className="text-primary ml-10 flex md:inline-flex bg-blue-300"><div><CodeIcon className="size-8 text-blue-500" /></div><h1 className="ml-3 text-lg pt-[2.5px] font-bold">Neeraj</h1></div>
+          <Link href="#">
+            <div className="text-primary ml-10 flex md:inline-flex bg-blue-300">
+              <div>
+                <CodeIcon className="size-8 text-blue-500" />
+              </div>
+              <h1 className="ml-3 text-lg pt-[2.5px] font-bold">Neeraj</h1>
+            </div>
           </Link>
         </div>
         <div className="md:flex space-x-3 justify-between items-center">
           <div className="md:flex pl-2 md:ml-12 pt-1 items-center">
-            {links.map((link,index) => (
+            {links.map((link, index) => (
               <Link
                 href={"#" + link.id}
                 passHref
@@ -154,7 +158,7 @@ export default function NavBar() {
                 <motion.div
                 // className={`${activeLink === link.id ? 'underline underline-offset-[7px] decoration-primary decoration-2':''}`}
                 >
-                {link.name}
+                  {link.name}
                 </motion.div>
               </Link>
             ))}
