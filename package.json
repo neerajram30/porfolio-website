@@ -10,7 +10,7 @@
     "export": "next export"
   },
   "dependencies": {
-    "@apollo/client": "^3.9.7",
+    "@apollo/client": "^3.13.9",
     "@fontsource/inter": "^4.5.11",
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
