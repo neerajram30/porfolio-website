@@ -10,18 +10,22 @@ function Tools() {
   const animation = useAnimation();
   const currentlyLearningAnimation = useAnimation();
   const tools = [
-    "Javascript",
-    "React JS",
-    "Node JS",
-    "Next JS",
+    "JavaScript",
+    "React.js",
+    "Next.js",
+    "TypeScript",
     "Tailwind CSS",
-    "Typescript",
-    "Redux",
-    "Zustand",
-    "React Query",
-    "Git",
+    "Shadcn",
+    "GraphQL",
+    "Redux Toolkit",
+    "RTK Query",
+    "Node.js",
     "AWS Lambda",
-    "CI/CD Pipeline",
+    "AWS",
+    "Git",
+    "CI/CD",
+    "Vitest",
+    "React Testing Library",
   ];
 
   useEffect(() => {

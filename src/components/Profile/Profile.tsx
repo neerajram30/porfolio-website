@@ -1,166 +1,74 @@
 "use client";
-import { motion, useAnimation } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
-
-import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { socials } from "../config/socialLinks";
 
+const container: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
+
+const item: Variants = {
+  hidden: { y: 30, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 80, damping: 18 },
+  },
+};
+
 function Profile() {
-  const [loaded, setLoaded] = useState(false);
-  const { ref, inView } = useInView();
-  const animation = useAnimation();
-  const currentlyLearningAnimation = useAnimation();
-
-  useEffect(() => {
-    if (loaded) return;
-    if (inView) {
-      setLoaded(true);
-      animation.start({
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: "tween",
-          duration: 0.3,
-        },
-      });
-      currentlyLearningAnimation.start({
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: "tween",
-          duration: 0.3,
-          delay: 1.1,
-        },
-      });
-    } else {
-      animation.start({
-        y: "30px",
-        opacity: 0,
-      });
-      currentlyLearningAnimation.start({
-        y: "30px",
-        opacity: 0,
-      });
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inView]);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <div className="h-screen md:h-screen lg:h-screen w-screen" ref={ref}>
-      <div className="flex flex-col md:pl-52 pl-10 pt-24 md:items-start items-start mt-10">
+      <motion.div
+        className="flex flex-col md:pl-52 pl-10 pt-24 md:items-start items-start mt-10"
+        variants={container}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
         <motion.h1
           className="md:text-5xl text-3xl w-fit font-black font-overpass text-white"
           id="head"
-          transition={{
-            duration: 0.3,
-            delay: 0.5,
-            type: "tween",
-          }}
-          initial={{
-            y: "30px",
-            opacity: 0,
-          }}
-          animate={{
-            y: 0,
-            opacity: 1,
-          }}
+          variants={item}
         >
           <span>{"Hy, I'm "}</span>
-          <span className="text-primary">Neeraj MR</span>{" "}
+          <span className="text-primary">Neeraj MR</span>
         </motion.h1>
-        <motion.div
-          transition={{
-            duration: 0.3,
-            delay: 0.5,
-            type: "tween",
-          }}
-          initial={{
-            y: "30px",
-            opacity: 0,
-          }}
-          animate={{
-            y: 0,
-            opacity: 1,
-          }}
-        >
-          <h6 className="mt-2 md:text-xl text-md font-bold text-white">
-            {/* ASE at Tata Consultancy Services */}
-            Frontend Developer
-          </h6>
-        </motion.div>
 
-        <motion.div
-          className="md:w-3/6 w-5/6 pt-8 break-words"
-          transition={{
-            duration: 0.3,
-            delay: 0.5,
-            type: "tween",
-          }}
-          initial={{
-            y: "30px",
-            opacity: 0,
-          }}
-          animate={{
-            y: 0,
-            opacity: 1,
-          }}
+        <motion.h6
+          className="mt-2 md:text-xl text-md font-bold text-white"
+          variants={item}
         >
-          <p className="md:text-lg text-white">
-            Passionate Software Engineer with a strong understanding of Fronend
-            and Backend technologies, including React JS, Redux, Node.js, and
-            Express.js. Experienced in building scalable web applications and
-            implementing responsive designs. Proficient in collaborating with
-            cross-functional teams to deliver high-quality software solutions
-            that meet user requirements. Committed to continuous learning and
-            staying updated with the latest industry trends and best practices
-            in software development.
-          </p>
-        </motion.div>
-        <motion.div
-          className="mt-12"
-          transition={{
-            duration: 0.3,
-            delay: 0.5,
-            type: "tween",
-          }}
-          initial={{
-            y: "30px",
-            opacity: 0,
-          }}
-          animate={{
-            y: 0,
-            opacity: 1,
-          }}
+          Fullstack Developer · React, Next.js & TypeScript
+        </motion.h6>
+
+        <motion.p
+          className="md:w-3/6 w-5/6 pt-8 break-words md:text-lg text-white"
+          variants={item}
         >
+          Fullstack Developer with 3.7 years of experience building web
+          applications using React, Next.js, and TypeScript. Specialized in
+          frontend architecture, performance optimization, responsive design,
+          and REST API integrations — with a proven track record of delivering
+          high-performance, accessible user experiences at scale.
+        </motion.p>
+
+        <motion.div className="mt-12" variants={item}>
           <Link
             target="_blank"
             type="submit"
             href="https://drive.google.com/file/d/1dm5sVqpcV3RmzHhegYTm0v69rxJnrvDX/view"
           >
-            <button className="mb-5 bg-primary h-10 w-28 rounded-sm text-white  hover:border-white font-overpass font-semibold text-sm">
+            <button className="mb-5 bg-primary h-10 w-28 rounded-sm text-white hover:border-white font-overpass font-semibold text-sm">
               Get resume
             </button>
           </Link>
         </motion.div>
 
-        <motion.div
-          className="flex mt-8"
-          transition={{
-            duration: 0.3,
-            delay: 0.5,
-            type: "tween",
-          }}
-          initial={{
-            y: "30px",
-            opacity: 0,
-          }}
-          animate={{
-            y: 0,
-            opacity: 1,
-          }}
-        >
+        <motion.div className="flex mt-8" variants={item}>
           {socials.map((social) => (
             <Link
               title={social.title}
@@ -172,7 +80,7 @@ function Profile() {
             </Link>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 }

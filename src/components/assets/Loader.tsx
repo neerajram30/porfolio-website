@@ -44,11 +44,17 @@ function Loader() {
                 {[...Array(20)].map((_, i) => (
                     <motion.div
                         key={i}
-                        className="absolute w-2 h-2 bg-hcolor rounded-full opacity-20"
+                        className="absolute w-2 h-2 bg-hcolor rounded-full"
                         animate={{
                             x: [0, Math.random() * 100 - 50],
                             y: [0, Math.random() * 100 - 50],
                             scale: [0, 1, 0],
+                            opacity: [0, 0.8, 0],
+                            boxShadow: [
+                                '0 0 0px 0px rgba(100, 111, 212, 0)',
+                                '0 0 12px 6px rgba(100, 111, 212, 0.7)',
+                                '0 0 0px 0px rgba(100, 111, 212, 0)',
+                            ],
                         }}
                         transition={{
                             duration: 3 + Math.random() * 2,
