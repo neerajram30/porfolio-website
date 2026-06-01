@@ -37,39 +37,24 @@ export default function NavBar() {
   }, []);
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
-    const navLinks: NodeListOf<HTMLAnchorElement> =
-      document.querySelectorAll(".nav-link");
+    const NAVBAR_HEIGHT = 80;
 
     const handleScroll = () => {
-      let current = null;
+      const sections = document.querySelectorAll("section[id]");
+      let current = "";
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop) {
+        const sectionTop = (section as HTMLElement).offsetTop - NAVBAR_HEIGHT;
+        if (window.scrollY >= sectionTop) {
           current = section.id;
         }
       });
-      navLinks.forEach((link) => {
-        link.classList.remove("active"); // Remove active class from all links
-        if (current && link.hash === `#${current}`) {
-          link.classList.add("active"); // Add active class to matching link
-        }
-      });
-
       setActiveLink(current);
     };
 
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup function to remove event listener on component unmount
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleActiveLink = (linkId, index) => {
-    if (linkId === links[index]?.id) {
-      setActiveLink(linkId);
-    }
-  };
 
   const spring = {
     type: "spring",
@@ -147,19 +132,26 @@ export default function NavBar() {
         </div>
         <div className="md:flex space-x-3 justify-between items-center">
           <div className="md:flex pl-2 md:ml-12 pt-1 items-center">
-            {links.map((link, index) => (
+            {links.map((link) => (
               <Link
                 href={"#" + link.id}
-                passHref
-                className="nav-link text-white ml-5 font-semibold md:block hidden"
+                className="relative ml-5 pb-1 md:block hidden"
                 key={link.id}
-                // onClick={() => handleActiveLink(link.id, index)}
               >
-                <motion.div
-                // className={`${activeLink === link.id ? 'underline underline-offset-[7px] decoration-primary decoration-2':''}`}
+                <span
+                  className={`font-semibold transition-colors duration-200 ${
+                    activeLink === link.id ? "text-hcolor" : "text-white"
+                  }`}
                 >
                   {link.name}
-                </motion.div>
+                </span>
+                {activeLink === link.id && (
+                  <motion.span
+                    layoutId="active-underline"
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-hcolor rounded-full"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
               </Link>
             ))}
           </div>
