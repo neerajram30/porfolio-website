@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { CodeIcon, MenuIcon, XIcon, HomeIcon } from "@heroicons/react/solid";
+import { Code2, Menu, X } from "lucide-react";
 
 export default function NavBar() {
   const links = [
@@ -96,7 +96,7 @@ export default function NavBar() {
             onClick={() => setOpen(false)}
             className="p-1 rounded-md dark:bg-gray-700 absolute top-8 right-8 ring-opacity-80 ring-gray-500 dark:ring-gray-200hover:ring-[2px]"
           >
-            <XIcon className="h-8 w-8 text-white -mt-5 -mr-3" />
+            <X className="h-8 w-8 text-white -mt-5 -mr-3" />
           </motion.button>
 
           <ul className="flex font-bold flex-col gap-12 text-center text-2xl  tracking-widest w-full bg-[#161d27] text-white items-center justify-center h-screen">
@@ -131,7 +131,7 @@ export default function NavBar() {
           onClick={() => setOpen(true)}
           className="md:hidden"
         >
-          <MenuIcon className="mt-1 h-8 w-8 -mr-3 md:-mr-0 text-white" />
+          <Menu className="mt-1 h-8 w-8 -mr-3 md:-mr-0 text-white" />
         </motion.button>
       </div>
       <div className="flex justify-between items-center h-fit pr-10">
@@ -139,7 +139,7 @@ export default function NavBar() {
           <Link href="#">
             <div className="text-primary ml-10 flex md:inline-flex bg-blue-300">
               <div>
-                <CodeIcon className="size-8 text-blue-500" />
+                <Code2 className="size-8 text-blue-500" />
               </div>
               <h1 className="ml-3 text-lg pt-[2.5px] font-bold">Neeraj</h1>
             </div>

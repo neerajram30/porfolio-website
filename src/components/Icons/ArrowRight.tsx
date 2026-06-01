@@ -1,8 +1,8 @@
 import React from 'react'
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { ChevronRight } from "lucide-react";
 function ArrowRight() {
   return (
-    <MdOutlineKeyboardArrowRight/>
+    <ChevronRight />
   )
 }
 

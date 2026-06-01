@@ -1,5 +1,5 @@
 "use client";
-import { LocationMarkerIcon } from "@heroicons/react/solid";
+import { MapPin } from "lucide-react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import Bubbles from "../assets/Bubbles";
@@ -57,7 +57,7 @@ function Experience({ data }: ExperienceI) {
         {/* location + website */}
         <div className="flex flex-wrap items-center gap-3 md:gap-4 text-xs md:text-sm text-gray-400 mb-4">
           <span className="flex items-center gap-1">
-            <LocationMarkerIcon className="size-4 shrink-0" />
+            <MapPin className="size-4 shrink-0" />
             {data.location}
           </span>
           <Link

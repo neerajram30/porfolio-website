@@ -1,4 +1,4 @@
-import { StarIcon } from "@heroicons/react/solid";
+import { Star } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Bubbles from "../assets/Bubbles";
@@ -77,7 +77,7 @@ function Project(props: ProjectI) {
         </div>
         <p className="md:mt-2 mt-5 text-md">{data.description}</p>
         <div className="text-xs flex h-8 justify-start items-center mt-2 md:mt-0">
-          <StarIcon className="size-3" />
+          <Star className="size-3" />
           <p className="ml-2 font-semibold">
             {starsDetails && starsDetails[data.repo]}
           </p>
