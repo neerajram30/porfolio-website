@@ -1,76 +1,67 @@
 "use client";
-import { useEffect, useState } from "react";
-import Experience from "./Experience";
+import { motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useAnimation, motion } from "framer-motion";
+import Experience from "./Experience";
+
+const container: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.05 } },
+};
 
 function Experiences() {
-  const [loaded, setLoaded] = useState(false);
-  const { ref, inView } = useInView();
-  const animation = useAnimation();
-  useEffect(() => {
-    if (loaded) return;
-    if (inView) {
-      setLoaded(true);
-      animation.start({
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: "tween",
-          duration: 0.3,
-        },
-      });
-    } else {
-      animation.start({
-        y: "30px",
-        opacity: 0,
-      });
-    }
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inView]);
   const experience = [
     {
       company: "TCS",
       designation: "Assistant System Engineer",
-      work: "Frontend developer in TCS AI cloud product team. Developing reusable and scalable components within the React ecosystem, collaborating closely with designers and backend engineers for building cutting edge solutions.",
-      experience: "Dec 2022 - Present",
+      work: [
+        "Led frontend development of AI-VX Studio — reduced LCP from 4s to 2s via code splitting, lazy loading, and image optimization",
+        "Migrated data-fetching to RTK Query, eliminating ~20% of stale-state and race-condition bugs",
+        "Built a shared component library (15+ components) adopted across 3 products, cutting duplicate UI code by ~50%",
+        "Conducted code reviews that reduced PR cycle time by ~25%",
+        "Designed and implemented CI/CD pipeline, accelerating deployment cycles by ~20%",
+      ],
+      experience: "Dec 2022 – Present",
       location: "Kochi",
       website: { display: "tcs.com", link: "https://www.tcs.com/" },
-      skills: ["Javascript", "React", "Nextjs", "Redux", "Aws"],
+      skills: ["React", "Next.js", "TypeScript", "RTK Query", "Redux Toolkit", "AWS", "CI/CD"],
     },
     {
       company: "TCS",
       designation: "Assistant System Engineer Trainee",
-      work: "Attended the TCS Initial Learning Program (ILP) at the TCS center in Kochi. It was a great opportunity to gain some industry insights by working alongside an experienced Talent & Development (TD) team. I learned Java and the basics of web development, and even worked on a mini-project that we presented to the TD heads.",
-      experience: "Sep 2022 - Nov 2022",
+      work: [
+        "Completed TCS Initial Learning Program (ILP) at the TCS centre in Kochi",
+        "Learned Java, HTML, CSS, JavaScript, SQL, and web development fundamentals",
+        "Built and presented a mini-project to Talent & Development heads",
+      ],
+      experience: "Sep 2022 – Nov 2022",
       location: "Kochi",
       website: { display: "tcs.com", link: "https://www.tcs.com/" },
-      skills: ["Java", "HTML", "CSS", "Javascript", "PLSQL", "MySQL"],
+      skills: ["Java", "HTML", "CSS", "JavaScript", "PLSQL", "MySQL"],
     },
   ];
+
   return (
     <div
-      className="pt-10 md:pl-20 pl-5 md:pr-20 pr-5 pb-10 text-white w-screen bg-[#0e131a]"
+      className="pt-10 md:pl-20 pl-5 md:pr-20 pr-5 pb-16 text-white w-screen bg-[#0e131a]"
       id="experience"
       ref={ref}
     >
-      <h2 className="md:text-3xl text-xl font-bold text-white text-center mb-10">
-        {" "}
+      <h2 className="md:text-3xl text-xl font-bold text-white text-center mb-12">
         Experience
       </h2>
-      {/* <motion.div variants={underlineVariants} animate="hover" /> */}
-      <div className="md:px-20 mt-5">
+
+      <motion.div
+        className="md:px-20"
+        variants={container}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
         {experience.map((exp, i) => (
-          <Experience
-            data={exp}
-            key={exp.company + "_" + i}
-            index={i}
-            delay={i / 30 + 0.05}
-            inView={inView}
-          />
+          <Experience data={exp} key={exp.company + "_" + i} />
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
