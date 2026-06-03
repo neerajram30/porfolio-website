@@ -11,12 +11,18 @@ const THEMES = {
 
 export default function CursorGlow() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isPointerDevice, setIsPointerDevice] = useState(false);
   const isMoving = useRef(false);
 
-  // 2. Change this key to match whatever theme your site uses
-  const activeColor = THEMES.emerald; 
+  const activeColor = THEMES.emerald;
 
   useEffect(() => {
+    const pointerQuery = window.matchMedia("(pointer: fine)");
+    setIsPointerDevice(pointerQuery.matches);
+
+    if (!pointerQuery.matches) return;
+
+
     const handleMouseMove = (e: MouseEvent) => {
       if (!isMoving.current) {
         isMoving.current = true;
@@ -31,8 +37,9 @@ export default function CursorGlow() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  if (!isPointerDevice) return null;
+
   return (
-      
         <div className="relative w-full text-slate-400 font-sans antialiased selection:bg-teal-300 selection:text-teal-900">
       
       {/* 
