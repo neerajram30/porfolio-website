@@ -7,6 +7,7 @@ import Experiences from "../components/Experience/Experiences";
 import Loader from "../components/assets/Loader";
 import About from "../components/About/About";
 import Footer from '../components/Footer/Footer'
+import CursorGlow from "src/components/ui/CursorGlow";
 export default function Home() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -34,6 +35,7 @@ export default function Home() {
               <Experiences />
             </section>
             <Footer />
+            <CursorGlow/>
           </>
         ) : (
           <Loader />
