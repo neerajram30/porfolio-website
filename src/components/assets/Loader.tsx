@@ -7,19 +7,19 @@ const particles = [
     'p11', 'p12', 'p13', 'p14', 'p15', 'p16', 'p17', 'p18', 'p19', 'p20'
 ];
 
+const loadingSteps = [
+    'Initializing...',
+    'Loading components...',
+    'Setting up animations...',
+    'Almost ready...',
+    'Welcome!'
+];
+
 function Loader() {
     const [progress, setProgress] = useState(0);
     const [loadingText, setLoadingText] = useState('Initializing...');
     const [spinnerClicked, setSpinnerClicked] = useState(false);
     const [spinnerSize, setSpinnerSize] = useState(40);
-
-    const loadingSteps = [
-        'Initializing...',
-        'Loading components...',
-        'Setting up animations...',
-        'Almost ready...',
-        'Welcome!'
-    ];
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -32,7 +32,7 @@ function Loader() {
         }, 300);
 
         return () => clearInterval(interval);
-    }, [loadingSteps]);
+    }, []);
 
     const handleSpinnerClick = () => {
         setSpinnerClicked(true);
