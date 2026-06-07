@@ -52,7 +52,7 @@ function Projects() {
       github: "https://github.com/neerajram30/async-hub",
       technologies: ["Nextjs", "Drizzle ORM", "Tailwind CSS"],
       description:
-        "An async video hub for global teams to capture screen recordings and manage timestamped discussions.",
+        "An async video hub for global teams to capture screen recordings and timestamped discussions",
       owner: "neerajram30",
       repo: "async-hub",
       image: "/async_hub.png",
