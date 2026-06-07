@@ -2,7 +2,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useTheme } from "next-themes";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Code2, Menu, X } from "lucide-react";
 
@@ -95,14 +94,13 @@ export default function NavBar() {
                 transition={{ delay: i * 0.1 }}
                 className="group"
               >
-                <Link href={"#" + link.id}>
-                  <span
-                    onClick={() => setOpen(false)}
-                    className="text-white  hover:font-semibold  transition-all duration-100 ease-out p-2"
-                  >
-                    {link.name}
-                  </span>
-                </Link>
+                <a
+                  href={"#" + link.id}
+                  onClick={() => setOpen(false)}
+                  className="text-white hover:font-semibold transition-all duration-100 ease-out p-2"
+                >
+                  {link.name}
+                </a>
               </motion.li>
             ))}
           </ul>
@@ -121,19 +119,19 @@ export default function NavBar() {
       </div>
       <div className="flex justify-between items-center h-fit pr-10">
         <div className="mt-[-30px] md:mt-0 md:pt-2">
-          <Link href="#">
+          <a href="#">
             <div className="text-primary ml-10 flex md:inline-flex bg-blue-300">
               <div>
                 <Code2 className="size-8 text-blue-500" />
               </div>
               <h1 className="ml-3 text-lg pt-[2.5px] font-bold">Neeraj</h1>
             </div>
-          </Link>
+          </a>
         </div>
         <div className="md:flex space-x-3 justify-between items-center">
           <div className="md:flex pl-2 md:ml-12 pt-1 items-center">
             {links.map((link) => (
-              <Link
+              <a
                 href={"#" + link.id}
                 className="relative ml-5 pb-1 md:block hidden"
                 key={link.id}
@@ -152,7 +150,7 @@ export default function NavBar() {
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
