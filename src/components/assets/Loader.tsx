@@ -2,6 +2,11 @@ import { MoonLoader, PulseLoader } from 'react-spinners';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
+const particles = [
+    'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10',
+    'p11', 'p12', 'p13', 'p14', 'p15', 'p16', 'p17', 'p18', 'p19', 'p20'
+];
+
 function Loader() {
     const [progress, setProgress] = useState(0);
     const [loadingText, setLoadingText] = useState('Initializing...');
@@ -41,9 +46,9 @@ function Loader() {
     return (
         <div className='h-screen flex flex-col w-full justify-center items-center bg-gradient-to-br from-[#161d27] via-[#1a2332] to-[#0e131a]'>
             <div className="absolute inset-0 overflow-hidden">
-                {[...Array(20)].map((_, i) => (
+                {particles.map((p) => (
                     <motion.div
-                        key={i}
+                        key={p}
                         className="absolute w-2 h-2 bg-hcolor rounded-full"
                         animate={{
                             x: [0, Math.random() * 100 - 50],

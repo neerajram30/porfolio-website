@@ -12,25 +12,25 @@ export const socials: Social[] = [
   {
     id: 1,
     title: "Github",
-    link: "https://github.com/neerajram30",
+    link: process.env.NEXT_PUBLIC_SOCIAL_GITHUB || "",
     icon: SiGithub,
   },
   {
     id: 2,
     title: "X",
-    link: "https://x.com/neeraJramachaN2",
+    link: process.env.NEXT_PUBLIC_SOCIAL_X || "",
     icon: SiX,
   },
   {
     id: 3,
     title: "Linkedin",
-    link: "https://www.linkedin.com/in/neeraj-m-r-173b64216/",
+    link: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN || "",
     icon: SiLinkedin,
   },
   {
     id: 4,
     title: "Instagram",
-    link: "https://www.instagram.com/neeraj_ramachandran/",
+    link: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM || "",
     icon: SiInstagram,
   }
 ];

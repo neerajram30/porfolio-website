@@ -5,7 +5,6 @@ import { useInView } from "react-intersection-observer";
 interface ToolI {
   tool: string;
   delay: number;
-  key: number;
   inView?:boolean;
 }
 

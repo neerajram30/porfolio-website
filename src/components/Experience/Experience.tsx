@@ -66,7 +66,7 @@ function Experience({ data }: ExperienceI) {
             className="flex items-center gap-1 hover:text-hcolor transition-colors"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns={process.env.NEXT_PUBLIC_SVG_XMLNS}
               viewBox="0 0 24 24"
               fill="currentColor"
               className="size-4 shrink-0"
@@ -83,8 +83,8 @@ function Experience({ data }: ExperienceI) {
 
         {/* bullet points */}
         <ul className="space-y-1.5 mb-4 md:w-10/12">
-          {data.work.map((point, i) => (
-            <li key={i} className="flex gap-2 text-xs md:text-sm text-gray-300 leading-relaxed">
+          {data.work.map((point) => (
+            <li key={point} className="flex gap-2 text-xs md:text-sm text-gray-300 leading-relaxed">
               <span className="text-hcolor mt-0.5 shrink-0">▹</span>
               {point}
             </li>

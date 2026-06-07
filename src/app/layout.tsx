@@ -7,7 +7,7 @@ const space_grotesk = Space_Grotesk({ subsets: ["latin"] });
 export const metadata = {
   title: "Neeraj MR | Full Stack Developer",
   description: "Neeraj's developer portfolio",
-  ogImage: 'https://neerajram.netlify.app/portfolio.png',
+  ogImage: process.env.NEXT_PUBLIC_PORTFOLIO_IMAGE_URL || "",
   verification: { google: "SS5GO0NWJv7wWHeWAgKj--lo-fU-WiuBrogioNJbUnM" },
 };
 

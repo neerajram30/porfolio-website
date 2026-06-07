@@ -60,7 +60,7 @@ function Profile() {
           <Link
             target="_blank"
             type="submit"
-            href="https://drive.google.com/file/d/1dm5sVqpcV3RmzHhegYTm0v69rxJnrvDX/view"
+            href={process.env.NEXT_PUBLIC_RESUME_DRIVE_URL || ""}
           >
             <button className="mb-5 bg-primary h-10 w-28 rounded-sm text-white hover:border-white font-overpass font-semibold text-sm">
               Get resume

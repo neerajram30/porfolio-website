@@ -4,7 +4,7 @@ function LinkArrow(props) {
   const { classNames } = props;
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns={process.env.NEXT_PUBLIC_SVG_XMLNS}
       viewBox="0 0 24 24"
       fill="currentColor"
       className={classNames}

@@ -77,10 +77,9 @@ function Tools() {
         <div className="md:flex md:flex-row flex flex-col md:items-center items-start">
           <div className="mt-5 md:text-lg break-words flex flex-wrap mr-1">
             {tools.map((tool, i) => (
-              <div className="mt-3 md:mr-4 mr-2" key={i}>
+              <div className="mt-3 md:mr-4 mr-2" key={tool}>
                 <Tool
                   tool={tool}
-                  key={i}
                   delay={i / 30 + 0.05}
                   inView={inView}
                 />

@@ -24,7 +24,7 @@ function Experiences() {
       ],
       experience: "Dec 2022 – Present",
       location: "Kochi",
-      website: { display: "tcs.com", link: "https://www.tcs.com/" },
+      website: { display: "tcs.com", link: process.env.NEXT_PUBLIC_TCS_URL || "" },
       skills: ["React", "Next.js", "TypeScript", "RTK Query", "Redux Toolkit", "AWS", "CI/CD"],
     },
     {
@@ -37,7 +37,7 @@ function Experiences() {
       ],
       experience: "Sep 2022 – Nov 2022",
       location: "Kochi",
-      website: { display: "tcs.com", link: "https://www.tcs.com/" },
+      website: { display: "tcs.com", link: process.env.NEXT_PUBLIC_TCS_URL || "" },
       skills: ["Java", "HTML", "CSS", "JavaScript", "PLSQL", "MySQL"],
     },
   ];
