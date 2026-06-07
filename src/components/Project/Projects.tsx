@@ -36,6 +36,28 @@ function Projects() {
   }, [inView]);
 
   const projects = [
+     {
+      title: "Speghetti Slicer",
+      github: "https://github.com/neerajram30/spaghetti-slicer",
+      technologies: ["Typescript", "CLI"],
+      description:
+        "An AST-based CLI that audits and refactors React/TypeScript projects",
+      owner: "neerajram30",
+      repo: "spaghetti-slicer",
+      image: "/spaghetti_slicer.png",
+      link: "https://www.npmjs.com/package/spaghetti-slicer",
+    },
+    {
+      title: "Async Hub",
+      github: "https://github.com/neerajram30/async-hub",
+      technologies: ["Nextjs", "Drizzle ORM", "Tailwind CSS"],
+      description:
+        "An async video hub for global teams to capture screen recordings and manage timestamped discussions.",
+      owner: "neerajram30",
+      repo: "async-hub",
+      image: "/async_hub.png",
+      link: "https://github.com/neerajram30/async-hub",
+    },
     {
       title: "God's Eye",
       github: "https://github.com/neerajram30/God-s-Eye",
@@ -58,6 +80,7 @@ function Projects() {
       image: "/portfolio.png",
       link: "https://neerajram.netlify.app/",
     },
+   
   ];
 
   useEffect(() => {
