@@ -53,7 +53,7 @@ function Profile() {
           applications using React, Next.js, and TypeScript. Specialized in
           frontend architecture, performance optimization, responsive design,
           and REST API integrations — with a proven track record of delivering
-          high-performance, accessible user experiences at scale.
+          high-performance, accessible user experiences at scale
         </motion.p>
 
         <motion.div className="mt-12" variants={item}>
