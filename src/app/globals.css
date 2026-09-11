@@ -2,33 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    color-scheme: dark;
+  }
 
+  body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #080C14;
+    color: #F8FAFC;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 56px;
+  /* Custom sleek scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080C14;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6366F1;
+  }
 }
 
-body{
-  /* background-color: #FAF9F6; */
-  padding: 0;
-  margin: 0;
-  overflow-x: hidden;
-  /* background: #0F2027; */
-/* background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-/* background: linear-gradient(to right, #2C5364, #203A43, #0F2027); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: #161d27;
+@layer utilities {
+  .bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
 
+  .bento-card {
+    @apply bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl transition-all duration-300 hover:border-indigo-500/40 hover:shadow-glow-indigo;
+  }
+
+  .glass-pill {
+    @apply bg-slate-900/70 backdrop-blur-md border border-white/10 rounded-full shadow-lg;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400;
+  }
+
+  .gradient-text-subtle {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400;
+  }
 }
 
-.dark-background {
-  /* background: #15202b; */
-
-
-}
-
-.dark-background:hover {
-  /* @apply bg-glow; */
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%)
-}
 

@@ -1,8 +1,8 @@
 "use client";
-import { MapPin } from "lucide-react";
-import Link from "next/link";
+import React from "react";
 import { motion, Variants } from "framer-motion";
-import Bubbles from "../assets/Bubbles";
+import { MapPin, ExternalLink, Briefcase, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 interface WebsiteI {
   link: string;
@@ -24,78 +24,88 @@ interface ExperienceI {
 }
 
 const item: Variants = {
-  hidden: { y: 30, opacity: 0 },
+  hidden: { y: 25, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 80, damping: 18 },
+    transition: { type: "spring", stiffness: 90, damping: 20 },
   },
 };
 
 function Experience({ data }: ExperienceI) {
   return (
-    <motion.div variants={item} className="group flex gap-3 md:gap-6">
-      {/* timeline column: dot + vertical connector */}
-      <div className="flex flex-col items-center shrink-0 pt-1.5">
-        <span className="w-3 h-3 rounded-full bg-hcolor ring-2 ring-hcolor/30 shrink-0" />
-        <span className="w-0.5 bg-hcolor/30 flex-1 mt-1.5 group-last:hidden" />
+    <motion.div variants={item} className="group relative flex gap-3 sm:gap-6 pb-8 sm:pb-12 last:pb-0">
+      {/* Timeline Node & Glowing Line */}
+      <div className="flex flex-col items-center shrink-0 pt-1">
+        <div className="relative flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-900 border border-indigo-500/40 text-indigo-400 group-hover:scale-110 group-hover:border-indigo-400 group-hover:shadow-glow-indigo transition-all">
+          <Briefcase className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
+          <span className="absolute inset-0 rounded-full bg-indigo-500/20 animate-ping opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+        <div className="w-0.5 bg-gradient-to-b from-indigo-500/50 via-slate-800 to-transparent flex-1 mt-2.5 sm:mt-3 group-last:hidden" />
       </div>
 
-      {/* card */}
-      <div className="flex-1 bg-[#161d27] rounded-lg p-4 md:p-5 border border-white/5 hover:border-hcolor/20 transition-colors duration-300 mb-6 group-last:mb-0">
-        {/* header */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1 mb-3">
-          <h3 className="font-bold text-base md:text-lg leading-snug">
-            {data.designation}{" "}
-            <span className="text-hcolor">@ {data.company}</span>
-          </h3>
-          <span className="text-gray-400 text-xs md:text-sm shrink-0 md:ml-4">
+      {/* Experience Bento Card */}
+      <div className="flex-1 bento-card p-4 sm:p-6 border border-white/10 hover:border-indigo-500/40 transition-all">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+          <div>
+            <h3 className="text-base sm:text-xl font-extrabold text-white group-hover:text-indigo-300 transition-colors">
+              {data.designation}
+            </h3>
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-1">
+              <span className="text-xs sm:text-sm font-semibold text-indigo-400">
+                @ {data.company}
+              </span>
+              <span className="text-slate-600">·</span>
+              <span className="flex items-center gap-1 text-[11px] sm:text-xs text-slate-400">
+                <MapPin className="w-3 h-3 text-slate-400" />
+                {data.location}
+              </span>
+              {data.website?.link && (
+                <Link
+                  href={data.website.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[11px] sm:text-xs text-indigo-400/80 hover:text-indigo-300 transition-colors ml-1"
+                >
+                  <span>{data.website.display}</span>
+                  <ExternalLink className="w-3 h-3" />
+                </Link>
+              )}
+            </div>
+          </div>
+
+          <span className="inline-flex items-center px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-[11px] sm:text-xs font-mono font-medium self-start sm:self-auto">
             {data.experience}
           </span>
         </div>
 
-        {/* location + website */}
-        <div className="flex flex-wrap items-center gap-3 md:gap-4 text-xs md:text-sm text-gray-400 mb-4">
-          <span className="flex items-center gap-1">
-            <MapPin className="size-4 shrink-0" />
-            {data.location}
-          </span>
-          <Link
-            href={data.website.link}
-            target="_blank"
-            className="flex items-center gap-1 hover:text-hcolor transition-colors"
-          >
-            <svg
-              xmlns={process.env.NEXT_PUBLIC_SVG_XMLNS}
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="size-4 shrink-0"
-            >
-              <path
-                fillRule="evenodd"
-                d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z"
-                clipRule="evenodd"
-              />
-            </svg>
-            {data.website.display}
-          </Link>
-        </div>
-
-        {/* bullet points */}
-        <ul className="space-y-1.5 mb-4 md:w-10/12">
-          {data.work.map((point) => (
-            <li key={point} className="flex gap-2 text-xs md:text-sm text-gray-300 leading-relaxed">
-              <span className="text-hcolor mt-0.5 shrink-0">▹</span>
-              {point}
+        {/* Work Bullets */}
+        <ul className="mt-3 sm:mt-4 space-y-2 sm:space-y-2.5">
+          {data.work.map((bullet) => (
+            <li key={bullet} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <ChevronRight className="w-3.5 h-3.5 text-indigo-400 shrink-0 mt-0.5" />
+              <span>{bullet}</span>
             </li>
           ))}
         </ul>
 
-        {/* skills */}
-        <Bubbles data={data.skills} />
+        {/* Skills Used */}
+        <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10 flex flex-wrap gap-1.5">
+          {data.skills.map((skill) => (
+            <span
+              key={skill}
+              className="text-[11px] sm:text-xs font-mono px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md bg-slate-800/80 text-slate-300 border border-white/5"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
     </motion.div>
   );
 }
 
 export default Experience;
+
+

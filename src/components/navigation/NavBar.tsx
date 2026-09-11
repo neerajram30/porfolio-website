@@ -1,53 +1,35 @@
 "use client";
-import React, { useEffect } from "react";
-import { useState } from "react";
-import { useTheme } from "next-themes";
-import { motion } from "framer-motion";
-import { Code2, Menu, X } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Code2, Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 
 export default function NavBar() {
   const links = [
-    // { name: "Home", href: "/", id:'' },
-    { name: "About", href: "/about", id: "about" },
-    { name: "Projects", href: "/projects", id: "projects" },
-    { name: "Experience", href: "/experience", id: "experience" },
-    // { name: "Skills", href: "/skills", id: "skills" },
-    // { name: "Blogs", href: "/blogs", id:'blogs' },
+    { name: "About", id: "about" },
+    { name: "Projects", id: "projects" },
+    { name: "Experience", id: "experience" },
   ];
-  const { theme, setTheme } = useTheme();
+
   const [open, setOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("");
-  const [hashShadow, setHasShadow] = useState(false);
+  const [activeLink, setActiveLink] = useState("about");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setHasShadow(false);
-      } else {
-        setHasShadow(true);
-      }
-    };
+      setScrolled(window.scrollY > 20);
 
-    if (window) {
-      window.addEventListener("scroll", handleScroll);
-    }
-
-    return () => window.removeEventListener("scroll", handleScroll); // Cleanup
-  }, []);
-
-  useEffect(() => {
-    const NAVBAR_HEIGHT = 80;
-
-    const handleScroll = () => {
       const sections = document.querySelectorAll("section[id]");
-      let current = "";
+      const scrollPosition = window.scrollY + 120;
+
       sections.forEach((section) => {
-        const sectionTop = (section as HTMLElement).offsetTop - NAVBAR_HEIGHT;
-        if (window.scrollY >= sectionTop) {
-          current = section.id;
+        const top = (section as HTMLElement).offsetTop;
+        const height = (section as HTMLElement).offsetHeight;
+        const id = section.getAttribute("id") || "";
+
+        if (scrollPosition >= top && scrollPosition < top + height) {
+          setActiveLink(id);
         }
       });
-      setActiveLink(current);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -55,106 +37,140 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const spring = {
-    type: "spring",
-    stiffness: 700,
-    damping: 30,
-  };
-
   return (
-    <nav
-      className={`bg-[#161d27] h-14 md:fixed fixed w-screen z-10 p-0
-      ${hashShadow ? "shadow-nav" : "shadow-none"}`}
-    >
-      {open && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed flex flex-col items-center justify-end z-20 w-screen h-screen inset-0 bg-[#161d27]"
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 pb-2 pointer-events-none">
+      <motion.nav
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className={`pointer-events-auto flex items-center justify-between w-full max-w-5xl px-4 md:px-6 py-2.5 rounded-full transition-all duration-300 ${
+          scrolled
+            ? "bg-slate-950/80 backdrop-blur-xl border border-white/10 shadow-2xl shadow-indigo-500/5"
+            : "bg-slate-900/50 backdrop-blur-md border border-white/5 shadow-lg"
+        }`}
+      >
+        {/* Brand Identity Logo */}
+        <a
+          href="#"
+          className="flex items-center gap-2 group focus:outline-none"
         >
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            animate={{ opacity: [0, 1], y: [-10, 0], rotate: [-60, 0] }}
-            onClick={() => setOpen(false)}
-            className="p-1 rounded-md dark:bg-gray-700 absolute top-8 right-8 ring-opacity-80 ring-gray-500 dark:ring-gray-200hover:ring-[2px]"
-          >
-            <X className="h-8 w-8 text-white -mt-5 -mr-3" />
-          </motion.button>
+          <div className="relative flex items-center justify-center w-9 h-9 rounded-full bg-indigo-500/10 border border-indigo-500/30 group-hover:border-indigo-400/80 transition-colors">
+            <Code2 className="w-5 h-5 text-indigo-400 group-hover:scale-110 transition-transform duration-200" />
+            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-400" />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-bold text-white text-sm md:text-base tracking-tight group-hover:text-indigo-300 transition-colors">
+              Neeraj<span className="text-indigo-400">.mr</span>
+            </span>
+            <span className="text-[10px] text-slate-400 tracking-wider font-mono">
+              FULLSTACK DEV
+            </span>
+          </div>
+        </a>
 
-          <ul className="flex font-bold flex-col gap-12 text-center text-2xl  tracking-widest w-full bg-[#161d27] text-white items-center justify-center h-screen">
-            {links.map((link, i) => (
-              <motion.li
-                key={link.name}
-                animate={{
-                  opacity: [0, 1],
-                  y: [-30, 0],
-                }}
-                transition={{ delay: i * 0.1 }}
-                className="group"
-              >
-                <a
-                  href={"#" + link.id}
-                  onClick={() => setOpen(false)}
-                  className="text-white hover:font-semibold transition-all duration-100 ease-out p-2"
-                >
-                  {link.name}
-                </a>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-      )}
-      <div className="w-full flex justify-end pr-5 pt-1">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          animate={{ opacity: [0, 1], y: [-10, 0], rotate: [-60, 0] }}
-          onClick={() => setOpen(true)}
-          className="md:hidden"
-        >
-          <Menu className="mt-1 h-8 w-8 -mr-3 md:-mr-0 text-white" />
-        </motion.button>
-      </div>
-      <div className="flex justify-between items-center h-fit pr-10">
-        <div className="mt-[-30px] md:mt-0 md:pt-2">
-          <a href="#">
-            <div className="text-primary ml-10 flex md:inline-flex bg-blue-300">
-              <div>
-                <Code2 className="size-8 text-blue-500" />
-              </div>
-              <h1 className="ml-3 text-lg pt-[2.5px] font-bold">Neeraj</h1>
-            </div>
-          </a>
-        </div>
-        <div className="md:flex space-x-3 justify-between items-center">
-          <div className="md:flex pl-2 md:ml-12 pt-1 items-center">
-            {links.map((link) => (
+        {/* Desktop Nav Items */}
+        <div className="hidden md:flex items-center gap-1 bg-slate-900/60 p-1 rounded-full border border-white/5">
+          {links.map((link) => {
+            const isActive = activeLink === link.id;
+            return (
               <a
-                href={"#" + link.id}
-                className="relative ml-5 pb-1 md:block hidden"
                 key={link.id}
+                href={`#${link.id}`}
+                className={`relative px-4 py-1.5 text-xs md:text-sm font-medium rounded-full transition-colors duration-200 ${
+                  isActive ? "text-white" : "text-slate-400 hover:text-slate-200"
+                }`}
               >
-                <span
-                  className={`font-semibold transition-colors duration-200 ${
-                    activeLink === link.id ? "text-hcolor" : "text-white"
-                  }`}
-                >
-                  {link.name}
-                </span>
-                {activeLink === link.id && (
+                {isActive && (
                   <motion.span
-                    layoutId="active-underline"
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-hcolor rounded-full"
+                    layoutId="nav-active-pill"
+                    className="absolute inset-0 bg-indigo-600/30 border border-indigo-500/40 rounded-full shadow-inner shadow-indigo-500/20"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
+                <span className="relative z-10">{link.name}</span>
               </a>
-            ))}
-          </div>
+            );
+          })}
         </div>
-      </div>
-    </nav>
+
+        {/* Quick Action Button */}
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href={process.env.NEXT_PUBLIC_RESUME_DRIVE_URL || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold text-white bg-indigo-600/80 hover:bg-indigo-500 rounded-full border border-indigo-400/40 shadow-sm shadow-indigo-500/30 transition-all hover:scale-[1.03] active:scale-[0.98]"
+          >
+            <span>Resume</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </a>
+        </div>
+
+        {/* Mobile Hamburger Menu Toggle */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden p-2 rounded-full text-slate-300 hover:text-white bg-slate-800/80 border border-white/10 focus:outline-none"
+          aria-label="Toggle Navigation Menu"
+        >
+          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
+      </motion.nav>
+
+      {/* Mobile Glass Menu Drawer Overlay */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 top-16 z-40 md:hidden bg-slate-950/95 backdrop-blur-2xl px-6 py-8 flex flex-col justify-between border-t border-white/10 pointer-events-auto"
+          >
+            <div className="flex flex-col gap-6 pt-4">
+              <div className="flex items-center gap-2 text-indigo-400 text-xs font-mono uppercase tracking-widest px-2">
+                <Sparkles className="w-4 h-4" /> Navigation
+              </div>
+              <ul className="flex flex-col gap-3">
+                {links.map((link, i) => (
+                  <motion.li
+                    key={link.id}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.08 }}
+                  >
+                    <a
+                      href={`#${link.id}`}
+                      onClick={() => setOpen(false)}
+                      className={`flex items-center justify-between p-4 rounded-xl text-lg font-semibold border transition-all ${
+                        activeLink === link.id
+                          ? "bg-indigo-600/20 border-indigo-500/40 text-white"
+                          : "bg-slate-900/40 border-white/5 text-slate-300 hover:bg-slate-800/50"
+                      }`}
+                    >
+                      <span>{link.name}</span>
+                      <ArrowUpRight className="w-5 h-5 text-indigo-400 opacity-60" />
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
+              <a
+                href={process.env.NEXT_PUBLIC_RESUME_DRIVE_URL || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold text-white bg-indigo-600 rounded-xl shadow-lg shadow-indigo-600/30"
+              >
+                <span>Download Resume</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 }
+
