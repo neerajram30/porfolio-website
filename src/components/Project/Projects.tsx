@@ -13,7 +13,7 @@ function Projects() {
   const filteredProjects = projects.filter((project) => {
     if (filter === "All") return true;
     if (filter === "Developer Tools") return project.technologies.some((t) => ["CLI", "Typescript"].includes(t));
-    if (filter === "Frontend / Web") return project.technologies.some((t) => ["Nextjs", "Tailwind CSS", "DaisyUI"].includes(t));
+    if (filter === "Frontend / Web") return project.technologies.some((t) => ["Nextjs", "Tailwind CSS", "TypeScript"].includes(t));
     if (filter === "AI & Backend") return project.technologies.some((t) => ["Python", "Flask", "Dlib", "Drizzle ORM"].includes(t));
     return true;
   });

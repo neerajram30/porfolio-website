@@ -23,7 +23,10 @@ function Profile() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 md:px-8 overflow-hidden bg-grid-pattern" ref={ref}>
+    <section
+      className="relative min-h-screen w-full flex items-center justify-center pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 md:px-8 overflow-hidden bg-grid-pattern"
+      ref={ref}
+    >
       {/* Background Mesh Glow Orbs */}
       <div className="absolute top-1/4 left-10 w-72 sm:w-96 h-72 sm:h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-10 w-72 sm:w-96 h-72 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -36,17 +39,6 @@ function Profile() {
       >
         {/* Main Hero Column (8 cols) */}
         <div className="lg:col-span-8 flex flex-col items-start text-left">
-          {/* Status Badge */}
-          <motion.div variants={item} className="mb-4 sm:mb-6">
-            <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-slate-900/80 border border-emerald-500/30 text-emerald-400 text-xs font-medium shadow-lg shadow-emerald-500/10">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span>Available for High-Impact Roles</span>
-            </div>
-          </motion.div>
-
           {/* Kinetic Headline */}
           <motion.h1
             className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15]"
@@ -59,7 +51,7 @@ function Profile() {
             className="mt-3 text-lg sm:text-2xl md:text-3xl font-semibold text-slate-300 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2"
             variants={item}
           >
-            <span>Fullstack Developer</span>
+            <span>Fullstack Engineer</span>
             <span className="text-indigo-400 font-mono text-xs sm:text-base font-normal">
               · React, Next.js &amp; TypeScript
             </span>
@@ -70,11 +62,18 @@ function Profile() {
             className="mt-4 sm:mt-6 text-slate-300 text-sm sm:text-lg leading-relaxed max-w-2xl font-normal"
             variants={item}
           >
-            Engineer with <span className="text-indigo-400 font-semibold">3.7+ years</span> of experience crafting production-grade web applications at scale. Specializing in frontend architecture, modular UI systems, performance optimization, and seamless API integrations.
+            Engineer with{" "}
+            <span className="text-indigo-400 font-semibold">4 years</span> of
+            experience crafting production-grade web applications at scale.
+            Specializing in frontend architecture, modular UI systems,
+            performance optimization, and seamless API integrations.
           </motion.p>
 
           {/* Call to Actions & Social Links */}
-          <motion.div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full" variants={item}>
+          <motion.div
+            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full"
+            variants={item}
+          >
             <Link
               target="_blank"
               rel="noopener noreferrer"
@@ -122,7 +121,9 @@ function Profile() {
                 EXPERIENCE
               </span>
             </div>
-            <div className="text-2xl sm:text-3xl font-black text-white">3.7+ Years</div>
+            <div className="text-2xl sm:text-3xl font-black text-white">
+              4 Years
+            </div>
             <div className="text-xs text-slate-400 mt-1">
               Building scalable frontend architectures &amp; web applications
             </div>
@@ -147,7 +148,10 @@ function Profile() {
           </motion.div>
 
           {/* Card 3: Core Stack */}
-          <motion.div variants={item} className="bento-card p-4 sm:p-5 sm:col-span-2 lg:col-span-1">
+          <motion.div
+            variants={item}
+            className="bento-card p-4 sm:p-5 sm:col-span-2 lg:col-span-1"
+          >
             <div className="flex items-center justify-between mb-3">
               <span className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
                 <Cpu className="w-5 h-5" />
@@ -157,16 +161,21 @@ function Profile() {
               </span>
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2">
-              {["React 19", "Next.js 15", "TypeScript", "Tailwind CSS", "GraphQL", "REST APIs"].map(
-                (tech) => (
-                  <span
-                    key={tech}
-                    className="text-[11px] sm:text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800/90 text-slate-200 border border-white/10"
-                  >
-                    {tech}
-                  </span>
-                )
-              )}
+              {[
+                "React 19",
+                "Next.js 15",
+                "TypeScript",
+                "Tailwind CSS",
+                "GraphQL",
+                "REST APIs",
+              ].map((tech) => (
+                <span
+                  key={tech}
+                  className="text-[11px] sm:text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800/90 text-slate-200 border border-white/10"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -176,5 +185,3 @@ function Profile() {
 }
 
 export default Profile;
-
-

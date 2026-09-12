@@ -51,7 +51,7 @@ export const PROJECTS_LIST: ProjectData[] = [
   {
     title: "Portfolio Website",
     github: process.env.NEXT_PUBLIC_PORTFOLIO_GITHUB || "",
-    technologies: ["Nextjs", "Tailwind CSS", "DaisyUI"],
+    technologies: ["Nextjs", "Tailwind CSS", "TypeScript"],
     description:
       "My personal portfolio website showcasing side projects and experience",
     owner: "neerajram30",

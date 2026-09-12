@@ -51,8 +51,7 @@ export default function CursorGlow() {
         className="pointer-events-none fixed top-0 left-0 w-[1200px] h-[1200px] z-0 mix-blend-screen opacity-40 transition-transform duration-700 ease-[cubic-bezier(0.15,0.85,0.35,1)]"
         style={{
           transform: `translate3d(${mousePos.x - 600}px, ${mousePos.y - 600}px, 0)`,
-          // TIP: If you have a specific primary color theme hex (e.g. DaisyUI primary), 
-          // you can replace this RGB string. Here we match a sleek slate/indigo theme.
+          // TIP: Primary color theme hex matching our obsidian/indigo design system.
           "--theme-glow-rgb": "99, 102, 241", 
         } as React.CSSProperties}
       >

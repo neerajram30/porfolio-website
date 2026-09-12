@@ -18,7 +18,7 @@ const categories: Category[] = [
   {
     title: "UI Systems & Styling",
     icon: Layout,
-    skills: ["Tailwind CSS", "Shadcn UI", "DaisyUI", "Framer Motion", "CSS3 / HTML5"],
+    skills: ["Tailwind CSS", "Shadcn UI", "Lucide React", "Framer Motion", "CSS3 / HTML5"],
   },
   {
     title: "Backend & Cloud APIs",
