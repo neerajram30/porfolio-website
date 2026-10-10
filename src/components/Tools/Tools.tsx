@@ -13,22 +13,22 @@ const categories: Category[] = [
   {
     title: "Frontend & Architecture",
     icon: Code2,
-    skills: ["React.js", "Next.js 15", "TypeScript", "JavaScript", "Redux Toolkit", "RTK Query"],
+    skills: ["React", "Next.js", "Redux Toolkit", "RTK Query", "TypeScript", "JavaScript (ES6+)"],
   },
   {
     title: "UI Systems & Styling",
     icon: Layout,
-    skills: ["Tailwind CSS", "Shadcn UI", "Lucide React", "Framer Motion", "CSS3 / HTML5"],
+    skills: ["Tailwind CSS", "HTML5", "CSS3", "Responsive UI", "Material UI"],
   },
   {
-    title: "Backend & Cloud APIs",
+    title: "Backend & Cloud Services",
     icon: Server,
-    skills: ["Node.js", "GraphQL", "REST APIs", "AWS Lambda", "AWS"],
+    skills: ["Node.js", "AWS Lambda", "AWS S3", "DynamoDB", "AWS Cognito", "RESTful APIs", "Websocket"],
   },
   {
     title: "Testing & Tooling",
     icon: Wrench,
-    skills: ["Git", "CI/CD Pipelines", "Vitest", "React Testing Library"],
+    skills: ["Vitest", "React Testing Library", "Git", "GitHub", "AWS CI/CD (CodePipeline)"],
   },
 ];
 

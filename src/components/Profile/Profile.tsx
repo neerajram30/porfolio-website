@@ -44,16 +44,16 @@ function Profile() {
             className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15]"
             variants={item}
           >
-            Hi, I&apos;m <span className="gradient-text">Neeraj MR</span>
+            Hi, I&apos;m <span className="gradient-text">Neeraj M R</span>
           </motion.h1>
 
           <motion.h2
             className="mt-3 text-lg sm:text-2xl md:text-3xl font-semibold text-slate-300 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2"
             variants={item}
           >
-            <span>Fullstack Engineer</span>
+            <span>Frontend React Developer</span>
             <span className="text-indigo-400 font-mono text-xs sm:text-base font-normal">
-              · React, Next.js &amp; TypeScript
+              · React, TypeScript &amp; AWS
             </span>
           </motion.h2>
 
@@ -62,11 +62,12 @@ function Profile() {
             className="mt-4 sm:mt-6 text-slate-300 text-sm sm:text-lg leading-relaxed max-w-2xl font-normal"
             variants={item}
           >
-            Engineer with{" "}
+            React Developer with{" "}
             <span className="text-indigo-400 font-semibold">4 years</span> of
-            experience crafting production-grade web applications at scale.
-            Specializing in frontend architecture, modular UI systems,
-            performance optimization, and seamless API integrations.
+            experience building scalable web applications using React,
+            TypeScript, Node.js, and AWS. Proficient in writing maintainable
+            code, optimizing frontend performance, and integrating robust
+            backend services.
           </motion.p>
 
           {/* Call to Actions & Social Links */}
@@ -74,15 +75,15 @@ function Profile() {
             className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full"
             variants={item}
           >
-            <Link
+            <a
               target="_blank"
               rel="noopener noreferrer"
-              href={process.env.NEXT_PUBLIC_RESUME_DRIVE_URL || "#"}
+              href={process.env.NEXT_PUBLIC_RESUME_DRIVE_URL || "/Neeraj_M_R.pdf"}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-600/30 border border-indigo-400/30 transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
             >
               <span>Get Resume</span>
               <ArrowUpRight className="w-4 h-4" />
-            </Link>
+            </a>
 
             <a
               href="#projects"
@@ -125,7 +126,7 @@ function Profile() {
               4 Years
             </div>
             <div className="text-xs text-slate-400 mt-1">
-              Building scalable frontend architectures &amp; web applications
+              Building scalable web applications with React &amp; TypeScript
             </div>
           </motion.div>
 
@@ -143,7 +144,7 @@ function Profile() {
               Tata Consultancy Services
             </div>
             <div className="text-xs text-slate-400 mt-1">
-              Frontend Developer · Production scale applications
+              Full-stack Engineer · React, TypeScript &amp; AWS
             </div>
           </motion.div>
 
@@ -162,12 +163,14 @@ function Profile() {
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2">
               {[
-                "React 19",
-                "Next.js 15",
+                "React",
                 "TypeScript",
+                "Next.js",
+                "Node.js",
+                "AWS Lambda",
+                "Redux Toolkit",
+                "RTK Query",
                 "Tailwind CSS",
-                "GraphQL",
-                "REST APIs",
               ].map((tech) => (
                 <span
                   key={tech}

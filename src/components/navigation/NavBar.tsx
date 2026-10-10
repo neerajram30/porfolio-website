@@ -97,7 +97,7 @@ export default function NavBar() {
         {/* Quick Action Button */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href={process.env.NEXT_PUBLIC_RESUME_DRIVE_URL || "#"}
+            href={process.env.NEXT_PUBLIC_RESUME_DRIVE_URL || "/Neeraj_M_R.pdf"}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold text-white bg-indigo-600/80 hover:bg-indigo-500 rounded-full border border-indigo-400/40 shadow-sm shadow-indigo-500/30 transition-all hover:scale-[1.03] active:scale-[0.98]"
@@ -157,7 +157,7 @@ export default function NavBar() {
 
             <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
               <a
-                href={process.env.NEXT_PUBLIC_RESUME_DRIVE_URL || "#"}
+                href={process.env.NEXT_PUBLIC_RESUME_DRIVE_URL || "/Neeraj_M_R.pdf"}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}

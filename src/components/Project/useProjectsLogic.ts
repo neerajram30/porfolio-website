@@ -27,15 +27,15 @@ export const PROJECTS_LIST: ProjectData[] = [
     link: process.env.NEXT_PUBLIC_SPAGHETTI_SLICER_NPM || "",
   },
   {
-    title: "Async Hub",
-    github: process.env.NEXT_PUBLIC_ASYNC_HUB_GITHUB || "",
-    technologies: ["Nextjs", "Drizzle ORM", "Tailwind CSS"],
+    title: "AL Taqniyoon",
+    github: "",
+    technologies: ["Next.js", "Shadcn UI", "Tailwind CSS", "AWS"],
     description:
-      "An async video hub for global teams to capture screen recordings and manage feedbacks",
+      "A commercial landing page built for electrical switchgear maintenance company AL Taqniyoon, deployed via AWS services.",
     owner: "neerajram30",
-    repo: "async-hub",
-    image: "/async_hub.png",
-    link: process.env.NEXT_PUBLIC_ASYNC_HUB_GITHUB || "",
+    repo: "",
+    image: "/taqniyoon.png",
+    link: "https://www.taqniyoon.com/",
   },
   {
     title: "God's Eye",

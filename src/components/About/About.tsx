@@ -21,15 +21,15 @@ const item: Variants = {
 const specializations = [
   "Frontend Architecture",
   "Performance Optimization",
-  "Responsive Design",
-  "REST API Integration",
-  "Fullstack Integration",
+  "State Management (RTK Query)",
+  "RESTful API Integration",
+  "AWS Cloud & CI/CD",
 ];
 
 const stats = [
   { value: "4", label: "Years Experience" },
-  { value: "15+", label: "Components Built" },
-  { value: "3", label: "Enterprise Products" },
+  { value: "4", label: "Enterprise Apps" },
+  { value: "AWS", label: "Cloud & CI/CD" },
 ];
 
 function About() {
@@ -77,15 +77,15 @@ function About() {
                 <span>Background &amp; Expertise</span>
               </h3>
               <p className="text-slate-300 text-sm sm:text-lg leading-relaxed">
-                Fullstack Engineer with{" "}
+                React Developer with{" "}
                 <span className="text-indigo-400 font-semibold">4 years</span>{" "}
-                of experience building enterprise web applications using React,
-                Next.js, and TypeScript. Currently at{" "}
+                of experience building scalable web applications using React,
+                TypeScript, Node.js, and AWS. Currently at{" "}
                 <span className="text-indigo-400 font-semibold">
-                  Tata Consultancy Services
-                </span>{" "}
-                as a Frontend Developer, specializing in clean architecture,
-                performance optimization, and REST API integrations.
+                  Tata Consultancy Services Kochi
+                </span>
+                , proficient in writing maintainable code, optimizing frontend
+                performance, and integrating robust backend services.
               </p>
 
               <div className="mt-6 pt-6 border-t border-white/10">
