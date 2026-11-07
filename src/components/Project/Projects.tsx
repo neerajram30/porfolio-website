@@ -1,22 +1,15 @@
 "use client";
 import React, { useState } from "react";
 import Project from "./Project";
-import { useProjectsLogic } from "./useProjectsLogic";
+import { projects } from "../config/projects";
 import { Sparkles } from "lucide-react";
 
 function Projects() {
-  const { projects, starsDetails } = useProjectsLogic();
   const [filter, setFilter] = useState("All");
 
-  const filterOptions = ["All", "Frontend / Web", "Developer Tools", "AI & Backend"];
+  const filterOptions = ["All", "Websites", "Mobile Apps", "Business Apps"];
 
-  const filteredProjects = projects.filter((project) => {
-    if (filter === "All") return true;
-    if (filter === "Developer Tools") return project.technologies.some((t) => ["CLI", "Typescript"].includes(t));
-    if (filter === "Frontend / Web") return project.technologies.some((t) => ["Nextjs", "Next.js", "Tailwind CSS", "TypeScript", "Shadcn UI"].includes(t));
-    if (filter === "AI & Backend") return project.technologies.some((t) => ["Python", "Flask", "Dlib", "Drizzle ORM"].includes(t));
-    return true;
-  });
+  const filteredProjects = projects.filter((project) => filter === "All" || project.category === filter);
 
   return (
     <section className="relative w-full py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-slate-950/40 overflow-hidden" id="projects">
@@ -27,10 +20,11 @@ function Projects() {
             <Sparkles className="w-3.5 h-3.5" /> Featured Work &amp; Creations
           </div>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-            Selected <span className="gradient-text">Projects</span>
+            Project <span className="gradient-text">Contributions</span>
           </h2>
           <p className="mt-3 text-slate-400 text-xs sm:text-base max-w-xl">
-            A curated showcase of open-source CLI tools, fullstack web applications, and developer utilities.
+            Websites, mobile apps, and business applications across employability,
+            data management, sports, sustainability, retail, and community.
           </p>
 
           {/* Category Filters */}
@@ -39,6 +33,7 @@ function Projects() {
               <button
                 key={option}
                 onClick={() => setFilter(option)}
+                aria-pressed={filter === option}
                 className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-xl transition-all ${
                   filter === option
                     ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/30"
@@ -57,7 +52,6 @@ function Projects() {
             <Project
               data={item}
               key={item.title + "_" + i}
-              starsDetails={starsDetails as Record<string, number | string>}
               index={i}
             />
           ))}

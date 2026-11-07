@@ -1,4 +1,5 @@
 "use client";
+import { profile } from "../config/profile";
 import React, { useState } from "react";
 import Link from "next/link";
 import { socials } from "../config/socialLinks";
@@ -6,7 +7,7 @@ import { Mail, Phone, Copy, Check, ArrowUpRight, Sparkles } from "lucide-react";
 
 function Footer() {
   const [copied, setCopied] = useState(false);
-  const email = "neerajramachandran30@gmail.com";
+  const email = profile.email;
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -30,7 +31,7 @@ function Footer() {
                 Got an exciting project or role in mind?
               </h2>
               <p className="mt-2.5 sm:mt-3 text-slate-300 text-xs sm:text-base leading-relaxed">
-                Whether you have a question, want to collaborate on open-source, or discuss frontend architecture opportunities — my inbox is always open.
+                Interested in collaborating or discussing a full-stack development role? Get in touch.
               </p>
             </div>
 
@@ -50,12 +51,12 @@ function Footer() {
               </button>
 
               <a
-                href="tel:+918129390516"
+                href={profile.phoneHref}
                 className="flex items-center justify-between px-3.5 sm:px-5 py-3 sm:py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 border border-white/10 text-white font-mono text-xs sm:text-sm transition-all w-full"
               >
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span>+91 8129390516</span>
+                  <span>{profile.phone}</span>
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-slate-400 shrink-0" />
               </a>
@@ -67,10 +68,10 @@ function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 pt-6 sm:pt-8 border-t border-white/10">
           <div className="flex items-center gap-2">
             <span className="font-bold text-white tracking-tight">
-              Neeraj<span className="text-indigo-400">.mr</span>
+              Archana<span className="text-indigo-400">.P.Babu</span>
             </span>
             <span className="text-slate-600">|</span>
-            <span className="text-xs text-slate-400">Fullstack Engineer</span>
+            <span className="text-xs text-slate-400">{profile.role}</span>
           </div>
 
           {/* Social Icons */}
@@ -90,7 +91,7 @@ function Footer() {
           </div>
 
           <p className="text-[11px] sm:text-xs text-slate-500 text-center sm:text-right font-mono">
-            © 2026 Neeraj M R · Built with Next.js 15 &amp; Tailwind CSS
+            © {new Date().getFullYear()} {profile.name} · {profile.location}
           </p>
         </div>
       </div>

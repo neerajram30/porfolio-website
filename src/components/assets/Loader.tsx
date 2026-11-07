@@ -1,6 +1,9 @@
 "use client";
+import { profile } from "../config/profile";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import profilePicture from "../../profilepic.png";
 
 export default function Loader() {
   const [progress, setProgress] = useState(0);
@@ -38,23 +41,25 @@ export default function Loader() {
 
       {/* Center Minimalist Brand & Loader */}
       <div className="relative z-10 flex flex-col items-center text-center px-6">
-        {/* Monogram Mark */}
+        {/* Circular Portrait */}
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative flex items-center justify-center w-14 h-14 rounded-2xl bg-slate-900/80 border border-white/10 shadow-2xl mb-5"
+          className="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-slate-900/80 border border-indigo-400/40 shadow-2xl shadow-indigo-500/20 mb-5"
         >
-          {/* Subtle Corner Accent Glow */}
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-indigo-500/10 via-transparent to-cyan-500/10" />
-
-          {/* Monogram Text */}
-          <span className="font-mono font-bold text-lg tracking-wider text-white">
-            N<span className="text-indigo-400">.</span>
-          </span>
+          <Image
+            src={profilePicture}
+            alt={`Illustrated portrait of ${profile.name}`}
+            width={96}
+            height={96}
+            sizes="(max-width: 639px) 80px, 96px"
+            priority
+            className="w-full h-full rounded-full object-cover"
+          />
 
           {/* Active Status Pulse Dot */}
-          <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+          <span className="absolute top-1 right-2 flex h-2.5 w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-60" />
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-500" />
           </span>
@@ -68,10 +73,10 @@ export default function Loader() {
           className="flex flex-col items-center mb-7"
         >
           <h1 className="text-base sm:text-lg font-semibold tracking-tight text-white">
-            Neeraj M R
+            {profile.name}
           </h1>
           <p className="text-[11px] sm:text-xs text-slate-400 font-mono tracking-widest uppercase mt-1">
-            Frontend React Developer
+            {profile.role}
           </p>
         </motion.div>
 

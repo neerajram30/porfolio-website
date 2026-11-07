@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import NavBar from "../components/navigation/NavBar";
 import Profile from "../components/Profile/Profile";
+import Education from "../components/Education/Education";
+import Gallery from "../components/Gallery/Gallery";
 import Projects from "../components/Project/Projects";
 import Experiences from "../components/Experience/Experiences";
 import Loader from "../components/assets/Loader";
@@ -38,12 +40,12 @@ export default function Home() {
             <section id="about" className="w-full">
               <About />
             </section>
-            <section id="projects" className="w-full">
-              <Projects />
-            </section>
             <section id="experience" className="w-full">
               <Experiences />
             </section>
+            <Projects />
+            <Education />
+            <Gallery />
             <Footer />
             <CursorGlow />
           </motion.div>

@@ -1,4 +1,5 @@
 "use client";
+import { profile } from "../config/profile";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
@@ -44,16 +45,16 @@ function Profile() {
             className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15]"
             variants={item}
           >
-            Hi, I&apos;m <span className="gradient-text">Neeraj M R</span>
+            Hi, I&apos;m <span className="gradient-text">{profile.name}</span>
           </motion.h1>
 
           <motion.h2
             className="mt-3 text-lg sm:text-2xl md:text-3xl font-semibold text-slate-300 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2"
             variants={item}
           >
-            <span>Frontend React Developer</span>
+            <span>{profile.role}</span>
             <span className="text-indigo-400 font-mono text-xs sm:text-base font-normal">
-              · React, TypeScript &amp; AWS
+              · MEAN &amp; MERN
             </span>
           </motion.h2>
 
@@ -62,12 +63,7 @@ function Profile() {
             className="mt-4 sm:mt-6 text-slate-300 text-sm sm:text-lg leading-relaxed max-w-2xl font-normal"
             variants={item}
           >
-            React Developer with{" "}
-            <span className="text-indigo-400 font-semibold">4 years</span> of
-            experience building scalable web applications using React,
-            TypeScript, Node.js, and AWS. Proficient in writing maintainable
-            code, optimizing frontend performance, and integrating robust
-            backend services.
+            {profile.summary}
           </motion.p>
 
           {/* Call to Actions & Social Links */}
@@ -78,18 +74,18 @@ function Profile() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href={process.env.NEXT_PUBLIC_RESUME_DRIVE_URL || "/Neeraj_M_R.pdf"}
+              href={profile.cvUrl}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-600/30 border border-indigo-400/30 transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
             >
-              <span>Get Resume</span>
+              <span>Resume</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
 
             <a
-              href="#projects"
+              href="#experience"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800/80 border border-white/10 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
             >
-              <span>View Projects</span>
+              <span>View Experience</span>
             </a>
 
             {/* Social Icons */}
@@ -123,10 +119,10 @@ function Profile() {
               </span>
             </div>
             <div className="text-2xl sm:text-3xl font-black text-white">
-              4 Years
+              7 Years
             </div>
             <div className="text-xs text-slate-400 mt-1">
-              Building scalable web applications with React &amp; TypeScript
+              Building dynamic, responsive applications with MEAN &amp; MERN
             </div>
           </motion.div>
 
@@ -141,10 +137,10 @@ function Profile() {
               </span>
             </div>
             <div className="text-base sm:text-lg font-bold text-white leading-tight">
-              Tata Consultancy Services
+              Entelika Consultancy &amp; IT Services
             </div>
             <div className="text-xs text-slate-400 mt-1">
-              Full-stack Engineer · React, TypeScript &amp; AWS
+              Senior Developer · 2024 – Present
             </div>
           </motion.div>
 
@@ -162,16 +158,7 @@ function Profile() {
               </span>
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2">
-              {[
-                "React",
-                "TypeScript",
-                "Next.js",
-                "Node.js",
-                "AWS Lambda",
-                "Redux Toolkit",
-                "RTK Query",
-                "Tailwind CSS",
-              ].map((tech) => (
+              {["Angular", "ReactJS", "Vue.js", "Node.js", "Express.js", "MongoDB", "TypeScript", "Azure", "AWS"].map((tech) => (
                 <span
                   key={tech}
                   className="text-[11px] sm:text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800/90 text-slate-200 border border-white/10"

@@ -1,36 +1,18 @@
-import { SiGithub, SiGmail, SiInstagram, SiLinkedin, SiX } from "react-icons/si";
+import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
+import { Mail } from "lucide-react";
 import { ComponentType } from "react";
+import { profile } from "./profile";
 
 interface Social {
   id: number;
   title: string;
   link: string;
-  icon: ComponentType<{className?:string}>;
+  icon: ComponentType<{ className?: string }>;
 }
 
 export const socials: Social[] = [
-  {
-    id: 1,
-    title: "Github",
-    link: process.env.NEXT_PUBLIC_SOCIAL_GITHUB || "",
-    icon: SiGithub,
-  },
-  {
-    id: 2,
-    title: "X",
-    link: process.env.NEXT_PUBLIC_SOCIAL_X || "",
-    icon: SiX,
-  },
-  {
-    id: 3,
-    title: "Linkedin",
-    link: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN || "",
-    icon: SiLinkedin,
-  },
-  {
-    id: 4,
-    title: "Instagram",
-    link: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM || "",
-    icon: SiInstagram,
-  }
+  { id: 1, title: "LinkedIn", link: profile.linkedin, icon: SiLinkedin },
+  { id: 2, title: "Email", link: `mailto:${profile.email}`, icon: Mail },
+  { id: 3, title: "Instagram", link: profile.instagram, icon: SiInstagram },
+  { id: 4, title: "GitHub", link: profile.github, icon: SiGithub },
 ];

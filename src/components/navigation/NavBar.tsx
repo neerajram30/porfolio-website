@@ -1,4 +1,5 @@
 "use client";
+import { profile } from "../config/profile";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Code2, Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
@@ -6,8 +7,10 @@ import { Code2, Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 export default function NavBar() {
   const links = [
     { name: "About", id: "about" },
+    { name: "Work Experience", id: "experience" },
     { name: "Projects", id: "projects" },
-    { name: "Experience", id: "experience" },
+    { name: "Education", id: "education" },
+    { name: "Gallery", id: "gallery" },
   ];
 
   const [open, setOpen] = useState(false);
@@ -61,16 +64,16 @@ export default function NavBar() {
           </div>
           <div className="flex flex-col">
             <span className="font-bold text-white text-sm md:text-base tracking-tight group-hover:text-indigo-300 transition-colors">
-              Neeraj<span className="text-indigo-400">.mr</span>
+              Archana<span className="text-indigo-400">.P.Babu</span>
             </span>
             <span className="text-[10px] text-slate-400 tracking-wider font-mono">
-              FULLSTACK DEV
+              FULL-STACK DEV
             </span>
           </div>
         </a>
 
         {/* Desktop Nav Items */}
-        <div className="hidden md:flex items-center gap-1 bg-slate-900/60 p-1 rounded-full border border-white/5">
+        <div className="hidden lg:flex items-center gap-1 bg-slate-900/60 p-1 rounded-full border border-white/5">
           {links.map((link) => {
             const isActive = activeLink === link.id;
             return (
@@ -95,9 +98,9 @@ export default function NavBar() {
         </div>
 
         {/* Quick Action Button */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <a
-            href={process.env.NEXT_PUBLIC_RESUME_DRIVE_URL || "/Neeraj_M_R.pdf"}
+            href={profile.cvUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold text-white bg-indigo-600/80 hover:bg-indigo-500 rounded-full border border-indigo-400/40 shadow-sm shadow-indigo-500/30 transition-all hover:scale-[1.03] active:scale-[0.98]"
@@ -110,7 +113,7 @@ export default function NavBar() {
         {/* Mobile Hamburger Menu Toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden p-2 rounded-full text-slate-300 hover:text-white bg-slate-800/80 border border-white/10 focus:outline-none"
+          className="lg:hidden p-2 rounded-full text-slate-300 hover:text-white bg-slate-800/80 border border-white/10 focus:outline-none"
           aria-label="Toggle Navigation Menu"
         >
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -124,7 +127,7 @@ export default function NavBar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-16 z-40 md:hidden bg-slate-950/95 backdrop-blur-2xl px-6 py-8 flex flex-col justify-between border-t border-white/10 pointer-events-auto"
+            className="fixed inset-0 top-16 z-40 lg:hidden bg-slate-950/95 backdrop-blur-2xl px-6 py-8 flex flex-col justify-between border-t border-white/10 pointer-events-auto"
           >
             <div className="flex flex-col gap-6 pt-4">
               <div className="flex items-center gap-2 text-indigo-400 text-xs font-mono uppercase tracking-widest px-2">
@@ -157,13 +160,13 @@ export default function NavBar() {
 
             <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
               <a
-                href={process.env.NEXT_PUBLIC_RESUME_DRIVE_URL || "/Neeraj_M_R.pdf"}
+                href={profile.cvUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold text-white bg-indigo-600 rounded-xl shadow-lg shadow-indigo-600/30"
               >
-                <span>Download Resume</span>
+                <span>Resume</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>

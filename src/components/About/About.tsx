@@ -1,6 +1,7 @@
 "use client";
 import { motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { profile } from "../config/profile";
 import Tools from "../Tools/Tools";
 import { Sparkles, Award, Cpu, CheckCircle2 } from "lucide-react";
 
@@ -19,17 +20,17 @@ const item: Variants = {
 };
 
 const specializations = [
-  "Frontend Architecture",
-  "Performance Optimization",
-  "State Management (RTK Query)",
+  "MEAN & MERN Development",
+  "Responsive User Interfaces",
+  "Cross-platform Performance",
   "RESTful API Integration",
-  "AWS Cloud & CI/CD",
+  "Azure DevOps & CI/CD",
 ];
 
 const stats = [
-  { value: "4", label: "Years Experience" },
-  { value: "4", label: "Enterprise Apps" },
-  { value: "AWS", label: "Cloud & CI/CD" },
+  { value: "7", label: "Years Experience" },
+  { value: "4", label: "Professional Roles" },
+  { value: "Azure", label: "Cloud & CI/CD" },
 ];
 
 function About() {
@@ -59,8 +60,8 @@ function About() {
             <span className="gradient-text">Web Experiences</span>
           </h2>
           <p className="mt-3 text-slate-400 text-xs sm:text-base max-w-xl">
-            Passionate about modern web standards, modular frontend
-            architectures, and fluid interactive UIs.
+            Building user-friendly applications with clean code, responsive
+            interfaces, and strong cross-functional collaboration.
           </p>
         </motion.div>
 
@@ -77,15 +78,8 @@ function About() {
                 <span>Background &amp; Expertise</span>
               </h3>
               <p className="text-slate-300 text-sm sm:text-lg leading-relaxed">
-                React Developer with{" "}
-                <span className="text-indigo-400 font-semibold">4 years</span>{" "}
-                of experience building scalable web applications using React,
-                TypeScript, Node.js, and AWS. Currently at{" "}
-                <span className="text-indigo-400 font-semibold">
-                  Tata Consultancy Services Kochi
-                </span>
-                , proficient in writing maintainable code, optimizing frontend
-                performance, and integrating robust backend services.
+                {profile.summary} Based in {profile.location}, I currently work
+                as a Senior Developer at Entelika Consultancy &amp; IT Services.
               </p>
 
               <div className="mt-6 pt-6 border-t border-white/10">
@@ -131,7 +125,7 @@ function About() {
           >
             <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
               <Cpu className="w-5 h-5 text-cyan-400 shrink-0" />
-              <span>Technology Matrix</span>
+              <span>Technical Skills</span>
             </h3>
             <Tools />
           </motion.div>

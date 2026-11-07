@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Code2, Layout, Server, Wrench } from "lucide-react";
+import { Cloud, Code2, Layout, Server, Wrench } from "lucide-react";
 
 interface Category {
   title: string;
@@ -11,24 +11,29 @@ interface Category {
 
 const categories: Category[] = [
   {
-    title: "Frontend & Architecture",
+    title: "Languages",
     icon: Code2,
-    skills: ["React", "Next.js", "Redux Toolkit", "RTK Query", "TypeScript", "JavaScript (ES6+)"],
+    skills: ["JavaScript", "TypeScript", "Python", "PHP", "Java", "SQL", "HTML", "CSS"],
   },
   {
-    title: "UI Systems & Styling",
+    title: "Frontend & Frameworks",
     icon: Layout,
-    skills: ["Tailwind CSS", "HTML5", "CSS3", "Responsive UI", "Material UI"],
+    skills: ["Angular", "ReactJS", "Vue.js", "Responsive UI"],
   },
   {
-    title: "Backend & Cloud Services",
+    title: "Backend & APIs",
     icon: Server,
-    skills: ["Node.js", "AWS Lambda", "AWS S3", "DynamoDB", "AWS Cognito", "RESTful APIs", "Websocket"],
+    skills: ["Node.js", "Express.js", "MongoDB", "RESTful APIs"],
   },
   {
-    title: "Testing & Tooling",
+    title: "Cloud Technologies",
+    icon: Cloud,
+    skills: ["Azure", "AWS"],
+  },
+  {
+    title: "Tools & Delivery",
     icon: Wrench,
-    skills: ["Vitest", "React Testing Library", "Git", "GitHub", "AWS CI/CD (CodePipeline)"],
+    skills: ["Git", "Postman", "Azure DevOps", "CI/CD", "Agile"],
   },
 ];
 

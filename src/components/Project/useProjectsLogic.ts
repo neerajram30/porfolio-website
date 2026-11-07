@@ -14,52 +14,7 @@ export interface ProjectData {
   link: string;
 }
 
-export const PROJECTS_LIST: ProjectData[] = [
-  {
-    title: "Speghetti Slicer",
-    github: process.env.NEXT_PUBLIC_SPAGHETTI_SLICER_GITHUB || "",
-    technologies: ["Typescript", "CLI"],
-    description:
-      "An AST-based CLI that audits and refactors React/TypeScript projects",
-    owner: "neerajram30",
-    repo: "spaghetti-slicer",
-    image: "/spaghetti_slicer.png",
-    link: process.env.NEXT_PUBLIC_SPAGHETTI_SLICER_NPM || "",
-  },
-  {
-    title: "AL Taqniyoon",
-    github: "",
-    technologies: ["Next.js", "Shadcn UI", "Tailwind CSS", "AWS"],
-    description:
-      "A commercial landing page built for electrical switchgear maintenance company AL Taqniyoon, deployed via AWS services.",
-    owner: "neerajram30",
-    repo: "",
-    image: "/taqniyoon.png",
-    link: "https://www.taqniyoon.com/",
-  },
-  {
-    title: "God's Eye",
-    github: process.env.NEXT_PUBLIC_GODS_EYE_GITHUB || "",
-    technologies: ["Python", "Flask", "Dlib"],
-    description:
-      "Helps police officers to find missing people using Artificial Intelligence",
-    owner: "neerajram30",
-    repo: "God-s-Eye",
-    image: "/godeye.jpg",
-    link: process.env.NEXT_PUBLIC_GODS_EYE_GITHUB || "",
-  },
-  {
-    title: "Portfolio Website",
-    github: process.env.NEXT_PUBLIC_PORTFOLIO_GITHUB || "",
-    technologies: ["Nextjs", "Tailwind CSS", "TypeScript"],
-    description:
-      "My personal portfolio website showcasing side projects and experience",
-    owner: "neerajram30",
-    repo: "porfolio-website",
-    image: "/portfolio.png",
-    link: process.env.NEXT_PUBLIC_NETLIFY_APP_URL || "",
-  },
-];
+export const PROJECTS_LIST: ProjectData[] = [];
 
 export function useProjectsLogic() {
   const [loaded, setLoaded] = useState(false);
