@@ -50,19 +50,19 @@ function Tools() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.4 }}
-              className="p-4 rounded-xl bg-slate-900/70 border border-white/10 hover:border-indigo-500/40 transition-all hover:shadow-lg hover:shadow-indigo-500/5"
+              className="p-4 rounded-xl bg-slate-900/70 light:bg-white/70 border border-white/10 light:border-slate-900/10 hover:border-indigo-500/40 transition-all hover:shadow-lg hover:shadow-indigo-500/5"
             >
               <div className="flex items-center gap-2 mb-3">
-                <span className="p-1.5 rounded-lg bg-indigo-500/10 text-indigo-400">
+                <span className="p-1.5 rounded-lg bg-indigo-500/10 text-indigo-400 light:text-indigo-600">
                   <Icon className="w-4 h-4" />
                 </span>
-                <h3 className="text-sm font-semibold text-slate-200">{cat.title}</h3>
+                <h3 className="text-sm font-semibold text-slate-200 light:text-slate-800">{cat.title}</h3>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {cat.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800/90 text-slate-300 border border-white/5 hover:border-indigo-500/40 hover:text-white transition-colors"
+                    className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800/90 light:bg-slate-200/90 text-slate-300 light:text-slate-700 border border-white/5 light:border-slate-900/10 hover:border-indigo-500/40 hover:text-white light:hover:text-slate-900 transition-colors"
                   >
                     {skill}
                   </span>

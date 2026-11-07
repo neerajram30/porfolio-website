@@ -40,7 +40,7 @@ export default function CursorGlow() {
   if (!isPointerDevice) return null;
 
   return (
-        <div className="relative w-full text-slate-400 font-sans antialiased selection:bg-teal-300 selection:text-teal-900">
+        <div className="relative w-full text-slate-400 light:text-slate-600 font-sans antialiased selection:bg-teal-300 selection:text-teal-900">
       
       {/* 
         SMOOTH LAYERING HOVER SPOTLIGHT

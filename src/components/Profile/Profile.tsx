@@ -42,25 +42,25 @@ function Profile() {
         <div className="lg:col-span-8 flex flex-col items-start text-left">
           {/* Kinetic Headline */}
           <motion.h1
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15]"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white light:text-slate-900 tracking-tight leading-[1.15]"
             variants={item}
           >
             Hi, I&apos;m <span className="gradient-text">{profile.name}</span>
           </motion.h1>
 
           <motion.h2
-            className="mt-3 text-lg sm:text-2xl md:text-3xl font-semibold text-slate-300 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2"
+            className="mt-3 text-lg sm:text-2xl md:text-3xl font-semibold text-slate-300 light:text-slate-700 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2"
             variants={item}
           >
             <span>{profile.role}</span>
-            <span className="text-indigo-400 font-mono text-xs sm:text-base font-normal">
+            <span className="text-indigo-400 light:text-indigo-600 font-mono text-xs sm:text-base font-normal">
               · MEAN &amp; MERN
             </span>
           </motion.h2>
 
           {/* Value Proposition */}
           <motion.p
-            className="mt-4 sm:mt-6 text-slate-300 text-sm sm:text-lg leading-relaxed max-w-2xl font-normal"
+            className="mt-4 sm:mt-6 text-slate-300 light:text-slate-700 text-sm sm:text-lg leading-relaxed max-w-2xl font-normal"
             variants={item}
           >
             {profile.summary}
@@ -83,7 +83,7 @@ function Profile() {
 
             <a
               href="#experience"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800/80 border border-white/10 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-slate-200 light:text-slate-800 bg-slate-900/80 light:bg-white/80 hover:bg-slate-800/80 light:hover:bg-slate-200/80 border border-white/10 light:border-slate-900/10 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
             >
               <span>View Experience</span>
             </a>
@@ -97,7 +97,7 @@ function Profile() {
                   target="_blank"
                   rel="noopener noreferrer"
                   key={social.title + social.id}
-                  className="p-2.5 rounded-xl bg-slate-900/60 border border-white/10 text-slate-400 hover:text-white hover:border-indigo-500/50 hover:bg-slate-800/80 transition-all hover:-translate-y-0.5"
+                  className="p-2.5 rounded-xl bg-slate-900/60 light:bg-white/60 border border-white/10 light:border-slate-900/10 text-slate-400 light:text-slate-600 hover:text-white light:hover:text-slate-900 hover:border-indigo-500/50 hover:bg-slate-800/80 light:hover:bg-slate-200/80 transition-all hover:-translate-y-0.5"
                 >
                   <social.icon className="w-5 h-5" />
                 </Link>
@@ -111,17 +111,17 @@ function Profile() {
           {/* Card 1: Experience Highlights */}
           <motion.div variants={item} className="bento-card p-4 sm:p-5">
             <div className="flex items-center justify-between mb-3">
-              <span className="p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
+              <span className="p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 light:text-indigo-600">
                 <Terminal className="w-5 h-5" />
               </span>
-              <span className="text-[10px] sm:text-xs font-mono text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">
+              <span className="text-[10px] sm:text-xs font-mono text-indigo-400 light:text-indigo-600 bg-indigo-500/10 px-2 py-0.5 rounded">
                 EXPERIENCE
               </span>
             </div>
-            <div className="text-2xl sm:text-3xl font-black text-white">
+            <div className="text-2xl sm:text-3xl font-black text-white light:text-slate-900">
               7 Years
             </div>
-            <div className="text-xs text-slate-400 mt-1">
+            <div className="text-xs text-slate-400 light:text-slate-600 mt-1">
               Building dynamic, responsive applications with MEAN &amp; MERN
             </div>
           </motion.div>
@@ -129,17 +129,17 @@ function Profile() {
           {/* Card 2: Company Highlight */}
           <motion.div variants={item} className="bento-card p-4 sm:p-5">
             <div className="flex items-center justify-between mb-3">
-              <span className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+              <span className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 light:text-cyan-700">
                 <Layers className="w-5 h-5" />
               </span>
-              <span className="text-[10px] sm:text-xs font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">
+              <span className="text-[10px] sm:text-xs font-mono text-cyan-400 light:text-cyan-700 bg-cyan-500/10 px-2 py-0.5 rounded">
                 CURRENT ROLE
               </span>
             </div>
-            <div className="text-base sm:text-lg font-bold text-white leading-tight">
+            <div className="text-base sm:text-lg font-bold text-white light:text-slate-900 leading-tight">
               Entelika Consultancy &amp; IT Services
             </div>
-            <div className="text-xs text-slate-400 mt-1">
+            <div className="text-xs text-slate-400 light:text-slate-600 mt-1">
               Senior Developer · 2024 – Present
             </div>
           </motion.div>
@@ -150,10 +150,10 @@ function Profile() {
             className="bento-card p-4 sm:p-5 sm:col-span-2 lg:col-span-1"
           >
             <div className="flex items-center justify-between mb-3">
-              <span className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+              <span className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 light:text-emerald-700">
                 <Cpu className="w-5 h-5" />
               </span>
-              <span className="text-[10px] sm:text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
+              <span className="text-[10px] sm:text-xs font-mono text-emerald-400 light:text-emerald-700 bg-emerald-500/10 px-2 py-0.5 rounded">
                 CORE STACK
               </span>
             </div>
@@ -161,7 +161,7 @@ function Profile() {
               {["Angular", "ReactJS", "Vue.js", "Node.js", "Express.js", "MongoDB", "TypeScript", "Azure", "AWS"].map((tech) => (
                 <span
                   key={tech}
-                  className="text-[11px] sm:text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800/90 text-slate-200 border border-white/10"
+                  className="text-[11px] sm:text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800/90 light:bg-slate-200/90 text-slate-200 light:text-slate-800 border border-white/10 light:border-slate-900/10"
                 >
                   {tech}
                 </span>

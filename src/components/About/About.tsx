@@ -38,7 +38,7 @@ function About() {
 
   return (
     <section
-      className="relative w-full py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-slate-950/60 border-y border-white/5 overflow-hidden"
+      className="relative w-full py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-slate-950/60 light:bg-slate-100/60 border-y border-white/5 light:border-slate-900/10 overflow-hidden"
       ref={ref}
     >
       <motion.div
@@ -52,14 +52,14 @@ function About() {
           className="flex flex-col items-center text-center mb-10 sm:mb-16"
           variants={item}
         >
-          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-[11px] sm:text-xs font-mono tracking-widest uppercase mb-3">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 light:text-indigo-600 text-[11px] sm:text-xs font-mono tracking-widest uppercase mb-3">
             <Sparkles className="w-3.5 h-3.5" /> About &amp; Capabilities
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white light:text-slate-900 tracking-tight">
             Crafting High-Performance{" "}
             <span className="gradient-text">Web Experiences</span>
           </h2>
-          <p className="mt-3 text-slate-400 text-xs sm:text-base max-w-xl">
+          <p className="mt-3 text-slate-400 light:text-slate-600 text-xs sm:text-base max-w-xl">
             Building user-friendly applications with clean code, responsive
             interfaces, and strong cross-functional collaboration.
           </p>
@@ -73,26 +73,26 @@ function About() {
             variants={item}
           >
             <div className="bento-card p-5 sm:p-6 md:p-8">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
-                <Award className="w-5 h-5 text-indigo-400 shrink-0" />
+              <h3 className="text-lg sm:text-xl font-bold text-white light:text-slate-900 mb-3 sm:mb-4 flex items-center gap-2">
+                <Award className="w-5 h-5 text-indigo-400 light:text-indigo-600 shrink-0" />
                 <span>Background &amp; Expertise</span>
               </h3>
-              <p className="text-slate-300 text-sm sm:text-lg leading-relaxed">
+              <p className="text-slate-300 light:text-slate-700 text-sm sm:text-lg leading-relaxed">
                 {profile.summary} Based in {profile.location}, I currently work
                 as a Senior Developer at Entelika Consultancy &amp; IT Services.
               </p>
 
-              <div className="mt-6 pt-6 border-t border-white/10">
-                <h4 className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-3">
+              <div className="mt-6 pt-6 border-t border-white/10 light:border-slate-900/10">
+                <h4 className="text-[11px] font-mono text-slate-400 light:text-slate-600 uppercase tracking-wider mb-3">
                   Core Specializations
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {specializations.map((spec) => (
                     <span
                       key={spec}
-                      className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-indigo-500/10 border border-indigo-500/30 text-indigo-300"
+                      className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 light:text-indigo-700"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400 light:text-indigo-600 shrink-0" />
                       {spec}
                     </span>
                   ))}
@@ -100,16 +100,16 @@ function About() {
               </div>
 
               {/* Stats Counters */}
-              <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-6 sm:mt-8 pt-6 border-t border-white/10 text-center">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-6 sm:mt-8 pt-6 border-t border-white/10 light:border-slate-900/10 text-center">
                 {stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="p-2 sm:p-3 rounded-xl bg-slate-900/60 border border-white/5"
+                    className="p-2 sm:p-3 rounded-xl bg-slate-900/60 light:bg-white/60 border border-white/5 light:border-slate-900/10"
                   >
-                    <p className="text-xl sm:text-3xl font-black text-indigo-400">
+                    <p className="text-xl sm:text-3xl font-black text-indigo-400 light:text-indigo-600">
                       {stat.value}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-slate-400 font-medium mt-1 leading-tight">
+                    <p className="text-[10px] sm:text-xs text-slate-400 light:text-slate-600 font-medium mt-1 leading-tight">
                       {stat.label}
                     </p>
                   </div>
@@ -123,8 +123,8 @@ function About() {
             className="lg:col-span-6 bento-card p-5 sm:p-6 md:p-8"
             variants={item}
           >
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
-              <Cpu className="w-5 h-5 text-cyan-400 shrink-0" />
+            <h3 className="text-lg sm:text-xl font-bold text-white light:text-slate-900 mb-4 sm:mb-6 flex items-center gap-2">
+              <Cpu className="w-5 h-5 text-cyan-400 light:text-cyan-700 shrink-0" />
               <span>Technical Skills</span>
             </h3>
             <Tools />

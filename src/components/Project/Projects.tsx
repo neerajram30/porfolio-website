@@ -12,23 +12,23 @@ function Projects() {
   const filteredProjects = projects.filter((project) => filter === "All" || project.category === filter);
 
   return (
-    <section className="relative w-full py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-slate-950/40 overflow-hidden" id="projects">
+    <section className="relative w-full py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-slate-950/40 light:bg-slate-100/40 overflow-hidden" id="projects">
       <div className="w-full max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-[11px] sm:text-xs font-mono tracking-widest uppercase mb-3">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 light:text-indigo-600 text-[11px] sm:text-xs font-mono tracking-widest uppercase mb-3">
             <Sparkles className="w-3.5 h-3.5" /> Featured Work &amp; Creations
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white light:text-slate-900 tracking-tight">
             Project <span className="gradient-text">Contributions</span>
           </h2>
-          <p className="mt-3 text-slate-400 text-xs sm:text-base max-w-xl">
+          <p className="mt-3 text-slate-400 light:text-slate-600 text-xs sm:text-base max-w-xl">
             Websites, mobile apps, and business applications across employability,
             data management, sports, sustainability, retail, and community.
           </p>
 
           {/* Category Filters */}
-          <div className="flex flex-wrap justify-center items-center gap-1.5 sm:gap-2 mt-6 sm:mt-8 p-1 sm:p-1.5 rounded-2xl bg-slate-900/80 border border-white/10 w-full sm:w-auto">
+          <div className="flex flex-wrap justify-center items-center gap-1.5 sm:gap-2 mt-6 sm:mt-8 p-1 sm:p-1.5 rounded-2xl bg-slate-900/80 light:bg-white/80 border border-white/10 light:border-slate-900/10 w-full sm:w-auto">
             {filterOptions.map((option) => (
               <button
                 key={option}
@@ -37,7 +37,7 @@ function Projects() {
                 className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-xl transition-all ${
                   filter === option
                     ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/30"
-                    : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                    : "text-slate-400 light:text-slate-600 hover:text-white light:hover:text-slate-900 hover:bg-slate-800/50 light:hover:bg-slate-200/50"
                 }`}
               >
                 {option}

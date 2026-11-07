@@ -6,16 +6,16 @@ import { education } from "../config/profile";
 
 export default function Education() {
   return (
-    <section id="education" className="relative w-full py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-slate-950/40">
+    <section id="education" className="relative w-full py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-slate-950/40 light:bg-slate-100/40">
       <div className="w-full max-w-6xl mx-auto">
         <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-mono tracking-widest uppercase mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 light:text-indigo-600 text-xs font-mono tracking-widest uppercase mb-3">
             <Award className="w-3.5 h-3.5" /> Learning &amp; Achievements
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white light:text-slate-900 tracking-tight">
             My <span className="gradient-text">Education</span>
           </h2>
-          <p className="mt-3 text-slate-400 text-sm sm:text-base max-w-xl">
+          <p className="mt-3 text-slate-400 light:text-slate-600 text-sm sm:text-base max-w-xl">
             A foundation in computer science, hands-on learning, and student leadership.
           </p>
         </div>
@@ -30,18 +30,18 @@ export default function Education() {
               className="bento-card p-5 sm:p-6"
             >
               <div className="flex items-center justify-between gap-2 mb-5">
-                <GraduationCap className="w-6 h-6 text-indigo-400" />
-                <span className="text-xs font-mono text-indigo-300">{entry.period}</span>
+                <GraduationCap className="w-6 h-6 text-indigo-400 light:text-indigo-600" />
+                <span className="text-xs font-mono text-indigo-300 light:text-indigo-700">{entry.period}</span>
               </div>
-              <h3 className="text-lg font-bold text-white">{entry.qualification}</h3>
-              <p className="text-sm text-indigo-300 mt-1">{entry.subject}</p>
-              <p className="text-sm text-slate-200 mt-4">{entry.institution}</p>
-              <p className="text-xs text-slate-400 mt-1">{entry.board}</p>
+              <h3 className="text-lg font-bold text-white light:text-slate-900">{entry.qualification}</h3>
+              <p className="text-sm text-indigo-300 light:text-indigo-700 mt-1">{entry.subject}</p>
+              <p className="text-sm text-slate-200 light:text-slate-800 mt-4">{entry.institution}</p>
+              <p className="text-xs text-slate-400 light:text-slate-600 mt-1">{entry.board}</p>
               {entry.highlights.length > 0 && (
-                <ul className="space-y-3 mt-5 pt-4 border-t border-white/10">
+                <ul className="space-y-3 mt-5 pt-4 border-t border-white/10 light:border-slate-900/10">
                   {entry.highlights.map((highlight) => (
-                    <li key={highlight} className="flex gap-2 text-sm text-slate-300 leading-relaxed">
-                      <ChevronRight className="w-3.5 h-3.5 shrink-0 text-indigo-400 mt-1" />
+                    <li key={highlight} className="flex gap-2 text-sm text-slate-300 light:text-slate-700 leading-relaxed">
+                      <ChevronRight className="w-3.5 h-3.5 shrink-0 text-indigo-400 light:text-indigo-600 mt-1" />
                       <span>{highlight}</span>
                     </li>
                   ))}

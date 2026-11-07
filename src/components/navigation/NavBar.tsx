@@ -1,5 +1,6 @@
 "use client";
 import { profile } from "../config/profile";
+import ThemeToggle from "./ThemeToggle";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Code2, Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
@@ -48,8 +49,8 @@ export default function NavBar() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`pointer-events-auto flex items-center justify-between w-full max-w-5xl px-4 md:px-6 py-2.5 rounded-full transition-all duration-300 ${
           scrolled
-            ? "bg-slate-950/80 backdrop-blur-xl border border-white/10 shadow-2xl shadow-indigo-500/5"
-            : "bg-slate-900/50 backdrop-blur-md border border-white/5 shadow-lg"
+            ? "bg-slate-950/80 light:bg-slate-100/80 backdrop-blur-xl border border-white/10 light:border-slate-900/10 shadow-2xl shadow-indigo-500/5"
+            : "bg-slate-900/50 light:bg-white/50 backdrop-blur-md border border-white/5 light:border-slate-900/10 shadow-lg"
         }`}
       >
         {/* Brand Identity Logo */}
@@ -58,22 +59,22 @@ export default function NavBar() {
           className="flex items-center gap-2 group focus:outline-none"
         >
           <div className="relative flex items-center justify-center w-9 h-9 rounded-full bg-indigo-500/10 border border-indigo-500/30 group-hover:border-indigo-400/80 transition-colors">
-            <Code2 className="w-5 h-5 text-indigo-400 group-hover:scale-110 transition-transform duration-200" />
+            <Code2 className="w-5 h-5 text-indigo-400 light:text-indigo-600 group-hover:scale-110 transition-transform duration-200" />
             <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
             <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-400" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-white text-sm md:text-base tracking-tight group-hover:text-indigo-300 transition-colors">
-              Archana<span className="text-indigo-400">.P.Babu</span>
+            <span className="font-bold text-white light:text-slate-900 text-sm md:text-base tracking-tight group-hover:text-indigo-300 light:group-hover:text-indigo-700 transition-colors">
+              Archana<span className="text-indigo-400 light:text-indigo-600">.P.Babu</span>
             </span>
-            <span className="text-[10px] text-slate-400 tracking-wider font-mono">
+            <span className="text-[10px] text-slate-400 light:text-slate-600 tracking-wider font-mono">
               FULL-STACK DEV
             </span>
           </div>
         </a>
 
         {/* Desktop Nav Items */}
-        <div className="hidden lg:flex items-center gap-1 bg-slate-900/60 p-1 rounded-full border border-white/5">
+        <div className="hidden lg:flex items-center gap-1 bg-slate-900/60 light:bg-white/60 p-1 rounded-full border border-white/5 light:border-slate-900/10">
           {links.map((link) => {
             const isActive = activeLink === link.id;
             return (
@@ -81,7 +82,7 @@ export default function NavBar() {
                 key={link.id}
                 href={`#${link.id}`}
                 className={`relative px-4 py-1.5 text-xs md:text-sm font-medium rounded-full transition-colors duration-200 ${
-                  isActive ? "text-white" : "text-slate-400 hover:text-slate-200"
+                  isActive ? "text-white light:text-slate-900" : "text-slate-400 light:text-slate-600 hover:text-slate-200 light:hover:text-slate-800"
                 }`}
               >
                 {isActive && (
@@ -110,14 +111,17 @@ export default function NavBar() {
           </a>
         </div>
 
+        <div className="flex items-center gap-2">
+        <ThemeToggle />
         {/* Mobile Hamburger Menu Toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="lg:hidden p-2 rounded-full text-slate-300 hover:text-white bg-slate-800/80 border border-white/10 focus:outline-none"
+          className="lg:hidden p-2 rounded-full text-slate-300 light:text-slate-700 hover:text-white light:hover:text-slate-900 bg-slate-800/80 light:bg-slate-200/80 border border-white/10 light:border-slate-900/10 focus:outline-none"
           aria-label="Toggle Navigation Menu"
         >
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
+        </div>
       </motion.nav>
 
       {/* Mobile Glass Menu Drawer Overlay */}
@@ -127,10 +131,10 @@ export default function NavBar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-16 z-40 lg:hidden bg-slate-950/95 backdrop-blur-2xl px-6 py-8 flex flex-col justify-between border-t border-white/10 pointer-events-auto"
+            className="fixed inset-0 top-16 z-40 lg:hidden bg-slate-950/95 light:bg-slate-100/95 backdrop-blur-2xl px-6 py-8 flex flex-col justify-between border-t border-white/10 light:border-slate-900/10 pointer-events-auto"
           >
             <div className="flex flex-col gap-6 pt-4">
-              <div className="flex items-center gap-2 text-indigo-400 text-xs font-mono uppercase tracking-widest px-2">
+              <div className="flex items-center gap-2 text-indigo-400 light:text-indigo-600 text-xs font-mono uppercase tracking-widest px-2">
                 <Sparkles className="w-4 h-4" /> Navigation
               </div>
               <ul className="flex flex-col gap-3">
@@ -146,19 +150,19 @@ export default function NavBar() {
                       onClick={() => setOpen(false)}
                       className={`flex items-center justify-between p-4 rounded-xl text-lg font-semibold border transition-all ${
                         activeLink === link.id
-                          ? "bg-indigo-600/20 border-indigo-500/40 text-white"
-                          : "bg-slate-900/40 border-white/5 text-slate-300 hover:bg-slate-800/50"
+                          ? "bg-indigo-600/20 border-indigo-500/40 text-white light:text-slate-900"
+                          : "bg-slate-900/40 light:bg-white/40 border-white/5 light:border-slate-900/10 text-slate-300 light:text-slate-700 hover:bg-slate-800/50 light:hover:bg-slate-200/50"
                       }`}
                     >
                       <span>{link.name}</span>
-                      <ArrowUpRight className="w-5 h-5 text-indigo-400 opacity-60" />
+                      <ArrowUpRight className="w-5 h-5 text-indigo-400 light:text-indigo-600 opacity-60" />
                     </a>
                   </motion.li>
                 ))}
               </ul>
             </div>
 
-            <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
+            <div className="flex flex-col gap-3 pt-6 border-t border-white/10 light:border-slate-900/10">
               <a
                 href={profile.cvUrl}
                 target="_blank"

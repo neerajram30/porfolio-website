@@ -18,6 +18,23 @@
     font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   }
 
+  html[data-theme="light"] {
+    color-scheme: light;
+  }
+
+  html[data-theme="light"] body {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  html[data-theme="light"] ::-webkit-scrollbar-track {
+    background-color: #f1f5f9;
+  }
+
+  html[data-theme="light"] ::-webkit-scrollbar-thumb {
+    background-color: #94a3b8;
+  }
+
   /* Custom sleek scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
@@ -56,6 +73,28 @@
 
   .gradient-text-subtle {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400;
+  }
+
+  [data-theme="light"] .bento-card {
+    @apply bg-white/80 border-slate-900/10 shadow-sm hover:border-indigo-500/40;
+  }
+
+  [data-theme="light"] .glass-pill {
+    @apply bg-white/90 border-slate-900/10;
+  }
+
+  [data-theme="light"] .gradient-text {
+    @apply from-indigo-700 via-cyan-700 to-emerald-700;
+  }
+
+  [data-theme="light"] .gradient-text-subtle {
+    @apply from-slate-900 via-slate-700 to-slate-600;
+  }
+
+  [data-theme="light"] .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
   }
 }
 

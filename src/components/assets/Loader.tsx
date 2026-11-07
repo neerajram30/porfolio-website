@@ -31,7 +31,7 @@ export default function Loader() {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#07090e] text-slate-200 select-none overflow-hidden"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#07090e] light:bg-slate-50 text-slate-200 light:text-slate-800 select-none overflow-hidden"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, y: -6, filter: "blur(6px)" }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -46,7 +46,7 @@ export default function Loader() {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-slate-900/80 border border-indigo-400/40 shadow-2xl shadow-indigo-500/20 mb-5"
+          className="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-slate-900/80 light:bg-white/80 border border-indigo-400/40 shadow-2xl shadow-indigo-500/20 mb-5"
         >
           <Image
             src={profilePicture}
@@ -72,10 +72,10 @@ export default function Loader() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="flex flex-col items-center mb-7"
         >
-          <h1 className="text-base sm:text-lg font-semibold tracking-tight text-white">
+          <h1 className="text-base sm:text-lg font-semibold tracking-tight text-white light:text-slate-900">
             {profile.name}
           </h1>
-          <p className="text-[11px] sm:text-xs text-slate-400 font-mono tracking-widest uppercase mt-1">
+          <p className="text-[11px] sm:text-xs text-slate-400 light:text-slate-600 font-mono tracking-widest uppercase mt-1">
             {profile.role}
           </p>
         </motion.div>
@@ -88,7 +88,7 @@ export default function Loader() {
           className="w-48 sm:w-56 flex flex-col items-center"
         >
           {/* Thin Progress Bar */}
-          <div className="relative w-full h-[2px] bg-white/10 rounded-full overflow-hidden">
+          <div className="relative w-full h-[2px] bg-white/10 light:bg-slate-900/10 rounded-full overflow-hidden">
             <div
               className="absolute top-0 bottom-0 left-0 bg-gradient-to-r from-indigo-500 via-indigo-400 to-cyan-400 rounded-full transition-all duration-75 ease-out"
               style={{ width: `${progress}%` }}
@@ -96,9 +96,9 @@ export default function Loader() {
           </div>
 
           {/* Progress Counter & State */}
-          <div className="flex items-center justify-between w-full mt-3 text-[11px] font-mono text-slate-500">
+          <div className="flex items-center justify-between w-full mt-3 text-[11px] font-mono text-slate-500 light:text-slate-600">
             <span className="tracking-wider">INITIALIZING</span>
-            <span className="text-slate-400 tabular-nums">
+            <span className="text-slate-400 light:text-slate-600 tabular-nums">
               {progress.toString().padStart(2, "0")}%
             </span>
           </div>

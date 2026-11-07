@@ -23,7 +23,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative min-h-screen w-full bg-obsidian text-slate-100 flex flex-col items-center overflow-x-hidden selection:bg-indigo-500 selection:text-white">
+    <main className="relative min-h-screen w-full bg-obsidian light:bg-slate-50 text-slate-100 light:text-slate-900 flex flex-col items-center overflow-x-hidden selection:bg-indigo-500 selection:text-white">
       <AnimatePresence mode="wait">
         {loading ? (
           <Loader key="loader" />

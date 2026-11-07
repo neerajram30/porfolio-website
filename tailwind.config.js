@@ -47,6 +47,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss/plugin')(({ addVariant }) => {
+    addVariant('light', '[data-theme="light"] &');
+  })],
 }
 

@@ -17,19 +17,19 @@ function Experiences() {
 
   return (
     <section
-      className="relative w-full py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-slate-950/80 border-t border-white/5 overflow-hidden"
+      className="relative w-full py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-slate-950/80 light:bg-slate-100/80 border-t border-white/5 light:border-slate-900/10 overflow-hidden"
       ref={ref}
     >
       <div className="w-full max-w-5xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-10 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-[11px] sm:text-xs font-mono tracking-widest uppercase mb-3">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 light:text-indigo-600 text-[11px] sm:text-xs font-mono tracking-widest uppercase mb-3">
             <Sparkles className="w-3.5 h-3.5" /> Career Roadmap
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white light:text-slate-900 tracking-tight">
             Work <span className="gradient-text">Experience</span>
           </h2>
-          <p className="mt-3 text-slate-400 text-xs sm:text-base max-w-xl">
+          <p className="mt-3 text-slate-400 light:text-slate-600 text-xs sm:text-base max-w-xl">
             A breakdown of my professional roles, engineering contributions, and business impacts.
           </p>
         </div>

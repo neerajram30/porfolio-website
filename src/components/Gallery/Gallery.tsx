@@ -35,13 +35,13 @@ export default function Gallery() {
     <section id="gallery" className="relative w-full px-4 py-16 sm:px-6 sm:py-24 md:px-8">
       <div className="mx-auto w-full max-w-6xl">
         <div className="mb-10 text-center sm:mb-12">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1.5 font-mono text-xs uppercase tracking-widest text-indigo-400">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1.5 font-mono text-xs uppercase tracking-widest text-indigo-400 light:text-indigo-600">
             <Camera className="h-3.5 w-3.5" /> Moments &amp; Memories
           </div>
-          <h2 className="text-2xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
+          <h2 className="text-2xl font-extrabold tracking-tight text-white light:text-slate-900 sm:text-4xl md:text-5xl">
             My <span className="gradient-text">Gallery</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-slate-400 sm:text-base">
+          <p className="mx-auto mt-3 max-w-xl text-sm text-slate-400 light:text-slate-600 sm:text-base">
             From tech summits to outdoor adventures. Select a photo to take a closer look.
           </p>
         </div>
@@ -56,15 +56,15 @@ export default function Gallery() {
               aria-label={`Preview ${photo.title}`}
               className="bento-card group overflow-hidden text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-400"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-slate-900">
+              <div className="relative aspect-[4/3] overflow-hidden bg-slate-900 light:bg-white">
                 <Image src={photo.image} alt={photo.title} fill placeholder="blur"
                   sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
                   className="object-cover transition-transform duration-300 motion-safe:group-hover:scale-105" />
-                <span className="absolute bottom-3 right-3 rounded-full border border-white/20 bg-slate-950/70 p-2 text-white" aria-hidden="true">
+                <span className="absolute bottom-3 right-3 rounded-full border border-white/20 light:border-slate-900/10 bg-slate-950/70 light:bg-slate-100/70 p-2 text-white light:text-slate-900" aria-hidden="true">
                   <Expand className="h-4 w-4" />
                 </span>
               </div>
-              <h3 className="px-5 py-4 text-base font-semibold text-slate-100 group-hover:text-indigo-300">{photo.title}</h3>
+              <h3 className="px-5 py-4 text-base font-semibold text-slate-100 light:text-slate-900 group-hover:text-indigo-300 light:group-hover:text-indigo-700">{photo.title}</h3>
             </button>
           ))}
         </div>
@@ -81,14 +81,14 @@ export default function Gallery() {
           if (event.key === "ArrowLeft") { event.preventDefault(); move(-1); }
           if (event.key === "ArrowRight") { event.preventDefault(); move(1); }
         }}
-        className="m-auto max-h-[90dvh] w-[calc(100%_-_2rem)] max-w-5xl overflow-y-auto rounded-2xl border border-white/15 bg-slate-950 p-0 text-slate-100 shadow-2xl backdrop:bg-black/85 backdrop:backdrop-blur-sm"
+        className="m-auto max-h-[90dvh] w-[calc(100%_-_2rem)] max-w-5xl overflow-y-auto rounded-2xl border border-white/15 light:border-slate-900/10 bg-slate-950 light:bg-slate-100 p-0 text-slate-100 light:text-slate-900 shadow-2xl backdrop:bg-black/85 backdrop:backdrop-blur-sm"
       >
         {selected && (
           <div>
-            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-              <span className="font-mono text-xs text-slate-400">{selectedIndex! + 1} / {galleryPhotos.length}</span>
+            <div className="flex items-center justify-between border-b border-white/10 light:border-slate-900/10 px-4 py-3">
+              <span className="font-mono text-xs text-slate-400 light:text-slate-600">{selectedIndex! + 1} / {galleryPhotos.length}</span>
               <button type="button" autoFocus onClick={() => setSelectedIndex(null)} aria-label="Close preview"
-                className="rounded-full p-2 text-slate-300 hover:bg-white/10 focus-visible:outline-indigo-400">
+                className="rounded-full p-2 text-slate-300 light:text-slate-700 hover:bg-white/10 light:hover:bg-slate-900/10 focus-visible:outline-indigo-400">
                 <X className="h-5 w-5" />
               </button>
             </div>
@@ -97,12 +97,12 @@ export default function Gallery() {
             </div>
             <div className="flex items-center justify-between gap-4 p-5 sm:p-6">
               <div aria-live="polite">
-                <h3 id="gallery-preview-title" className="text-lg font-bold text-white sm:text-xl">{selected.title}</h3>
-                <p id="gallery-preview-description" className="mt-2 text-sm leading-relaxed text-slate-400">{selected.description}</p>
+                <h3 id="gallery-preview-title" className="text-lg font-bold text-white light:text-slate-900 sm:text-xl">{selected.title}</h3>
+                <p id="gallery-preview-description" className="mt-2 text-sm leading-relaxed text-slate-400 light:text-slate-600">{selected.description}</p>
               </div>
               <div className="flex shrink-0 gap-2">
-                <button type="button" onClick={() => move(-1)} aria-label="Previous photo" className="rounded-full border border-white/15 p-2 hover:bg-indigo-500/20 focus-visible:outline-indigo-400"><ChevronLeft className="h-5 w-5" /></button>
-                <button type="button" onClick={() => move(1)} aria-label="Next photo" className="rounded-full border border-white/15 p-2 hover:bg-indigo-500/20 focus-visible:outline-indigo-400"><ChevronRight className="h-5 w-5" /></button>
+                <button type="button" onClick={() => move(-1)} aria-label="Previous photo" className="rounded-full border border-white/15 light:border-slate-900/10 p-2 hover:bg-indigo-500/20 focus-visible:outline-indigo-400"><ChevronLeft className="h-5 w-5" /></button>
+                <button type="button" onClick={() => move(1)} aria-label="Next photo" className="rounded-full border border-white/15 light:border-slate-900/10 p-2 hover:bg-indigo-500/20 focus-visible:outline-indigo-400"><ChevronRight className="h-5 w-5" /></button>
               </div>
             </div>
           </div>
